@@ -1,4 +1,4 @@
 package com.example.depropdemo.Dao;
 
-public class CustomerRepository {
+public interface CustomerRepository {
 }
