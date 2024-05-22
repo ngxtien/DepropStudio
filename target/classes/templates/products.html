@@ -26,7 +26,7 @@
         <td th:text="${products.price}"></td>
         <td th:text="${products.quantity}"></td>
         <td th:text="${products.description}"></td>
-        <td><img th:src="@{'data:image/png;base64,'+${products.image}}" alt="Product Image" style="width:70px;height:40px;"></td>
+        <td><img th:src="${products.image}" alt="Product Image" style="width:100px;height:100px;"></td>
     </tr>
     </tbody>
 </table>
@@ -36,7 +36,7 @@
 
 
 <h2>Add product</h2>
-<form th:action="@{/products}" th:object="${product}" method="post" enctype="multipart/form-data">
+<form th:action="@{/products}" th:object="${product}" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" th:field="*{name}"  />
 
@@ -49,8 +49,8 @@
     <label for="description">Des:</label>
     <input type="text" id="description" th:field="*{description}" />
 
-    <label for="imaged">Image:</label>
-    <input type="file" id="imaged" name="imaged" accept="image/*" />
+    <label for="image">Img:</label>
+    <input type="text" id="image" th:field="*{image}" />
 
     <button type="submit">Save</button>
 </form>
