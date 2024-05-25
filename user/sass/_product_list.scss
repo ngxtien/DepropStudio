@@ -1,0 +1,118 @@
+/***************** product list css *******************/
+.product_list {
+    background-color: $section_bg;
+    .section_tittle {
+        text-align: left !important;
+        h2 {
+            font-size: 40px;
+            color: $text-color;
+            text-transform: capitalize;
+        }
+
+        span {
+            color: #adadad;
+            font-size: 20px;
+            font-weight: 700;
+            margin-left: 60px;
+        }
+    }
+
+    .product_list_slider {
+        padding-bottom: 70px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        right: 0;
+        top: -120px;
+        padding-bottom: 70px;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    
+        @media #{$medium_device} {
+            top: -100px;
+        }
+    
+        @media #{$tab} {
+            top: -100px;
+        }
+    
+        .owl-prev,
+        .owl-next {
+            font-size: 7px;
+            border: 2px solid $white-color;
+            border-radius: 50% !important;
+            background-color: transparent;
+            color: $white-color;
+            padding: 10px 10px !important;
+    
+            @media #{$medium_device} {
+    
+            }
+    
+            @media #{$tab} {  
+            }
+        }
+    
+        .owl-prev:hover, .owl-next:hover{
+            background-color: $white-color;
+            color: $black_color;
+        }
+    }
+}
+
+
+.single_product_item {
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: $white-color;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    @include transform_time(0.5s);
+    img{
+        border-radius: 8px 8px;
+        @media #{$tab}{
+            width: 100%;
+        }
+        @media #{$medium_device}{
+            width: 100%;
+        }
+    }
+    .single_product_text {
+        border-radius: 8px 8px;
+        padding: 20px 15px;
+        background-color: $white_color;
+        @include transform_time(0.5s);
+
+        h4 {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+        a {
+            display: inline-block;
+            width: 100%;
+            @media #{$tab} {
+                font-size: 12px;
+            }
+            @media #{$medium_device} {
+                font-size: 13px;
+            }
+            i {
+                margin-right: 5px;
+                font-size: 15px;
+                @media #{$tab} {
+                    font-size: 12px;
+                }
+            }
+        }
+        
+    }
+}
