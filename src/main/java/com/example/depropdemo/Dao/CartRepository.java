@@ -1,4 +1,7 @@
 package com.example.depropdemo.Dao;
 
-public interface CartRepository {
+import com.example.depropdemo.Model.Cart;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CartRepository extends JpaRepository<Cart, Long> {
 }

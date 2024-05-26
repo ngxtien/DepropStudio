@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org">
+        <head>
+        <title>Shopping Cart</title>
+<!--    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">-->
+</head>
+<body>
+<h1>Shopping Cart</h1>
+<div class="cart">
+    <div th:if="${cart.isEmpty()}">
+        <p>Your cart is empty.</p>
+    </div>
+    <div th:unless="${cart.isEmpty()}">
+        <ul>
+            <li th:each="item : ${cart}">
+                <span th:text="${item.name}"></span>
+                <span th:text="${item.price}"></span>
+            </li>
+        </ul>
+        <button id="checkoutButton">Checkout</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("checkoutButton").addEventListener("click", function() {
+            fetch('/checkout', {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    alert('Order placed successfully');
+                } else {
+                    alert('Failed to place order');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
