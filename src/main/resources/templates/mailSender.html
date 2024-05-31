@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail Sender</title>
+</head>
+<body>
+<form th:action="@{/sendBill}" method="post">
+    <div class="div">
+        <h5>Enter your e-mail:</h5>
+        <input type="text" id="email" name="email" class="input" >
+        <button type="submit" class="btn">Send</button>
+    </div>
+</form>
+</body>
+</html>
