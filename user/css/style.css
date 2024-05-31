@@ -884,7 +884,7 @@ ul {
   font-weight: 700;
   margin-bottom: 35px;
   line-height: 72px;
-  color: #ffffff;
+  color: #fff;
 }
 @media (max-width: 576px) {
   .banner_part .single_banner_slider .banner_text h1 {
@@ -914,7 +914,7 @@ ul {
   font-size: 15px;
   line-height: 1.8;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 70px;
   padding-right: 80px;
 }
@@ -1010,7 +1010,7 @@ ul {
 }
 .product_list .section_tittle h2 {
   font-size: 35px;
-  color: #ffffff;
+  color: #fff;
 }
 .product_list .section_tittle span {
   color: #adadad;
@@ -1173,7 +1173,7 @@ ul {
   text-align: center;
   background: #fff;
   border-radius: 30px;
-  color: #ffffff;
+  color: #fff;
   margin-right: 25px;
 }
 .single-product .product-img .p_icon a:last-child {
@@ -1199,14 +1199,14 @@ ul {
 .single-product .product-btm h5 {
   margin-bottom: 0px;
   font-size: 18px;
-  color: #ffffff;
+  color: #fff;
 }
 .single-product .product-btm span {
   font-family: "Be Vietnam Pro", sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 16px;
-  color: #ffffff;
+  color: #fff;
 }
 .single-product:hover .product-img .p_icon {
   bottom: 0px;
@@ -1264,12 +1264,12 @@ ul {
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: normal;
-  color: #ffffff;
+  color: #fff;
 }
 .most_p_list .media .media-body h3 {
   font-size: 16px;
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 0px;
 }
 
@@ -1647,7 +1647,7 @@ ul {
   border: 1px solid #eeeeee;
   border-radius: 0px;
   padding: 0px 30px;
-  color: #ffffff;
+  color: #fff;
   font-size: 13px;
   font-weight: normal;
   border-radius: 50px;
@@ -1680,15 +1680,15 @@ ul {
   font-weight: bold;
 }
 .product_description_area .tab-content .total_rate .box_total h5 {
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 0px;
   font-size: 24px;
 }
 .product_description_area .tab-content .total_rate .box_total h6 {
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 0px;
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
 }
 .product_description_area .tab-content .total_rate .rating_list {
@@ -1696,14 +1696,14 @@ ul {
 }
 .product_description_area .tab-content .total_rate .rating_list h3 {
   font-size: 18px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 700;
   margin-bottom: 10px;
 }
 .product_description_area .tab-content .total_rate .rating_list .list li a {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
 }
 .product_description_area .tab-content .total_rate .rating_list .list li a i {
   color: #fbd600;
@@ -1724,7 +1724,7 @@ ul {
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 0px;
   white-space: nowrap;
 }
@@ -1739,7 +1739,7 @@ ul {
   margin-bottom: 0px;
 }
 .review_item p {
-  color: #ffffff;
+  color: #fff;
 }
 .review_item .media {
   position: relative;
@@ -1754,7 +1754,7 @@ ul {
 .review_item .media .media-body h4 {
   margin-bottom: 0px;
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   margin-bottom: 8px;
 }
@@ -1764,7 +1764,7 @@ ul {
 .review_item .media .media-body h5 {
   font-size: 13px;
   font-weight: normal;
-  color: #ffffff;
+  color: #fff;
 }
 .review_item .media .media-body .reply_btn {
   border: 1px solid #e0e0e0;
@@ -1774,7 +1774,7 @@ ul {
   border-radius: 16px;
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   position: absolute;
   right: 0px;
   top: 14px;
@@ -1794,7 +1794,7 @@ ul {
 
 .review_box h4 {
   font-size: 24px;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -1842,7 +1842,7 @@ ul {
   font-size: 14px;
   font-weight: 500;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   border-bottom: 0px !important;
 }
 .cart_inner .table tbody tr td {
@@ -1867,7 +1867,7 @@ ul {
 }
 .cart_inner .table tbody tr td h5 {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   margin-bottom: 0px;
 }
@@ -1912,7 +1912,7 @@ ul {
   border-radius: 3px;
   padding: 0px 40px;
   display: inline-block;
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -1986,7 +1986,7 @@ ul {
 .cart_inner .table tbody tr.shipping_area .shipping_box .list li a {
   padding-right: 30px;
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   position: relative;
 }
 .cart_inner .table tbody tr.shipping_area .shipping_box .list li a:before {
@@ -2020,13 +2020,13 @@ ul {
 .cart_inner .table tbody tr.shipping_area .shipping_box h6 {
   font-size: 14px;
   font-weight: normal;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 .cart_inner .table tbody tr.shipping_area .shipping_box h6 i {
-  color: #ffffff;
+  color: #fff;
   padding-left: 5px;
 }
 .cart_inner .table tbody tr.shipping_area .shipping_box .shipping_select {
@@ -2044,7 +2044,7 @@ ul {
 .cart_inner .table tbody tr.shipping_area .shipping_box .shipping_select .list li {
   font-size: 14px;
   font-weight: normal;
-  color: #ffffff;
+  color: #fff;
 }
 .cart_inner .table tbody tr.shipping_area .shipping_box input {
   height: 40px;
@@ -2072,7 +2072,7 @@ ul {
   border-radius: 3px;
   padding: 0px 40px;
   display: inline-block;
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -2150,31 +2150,31 @@ ul {
   border-radius: 3px;
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
 }
 .returning_customer .contact_form .form-group input.placeholder {
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
 }
 .returning_customer .contact_form .form-group input:-moz-placeholder {
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
 }
 .returning_customer .contact_form .form-group input::-moz-placeholder {
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
 }
 .returning_customer .contact_form .form-group input::-webkit-input-placeholder {
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
 }
 .returning_customer .contact_form .form-group .submit_btn {
@@ -2193,7 +2193,7 @@ ul {
   margin-top: 20px;
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
 }
 
@@ -2264,7 +2264,7 @@ ul {
   display: inline-block;
   line-height: 38px;
   padding: 0px 40px;
-  color: #ffffff;
+  color: #fff;
   text-transform: capitalize;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
@@ -2278,7 +2278,7 @@ ul {
 
 .billing_details h3 {
   font-size: 18px;
-  color: #ffffff;
+  color: #fff;
   padding-bottom: 10px;
   margin-bottom: 30px;
 }
@@ -2287,19 +2287,19 @@ ul {
 }
 .billing_details .contact_form .form-group input {
   border-radius: 3px;
-  color: #ffffff;
+  color: #fff;
 }
 .billing_details .contact_form .form-group input.placeholder {
-  color: #ffffff;
+  color: #fff;
 }
 .billing_details .contact_form .form-group input:-moz-placeholder {
-  color: #ffffff;
+  color: #fff;
 }
 .billing_details .contact_form .form-group input::-moz-placeholder {
-  color: #ffffff;
+  color: #fff;
 }
 .billing_details .contact_form .form-group input::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #fff;
 }
 .billing_details .contact_form .form-group textarea {
   height: 150px;
@@ -2310,7 +2310,7 @@ ul {
   width: 100%;
 }
 .billing_details .contact_form .form-group .country_select span {
-  color: #ffffff;
+  color: #fff;
 }
 .billing_details .contact_form .form-group .country_select .list {
   width: 100%;
@@ -2339,12 +2339,12 @@ ul {
   border-bottom: 1px solid #dddddd;
   font-size: 18px;
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   padding-bottom: 15px;
 }
 .order_box .list li a {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-weight: normal;
   border-bottom: 1px solid #eeeeee;
   display: block;
@@ -2359,27 +2359,27 @@ ul {
   text-align: right;
   display: inline-block;
   margin-left: 30px;
-  color: #ffffff;
+  color: #fff;
 }
 .order_box .list li:nth-child(4) a .middle {
   margin-left: 48px;
 }
 .order_box .list_2 li a {
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fff;
   font-weight: 500;
 }
 .order_box .list_2 li a span {
-  color: #ffffff;
+  color: #fff;
   text-transform: capitalize;
 }
 .order_box .list_2 li:last-child a span {
-  color: #ffffff;
+  color: #fff;
 }
 .order_box .payment_item h4 {
   font-size: 14px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fff;
   font-weight: 500;
   padding-left: 22px;
   position: relative;
@@ -2427,7 +2427,7 @@ ul {
 .order_box .creat_account label {
   padding-left: 10px;
   font-size: 12px;
-  color: #ffffff;
+  color: #fff;
 }
 .order_box .creat_account a {
   color: #ff3368;
@@ -2455,7 +2455,7 @@ ul {
 ============================================================================================ */
 .tracking_box_area .tracking_box_inner p {
   max-width: 870px;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 25px;
 }
 .tracking_box_area .tracking_box_inner .tracking_form {
@@ -2472,31 +2472,31 @@ ul {
   box-shadow: none;
   border-radius: 0px;
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
 }
 .tracking_box_area .tracking_box_inner .tracking_form .form-group input.placeholder {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
 }
 .tracking_box_area .tracking_box_inner .tracking_form .form-group input:-moz-placeholder {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
 }
 .tracking_box_area .tracking_box_inner .tracking_form .form-group input::-moz-placeholder {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
 }
 .tracking_box_area .tracking_box_inner .tracking_form .form-group input::-webkit-input-placeholder {
   font-size: 14px;
-  color: #ffffff;
+  color: #fff;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
 }
@@ -2537,7 +2537,7 @@ ul {
   transition: all 0.25s linear;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   font-size: 13px;
   letter-spacing: 0.25px;
   text-transform: uppercase;
@@ -3938,11 +3938,11 @@ h6 {
   }
 }
 .feature_part .single_feature_slider .feature_text p {
-  color: #828bb2;
+  color: #fff;
   line-height: 13px;
 }
 .feature_part .single_feature_slider .feature_text h3 {
-  color: #828bb2;
+  color: #fff;
   font-size: 24px;
   font-weight: 700;
   margin-top: 21px;
