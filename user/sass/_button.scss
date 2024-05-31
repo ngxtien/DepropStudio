@@ -35,25 +35,39 @@
 		color: $white_color;
 	}
 }
+
 .btn_3{
-	display: inline-block;
-	padding: 9px 42px;
-	border-radius: 50px;
-	background-color: $btn_bg;
-	border: 1px solid $section_bg;
-	font-size: 15px;
-	font-weight: 700;
-	color: $white_color;
-	text-transform: uppercase;
-	font-weight: 400;
-	box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
-	border: 1px solid $btn_bg;
-	@include transform_time(0.5s);
+	padding: 12px 40px;
+	line-height: 24px;
+	text-align: center;
+	border-radius: 30px;
+	font-size: 14px;
+	font-family: $font_stack_2;
+	font-weight: 500;
+	color: $btn_bg;
+    text-transform: capitalize;
+	box-shadow: none !important;
+	
 	&:hover{
-		background-color: red;
+		background-color: $btn_bg;
+		@extend %custom_btn_bg_1;
 		color: $white_color;
+		-o-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
+		transition: all .4s ease-in-out;
+		background-size: 200% auto;
+	}
+	@media #{$tab}{
+		font-size: 12px;
+		padding: 12px 20px;
+		line-height: 24px;
+	}
+	@media #{$medium_device}{
+		padding: 12px 30px;
+		line-height: 24px;
 	}
 }
+
 .btn_2{
 	padding: 12px 40px;
 	line-height: 24px;
@@ -61,7 +75,7 @@
 	border-radius: 30px;
 	background-color: $btn_bg;
 	@extend %custom_btn_bg_1;
-	font-size: 15px;
+	font-size: 14px;
 	font-family: $font_stack_2;
 	font-weight: 500;
 	color: $white_color;
@@ -70,13 +84,15 @@
     transition: all .4s ease-in-out;
 	text-transform: capitalize;
 	background-size: 200% auto;
-	box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
+	
 	&:hover{
 		color: $white_color !important;
 		background-position: right center;
+		box-shadow: -1.717px 8.835px 29.76px 2.24px rgba(255, 51, 104, 0.18);
 	}
 	@media #{$tab}{
-		padding: 12px 10px;
+		font-size: 12px;
+		padding: 12px 20px;
 		line-height: 24px;
 	}
 	@media #{$medium_device}{
@@ -174,11 +190,11 @@
 		border-color: $border_color;
 		padding: 12px 25px;
 
-		&:hover{
-			// border-color: $title-color;
-			// background: $title-color;
-			// color: $white_color;
-		}
+		// &:hover{
+		// 	// border-color: $title-color;
+		// 	// background: $title-color;
+		// 	// color: $white_color;
+		// }
 	}
 }
 

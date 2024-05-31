@@ -1,17 +1,19 @@
-/***************** product list css *******************/
-.product_list {
-    @include background("/user/img/bg2.png");
+/***************** related product css *******************/
+.related_product {
     .section_tittle {
         text-align: left !important;
         h2 {
             font-size: 35px;
-            color: $text-color;
+            color: $black-color;
+            @media #{$small_mobile} {
+                text-align: center;
+            }
         }
 
         span {
             color: #adadad;
             font-size: 20px;
-            font-weight: 700;
+            font-weight: 500;
             margin-left: 60px;
         }
     }
@@ -37,13 +39,13 @@
 
             .owl-dot {
                 span {
-                    background: #747474 !important;
+                    background: #adadad !important;
                 }
             }
             .owl-dot.active,
             .owl-dot:hover {
                 span {
-                    background: white !important;
+                    background: rgb(0, 0, 0) !important;
                 }
             }
         }
@@ -63,10 +65,12 @@
                 display: none;
             }
             .owl-next, .owl-prev{
+                color: #adadad;
                 margin: 10px;
             }
             .owl-prev:hover,
             .owl-next:hover {
+            color: $black-color;
             background: none !important;
         }
         } 

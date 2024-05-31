@@ -78,12 +78,12 @@
     product_list_slider.owlCarousel({
       items: 1,
       loop: true,
-      dots: false,
+      dots: true,
       autoplay: true,
       autoplayHoverPause: true,
       autoplayTimeout: 5000,
       nav: true,
-      navText: ["<span><i class='fa fa-arrow-right fa-3x'></i></span>", "<span><i class='fa fa-arrow-left fa-3x'></i></span>"],
+      navText: ["<span><i class='fa fa-angle-right fa-4x'></i></span>", "<span><i class='fa fa-angle-left fa-4x'></i></span>"],
       smartSpeed: 1000,
       responsive: {
         0: {
@@ -147,7 +147,7 @@
     autoplayHoverPause: true,
     autoplayTimeout: 5000,
     nav: true,
-    navText: ["<span><i class='fa fa-arrow-right fa-3x'></i></span>", "<span><i class='fa fa-arrow-left fa-3x'></i></span>"],
+    navText: ["<span><i class='fa fa-angle-right fa-4x'></i></span>", "<span><i class='fa fa-angle-left fa-4x'></i></span>"],
     smartSpeed: 1000,
     responsive: {
       0: {
@@ -165,12 +165,12 @@
   $('.feature_slider').owlCarousel({
     items: 1,
     loop: true,
-    dots: false,
+    dots: true,
     autoplay: true,
     autoplayHoverPause: true,
     autoplayTimeout: 5000,
     nav: true,
-    navText: ["<span><i class='fa fa-arrow-right fa-3x'></i></span>", "<span><i class='fa fa-arrow-left fa-3x'></i></span>"],
+    navText: ["<span><i class='fa fa-angle-right fa-4x'></i></span>", "<span><i class='fa fa-angle-left fa-4x'></i></span>"],
     smartSpeed: 1000,
     responsive: {
       0: {
