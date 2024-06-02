@@ -75,42 +75,7 @@
                                 <i class="fas fa-shopping-cart"></i>
                                 <span>5</span>
                             </a>
-                            <div class="quick_cart offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="quickCart" aria-labelledby="quickCartLabel">
-                                <div class="offcanvas-header">
-                                    <h4 class="offcanvas-title" id="quickCartLabel">Giỏ hàng</h4>
-                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                </div>
-                                <div class="offcanvas-body">
-                                    <div class="s_product_view">
-                                        <div class="s_product_item d-flex justify-content-between align-items-center">
-                                            <img class="product_img" src="img/bg1.jpg" alt="">
-                                            <div class="product_text d-flex flex-column">
-                                                <div class="product_title">Product Name</div>
-                                                <div class="product_price">100.000</div>
-                                            </div>
-                                            <div class="product_count">
-                                                <span class="number-decrement"><i class="ti-minus"></i></span>
-                                                <input class="input-number" type="text" value="1" min="0">
-                                                <span class="number-increment"><i class="ti-plus"></i></span>
-                                            </div>
-                                            <a><i class="far fa-trash-alt"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="offcanvas-footer">
-                                    <div class="total_area">
-                                        <div class="row align-items-center">
-                                            <div class="col-lg-8">
-                                                <div>Tổng:</div>
-                                                <div>Giá:</div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <a href="">Check Out</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </nav>
                 </div>
@@ -129,7 +94,7 @@
     <!-- Header part end-->
 
     <!-- banner part start-->
-    <section class="banner_part section_margin">
+    <section class="banner_part">
         <div class="banner_slider owl-carousel owl-theme">
             <div class="single_banner_slider">
                 <div class="banner_img">
@@ -188,7 +153,7 @@
     <!-- banner part start-->
 
     <!-- combo_part start-->
-    <section class="feature_part section_margin">
+    <section class="feature_part">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -245,7 +210,7 @@
     <!-- combo part start-->
 
     <!-- best-picked-item start-->
-    <section class="product_list section_margin">
+    <section class="product_list">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -441,7 +406,7 @@
     <!-- best-pick-item start-->
 
     <!-- offer_part start-->
-    <section class="our_offer section_margin">
+    <section class="our_offer">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6">
@@ -543,6 +508,42 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!--::footer_part end::-->
+    
+    <!-- quick_cart start -->
+    <div class="quick_cart offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="quickCart" aria-labelledby="quickCartLabel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="quickCartLabel">Giỏ hàng</h4>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="s_product_view">
+                <div class="s_product_item d-flex justify-content-between align-items-center">
+                    <img class="product_img" src="img/bg1.jpg" alt="">
+                    <div class="product_text d-flex flex-column">
+                        <div class="product_title">Product Name</div>
+                        <div class="product_price">100.000</div>
+                    </div>
+                    <div class="product_count">
+                        <span class="number-decrement"><i class="ti-minus"></i></span>
+                        <input class="input-number" type="text" value="1" min="0">
+                        <span class="number-increment"><i class="ti-plus"></i></span>
+                    </div>
+                    <a><i class="far fa-trash-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-footer">
+            <div class="total_area d-flex align-items-center justify-content-between">
+                <span class="total_text">Tổng:</span>
+                <span class="total_amount">100.000đ</span> 
+            </div>
+            <div class="cart_button row">
+                <a href="#" class="btn_2 col-lg-6">View cart</a>
+                <a href="#" class="btn_3 col-lg-6">Checkout</a>
+            </div>
+        </div>
+    </div>
+    <!-- quick_cart end-->
 
     <!-- jquery plugins here-->
     <script src="js/jquery-1.12.1.min.js"></script>

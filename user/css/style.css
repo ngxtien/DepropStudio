@@ -409,6 +409,7 @@ ul {
   color: #ff3368;
   text-transform: capitalize;
   box-shadow: none !important;
+  border: 1px solid #ff3368;
 }
 .btn_3:hover {
   background-color: #ff3368;
@@ -1000,7 +1001,7 @@ ul {
 /**************** hero part css end ****************/
 /***************** product list css *******************/
 .product_list {
-  background-image: url("/user/img/bg2.png");
+  background-image: url("/user/img/background/bg1.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1011,12 +1012,6 @@ ul {
 .product_list .section_tittle h2 {
   font-size: 35px;
   color: #fff;
-}
-.product_list .section_tittle span {
-  color: #adadad;
-  font-size: 20px;
-  font-weight: 700;
-  margin-left: 60px;
 }
 .product_list .product_list_slider {
   padding-bottom: 70px;
@@ -1064,7 +1059,7 @@ ul {
     display: none;
   }
 }
-.product_list .owl-theme .owl-nav .owl-next, .product_list .owl-theme .owl-nav .owl-prev {
+.product_list .owl-theme .owl-nav button.owl-next, .product_list .owl-theme .owl-nav button.owl-prev {
   margin: 10px;
 }
 .product_list .owl-theme .owl-nav .owl-prev:hover,
@@ -4369,74 +4364,91 @@ h6 {
   }
 }
 
+.quick_cart {
+  overflow: auto;
+}
 .quick_cart .s_product_view {
   width: 100%;
   display: inline-block;
 }
-.quick_cart .s_product_view .product_img {
+.quick_cart .s_product_view .s_product_item {
+  margin-bottom: 20px;
+}
+.quick_cart .s_product_view .s_product_item .product_img {
   width: 50px;
   height: 50px;
   object-fit: cover;
   object-position: center;
 }
-.quick_cart .s_product_view .product_text {
+.quick_cart .s_product_view .s_product_item .product_text {
   gap: 5px;
   width: 160px;
 }
-.quick_cart .s_product_view .product_text .product_title {
+.quick_cart .s_product_view .s_product_item .product_text .product_title {
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 @media (max-width: 576px) {
-  .quick_cart .s_product_view .product_text {
+  .quick_cart .s_product_view .s_product_item .product_text {
     width: 130px;
   }
 }
-.quick_cart .s_product_view .product_count {
+.quick_cart .s_product_view .s_product_item .product_count {
   border: 1px solid #ddd;
   border-radius: 50px;
   display: flex;
   align-items: center;
   padding: 10px;
 }
-.quick_cart .s_product_view .product_count input {
+.quick_cart .s_product_view .s_product_item .product_count input {
   border: 0px solid transparent;
   text-align: center;
 }
-.quick_cart .s_product_view .product_count .input-number {
+.quick_cart .s_product_view .s_product_item .product_count .input-number {
   display: inline-block;
   width: 30px;
 }
 @media (max-width: 576px) {
-  .quick_cart .s_product_view .product_count .input-number {
+  .quick_cart .s_product_view .s_product_item .product_count .input-number {
     width: 60px;
   }
 }
-.quick_cart .s_product_view .product_count .ti-minus {
+.quick_cart .s_product_view .s_product_item .product_count .ti-minus {
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
 }
-.quick_cart .s_product_view .product_count .ti-minus:hover {
+.quick_cart .s_product_view .s_product_item .product_count .ti-minus:hover {
   background-color: #f3f3f3;
 }
-.quick_cart .s_product_view .product_count .ti-plus {
+.quick_cart .s_product_view .s_product_item .product_count .ti-plus {
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
 }
-.quick_cart .s_product_view .product_count .ti-plus:hover {
+.quick_cart .s_product_view .s_product_item .product_count .ti-plus:hover {
   background-color: #f3f3f3;
 }
-.quick_cart .s_product_view a i {
+.quick_cart .s_product_view .s_product_item a i {
   margin: 0;
 }
 .quick_cart .total_area {
   width: 100%;
-  display: inline-block;
-  border-top: #ddd 1px solid;
+  background-color: #f5f5f5;
+  padding: 20px 20px;
+}
+.quick_cart .cart_button {
+  width: 100%;
+  margin: 0;
+}
+.quick_cart .cart_button .btn_2, .quick_cart .cart_button .btn_3 {
+  border-radius: 0;
+  border: none;
+}
+.quick_cart .cart_button a {
+  text-align: center;
 }
 
 /**********************footer part css*******************/

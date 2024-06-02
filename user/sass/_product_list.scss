@@ -1,18 +1,11 @@
 /***************** product list css *******************/
 .product_list {
-    @include background("/user/img/bg2.png");
+    @include background("/user/img/background/bg1.png");
     .section_tittle {
         text-align: left !important;
         h2 {
             font-size: 35px;
             color: $text-color;
-        }
-
-        span {
-            color: #adadad;
-            font-size: 20px;
-            font-weight: 700;
-            margin-left: 60px;
         }
     }
 
@@ -62,7 +55,7 @@
             @media #{$medium_device} {
                 display: none;
             }
-            .owl-next, .owl-prev{
+            button.owl-next, button.owl-prev{
                 margin: 10px;
             }
             .owl-prev:hover,

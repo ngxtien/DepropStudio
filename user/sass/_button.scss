@@ -47,6 +47,7 @@
 	color: $btn_bg;
     text-transform: capitalize;
 	box-shadow: none !important;
+	border: 1px solid $btn_bg;
 	
 	&:hover{
 		background-color: $btn_bg;
