@@ -1,24 +1,123 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Product List</title>
-<!--    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">-->
+    <!--    <script src="/static/js/deleteProducts.js"></script>-->
 </head>
 <body>
 <h1>Product List</h1>
-<div class="product-list">
-    <div class="row align-items-center latest_product_inner" th:each="products : ${products}">
-        <div class="col-lg-4 col-sm-6 col-6">
-            <div class="single_product_item">
-<!--                <img th:src="@{'data:image/png;base64,' + ${products.images[0].imageData}}" alt="Product Image">-->
-                <div class="single_product_text">
-                    <h4 th:text="${products.name}"></h4>
-                    <h3 th:text="${products.price}"></h3>
-                    <a th:href="@{'/product/' + ${products.id}}" class="view_detail">View Detail</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Select</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="products : ${products}">
+        <td><input type="checkbox" name="selectedProducts" th:value="${products.id}"></td>
+        <td th:text="${products.id}"></td>
+        <td th:text="${products.name}"></td>
+        <td th:text="${products.price}"></td>
+        <td th:text="${products.quantity}"></td>
+        <td th:text="${products.description}"></td>
+        <td><img th:src="@{'data:image/png;base64,'+${products.image}}" alt="Product Image" style="width:70px;height:40px;"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<button id="deleteButton">Delete Selected</button>
+<button id="updateButton">Update Selected</button>
+
+
+<h2>Add product</h2>
+<form th:action="@{/products}" th:object="${product}" method="post" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}"  />
+
+    <label for="price">Price:</label>
+    <input type="text" id="price" th:field="*{price}" />
+
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" th:field="*{quantity}" />
+
+    <label for="description">Des:</label>
+    <input type="text" id="description" th:field="*{description}" />
+
+    <label for="imaged">Img:</label>
+    <input type="file" id="imaged" name="imaged" accept="image/*" />
+
+    <button type="submit">Save</button>
+</form>
+
+<h2>Update product</h2>
+<form th:action="@{/update-products/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
+    <!-- Các trường dữ liệu sản phẩm -->
+    <label for="name">Name:</label>
+    <input type="text" id="name-update" th:field="*{name}" />
+
+    <label for="price">Price:</label>
+    <input type="text" id="price-update" th:field="*{price}" />
+
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity-update" th:field="*{quantity}" />
+
+    <label for="description">Des:</label>
+    <input type="text" id="description-update" th:field="*{description}" />
+
+    <label for="image-update">Img:</label>
+    <input type="file" id="image-update" name="image-update" th:field="*{image}" accept="image/*"/>
+
+    <button type="submit">Save</button>
+</form>
+
+
 </body>
 </html>
+
+<script>
+    <!-- delete by selects   -->
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("deleteButton").addEventListener("click", function() {
+            var checkboxes = document.querySelectorAll('input[name="selectedProducts"]:checked');
+
+            const ids = Array.from(checkboxes)
+                .map(checkbox => checkbox.value)
+                .filter(value => value !== "on" && !isNaN(value))
+                .join(',');
+
+            if (ids.length > 0) {
+                console.log(ids);
+                window.location.href = `/delete-products/${ids}`;
+            } else {
+                console.log('No products selected for deletion');
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("updateButton").addEventListener("click", function() {
+            var checkboxes = document.querySelectorAll('input[name="selectedProducts"]:checked');
+
+            const id = Array.from(checkboxes)
+                .map(checkbox => checkbox.value)
+                .filter(value => value !== "on" && !isNaN(value))
+                .join(',');
+
+            if(checkboxes.length === 1){
+                console.log(id);
+                window.location.href = `/update-products/${id}`;
+            }
+            else {
+                console.log("Choose 1");
+            }
+
+        });
+    });
+
+</script>

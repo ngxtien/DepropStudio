@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.weaver.loadtime.definition.Definition;
 
 @Getter
 @Setter
@@ -23,6 +24,8 @@ public class Products {
 
     private Integer quantity;
 
+    @Lob
+    @Column(length = Integer.MAX_VALUE)
     private String image;
 
     private String description;

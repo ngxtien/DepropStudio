@@ -1,54 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title><!DOCTYPE html>
-        <html xmlns:th="http://www.thymeleaf.org">
-        <head>
-        <title>Shopping Cart</title>
-<!--    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">-->
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Shopping Cart</h1>
-<div class="cart">
-    <div th:if="${cart.isEmpty()}">
+<div class="container mt-4">
+    <h1>Your Cart</h1>
+
+    <!-- Kiểm tra nếu giỏ hàng trống -->
+    <div th:if="${#lists.isEmpty(cartItems)}">
         <p>Your cart is empty.</p>
     </div>
-    <div th:unless="${cart.isEmpty()}">
-        <ul>
-            <li th:each="item : ${cart}">
-                <span th:text="${item.name}"></span>
-                <span th:text="${item.price}"></span>
-            </li>
-        </ul>
-        <button id="checkoutButton">Checkout</button>
+
+    <!-- Nếu giỏ hàng không trống, hiển thị chi tiết các mục trong giỏ -->
+    <div th:if="${not #lists.isEmpty(cartItems)}">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${cartItems}">
+                <td th:text="${item.products.name}"></td>
+                <td th:text="${item.unitPrice}"></td>
+                <td>
+                    <form th:action="@{/cart/update/{id}(id=${item.products.id})}" method="post">
+                        <input type="number" name="quantity" th:value="${item.quantity}" min="1" class="form-control" style="width:80px; display:inline;"/>
+                        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                    </form>
+                </td>
+                <td th:text="${item.unitPrice * item.quantity}"></td>
+                <td>
+                    <form th:action="@{/cart/remove/{id}(id=${item.products.id})}" method="post">
+                        <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Total: <span th:text="${total}"></span> $</h2>
+
+        <form th:action="@{/cart/clear}" method="post">
+            <button type="submit" class="btn btn-danger">Clear Cart</button>
+        </form>
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("checkoutButton").addEventListener("click", function() {
-            fetch('/checkout', {
-                method: 'POST'
-            }).then(response => {
-                if (response.ok) {
-                    alert('Order placed successfully');
-                } else {
-                    alert('Failed to place order');
-                }
-            }).catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred');
-            });
-        });
-    });
-</script>
-
-</body>
-</html>
-</title>
-</head>
-<body>
-
 </body>
 </html>
