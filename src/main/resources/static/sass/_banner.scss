@@ -1,0 +1,175 @@
+/**************** banner part css start ****************/
+.banner_part{
+    margin-bottom: 10px;
+    background-color: $section_bg;
+   
+    .single_banner_slider{
+        .banner_text{
+            display: table;
+            width: 100%;
+            height: 700px;
+            .banner_text_iner{
+                display: table-cell;
+                vertical-align: middle;
+            }
+            @media #{$tab}{
+               height: 400px;
+            }
+            @media #{$medium_device}{
+                height: 500px;
+            }
+            h1{
+                font-size: 66px;
+                font-weight: 700;
+                margin-bottom: 35px;
+                line-height: 72px;
+                color: $title-color;
+                @media #{$small_mobile}{
+                    font-size: 25px;
+                    margin-bottom: 15px;
+                    line-height: 1.3;
+                }
+                @media #{$large_mobile}{
+                    font-size: 30px;
+                    margin-bottom: 15px;
+                    line-height: 1.3;
+                }
+                @media #{$tab_device}{
+                    font-size: 40px;
+                    margin-bottom: 15px;
+                    line-height: 1.3;
+                }
+                @media #{$medium_device}{
+                    font-size: 40px;
+                    margin-bottom: 15px;
+                    line-height: 1.4;
+                }
+                span{
+                    color: $btn_bg;
+                }
+            }
+            p{
+                font-size: 15px;
+                line-height: 1.8;
+                font-family: $font_stack_2;
+                color: $title-color;
+                margin-bottom: 70px;
+                padding-right: 80px;
+                @media #{$tab}{
+                    padding-right: 0;
+                    margin-bottom: 20px;
+                 }
+                 @media #{$medium_device}{
+                    padding-right: 0;
+                 }
+            }
+        }
+        .banner_img{
+            position: absolute;
+            right: 30px;
+            top: 30%;
+        }
+    }
+    .owl-nav {
+        position: absolute;
+        left: 0;
+        bottom: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        @media #{$medium_device} {
+            bottom: 20px;
+        }
+
+        @media #{$tab} {
+            bottom: 30px;
+        }
+
+        .owl-prev,
+        .owl-next {
+            font-size: 7px;
+            border: 2px solid $white-color;
+            border-radius: 50% !important;
+            background-color: transparent;
+            color: $white-color;
+            padding: 10px 10px !important;
+
+            @media #{$medium_device} {
+            }
+
+            @media #{$tab} {  
+            }
+        }
+
+        .owl-prev:hover, .owl-next:hover{
+            background-color: $white-color;
+            color: black;
+        }
+    }
+    .btn_2{
+        display: inline-block;
+        box-shadow: none;
+        @media #{$tab}{
+            .btn_2{
+                margin-top: 15px;
+            }
+         }
+    }
+
+    .owl-dots {
+        display: flex;
+        padding: 15px;
+        justify-content: center;
+        gap: 10px;
+        button.owl-dot {
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            display: inline-block;
+            border-radius: 50%;
+            opacity: 0.5;
+            transform: scale(0.75);
+            transition: opacity 0.4s, transform 0.4s;
+            cursor: pointer;
+        }
+
+        button.owl-dot.active,
+        button.owl-dot:hover {
+            background-color: #fff;
+        }
+    }
+
+    .slider-counter{
+        font-size: 40px;
+        font-weight: 700;
+        color: $white_color;
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+        @media #{$tab}{
+            font-size: 40px;
+            right: 20px;
+            bottom: 20px;
+        }
+        @media #{$medium_device}{
+            font-size: 40px;
+            bottom: 10px;
+        }
+    }
+
+    @media #{$tab}{
+        padding: 0px;
+        height: 400px;
+    }
+    
+     @media #{$medium_device}{
+        .banner_img {
+            img{
+                max-width: 75%;
+                float: right;
+            }
+        }
+     }
+} 
+/**************** hero part css end ****************/

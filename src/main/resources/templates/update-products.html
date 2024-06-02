@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+</head>
+<body>
+<h2>Update Product</h2>
+<form th:action="@{/update-products/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
+    <input type="hidden" th:field="*{id}" />
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" />
+    <br>
+    <label for="price">Price:</label>
+    <input type="text" id="price" th:field="*{price}" />
+    <br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="text" id="quantity" th:field="*{quantity}" />
+    <br>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" th:field="*{description}" />
+    <br>
+
+    <input type="hidden" th:field="*{image}" />
+    <label for="imaged">Image:</label>
+    <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image" id="imaged" style="width:20%; height:20%;"/>
+    <img id="image-preview" style="max-width: 300px; max-height: 300px; display: none;" />
+    <br>
+    <input type="file" id="image-update" name="image-update" accept="image/*" onchange="previewImage(event)" />
+
+    <!-- Thêm thẻ img mới để hiển thị hình ảnh xem trước -->
+
+
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>
+<script>
+    function previewImage(event) {
+        var input = event.target;
+        var reader = new FileReader();
+
+        reader.onload = function(){
+            var imgPreview = document.getElementById('image-preview');
+            imgPreview.style.display = 'block'; // Hiển thị thẻ img xem trước
+
+            var currentImg = document.getElementById('imaged');
+            currentImg.style.display = 'none'; // Ẩn ảnh hiện tại
+
+            imgPreview.src = reader.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>
