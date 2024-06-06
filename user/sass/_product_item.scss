@@ -21,14 +21,15 @@
         }
     }
 
-    .product_tag_sale {
-        background-color: $btn_bg;
+    .product_tag {
+        background-color: $black;
         color: $white;
-        padding: 5px 15px 5px 10px;
+        padding: 8px 15px 8px 10px;
         border-radius: 0 20px 20px 0;
         position: absolute;
         top: 20px;
         left: 12px;
+        font-size: 13px;
     }
     
     .single_product_text {
@@ -40,7 +41,6 @@
             margin: 0;
             a {
                 font-size: 13px;
-                color: $font_1;
                 margin-bottom: 5px;
                 &:hover {
                     color: $black-color;

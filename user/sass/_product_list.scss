@@ -1,12 +1,17 @@
 /***************** product list css *******************/
 .product_list {
-    @include background("/user/img/background/bg1.png");
+    border-top: 0.5px solid #222222;
     .section_tittle {
         text-align: left !important;
         h2 {
             font-size: 35px;
             color: $text-color;
+            span {
+                font-family: Caveat;
+                font-size: 60px;
+            }
         }
+
     }
 
     .product_list_slider {

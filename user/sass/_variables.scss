@@ -2,6 +2,7 @@ $font_stack_1: 'Be Vietnam Pro', sans-serif;
 $font_stack_2: 'Be Vietnam Pro', sans-serif;
 $body-font: 'Be Vietnam Pro', sans-serif;
 $title-font: 'Be Vietnam Pro', sans-serif;
+$special_font: 'Caveat', cursive;
 /*Color Variables*/
 
 $primary-color  : #71cd14;
@@ -9,6 +10,11 @@ $title-color    : #fff;
 $text-color     : #fff;
 $offwhite       : #f6f6f6;
 $white: #fff;
+$black: #000;
+$grey: rgba(129, 129, 139, .2);
+$hover: rgba(74, 74, 80, 0.2);
+$subtext: #6E6E6E;
+$subtext1: rgba(255, 255, 255, 0.7);
 
 $white_color: #fff;
 $black_color: #000;
@@ -43,15 +49,17 @@ $sidebar_bg: #fbf9ff;
 
 
 
-$medium_device : 'only screen and (min-width: 992px) and (max-width: 1200px)';
-$tab_device:'only screen and (min-width: 768px) and (max-width: 991px)';
-$large_mobile: 'only screen and (min-width: 576px) and (max-width: 767px)';
-$tab:'(max-width: 991px)';
 $small_mobile:'(max-width: 576px)';
-$xs_mobile:'(max-width: 420px)';
-$sm_mobile:'only screen and (min-width: 421px) and (max-width: 575px)';
-$big_screen:'only screen and (min-width: 1200px) and (max-width: 1440px)';
-$extra_big_screen: 'only screen and (min-width: 1200px) and (max-width: 3640px)';
+$large_mobile: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$tab_device:'only screen and (min-width: 768px) and (max-width: 991px)';
+$medium_device : 'only screen and (min-width: 992px) and (max-width: 1200px)';
+$big_screen:'only screen and (min-width: 1200px)';
+$extra_big_screen: 'only screen and (min-width: 1440px)';
+
+$tab:'(max-width: 991px)';
+
+
+
   
   
   

@@ -1,5 +1,6 @@
 /***************** related product css *******************/
 .related_product {
+    background-color: $white;
     .section_tittle {
         text-align: left !important;
         h2 {
@@ -8,13 +9,10 @@
             @media #{$small_mobile} {
                 text-align: center;
             }
-        }
-
-        span {
-            color: #adadad;
-            font-size: 20px;
-            font-weight: 500;
-            margin-left: 60px;
+            span {
+                font-family: $special_font;
+                font-size: 50px;
+            }
         }
     }
 

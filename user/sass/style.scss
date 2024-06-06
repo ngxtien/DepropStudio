@@ -22,6 +22,7 @@
 @import "elements";
 @import "breadcrumb";
 @import "offcanvas";
+@import "coreds";
 
 // product list
 @import "feature_part";
@@ -31,11 +32,16 @@
 @import "single_product";
 @import "product_item";
 
+//cart
+@import "cart";
+
+//checkout
+@import "checkout";
+
 // cart
 @import "quick_cart";
 
 // footer
 @import "footer";
-@import "_copyright_part";
 
 

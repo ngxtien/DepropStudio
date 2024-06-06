@@ -1,9 +1,9 @@
 .quick_cart {
     overflow: auto;
-    .s_product_view {
+    .q_cart_area {
         width: 100%;
         display: inline-block;
-        .s_product_item{
+        .q_cart_item{
             margin-bottom: 20px;
             .product_img {
                 width: 50px;
@@ -76,12 +76,9 @@
     .cart_button {
         width: 100%;
         margin: 0;
-        .btn_2, .btn_3 {
+        .custom_btn {
             border-radius: 0;
-            border: none;
-        }
-        a {
-            text-align: center;
         }
     }
 }
+

@@ -1,17 +1,25 @@
 /**************** service_part css start ****************/
 .feature_part {
-  @include background("../img/bg_1.jpg");
   .section_tittle {
     margin-top: 70px;
     @media #{$small_mobile} {
       margin-top: 50px;
     }
-    h2 {
-      margin: 0 auto;
-      width: 100%;
-      font-size: 48px;
+    h4 {
+      color: $white;
+      margin-bottom: 30px;
       @media #{$small_mobile} {
-        font-size: 30px;
+        font-size: 15px;
+      }
+    }
+
+    h2 {
+      font-family: $special_font;
+      color: $white;
+      width: 100%;
+      font-size: 70px;
+      @media #{$small_mobile} {
+        font-size: 60px;
       }
     }
   }
@@ -70,10 +78,10 @@
   }
 
   .single_feature_slider {
+    @include background("../img/bg_1.jpg");
     margin-right: 10px;
     margin-left: 10px;
     padding: 30px;
-    background: $black_color;
     border-radius: 18px;
 
     @media #{$small_mobile} {
@@ -94,7 +102,7 @@
 
     
     .feature_text {
-      padding: 30px 30px;
+      padding: 30px 20px;
 
       @media #{$small_mobile} {
         padding: 0px 20px;
@@ -105,12 +113,12 @@
         margin-bottom: 30px;
       }
       p {
-        color: $white_color;
+        color: $subtext;
         line-height: 13px;
       }
   
       h3 {
-        color: $white_color;
+        color: $black;
         font-size: 24px;
         font-weight: 700;
         margin-top: 21px;
@@ -126,9 +134,9 @@
         }
       }
 
-      .btn_2 {
+      .custom_btn {
         position: absolute;
-        left: 30px;
+        left: 20px;
         bottom: 30px;
         @media #{$small_mobile} {
           padding: 10px 30px;

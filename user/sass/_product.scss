@@ -165,9 +165,9 @@
 ============================================================================================ */
 
 .cat_product_area {
+  background-color: $white;
   .latest_product_inner {
     padding-top: 30px;
-
     .single-product {
       margin-bottom: 50px;
     }
@@ -202,8 +202,7 @@
 }
 
 .widgets_inner {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 50px;
   padding-top: 0px;
   padding-bottom: 15px;
   @media #{$tab}{
@@ -216,8 +215,6 @@
 }
 
 .l_w_title {
-  padding-left: 30px;
-  padding-right: 30px;
   @media #{$tab}{
     padding-left: 0;
     padding-right: 0;
