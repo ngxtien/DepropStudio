@@ -5,7 +5,7 @@
         padding: 20px 0;
         border-bottom: 1px solid rgba(0,0,0,.125);
     }
-    .cart_product {
+    .cart_area {
         padding: 20px 15px;
     }
     .cart_item{
@@ -78,11 +78,11 @@
                 }
             }
         }
-        a {
-            color: $black;
-            i {
-                text-align: center;
-                margin: auto;
+        .remove_item {
+            color: $subtext2;
+            cursor: pointer;
+            &:hover {
+                color: $black;
             }
         }
     }

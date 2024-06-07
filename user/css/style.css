@@ -3685,6 +3685,21 @@ body {
   background-color: black;
 }
 
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6E6E6E;
+  border-radius: 10px;
+}
+
 /**************** service_part css start ****************/
 .feature_part .section_tittle {
   margin-top: 70px;
@@ -3955,8 +3970,7 @@ body {
 ============================================================================================ */
 .product_image_area {
   background-color: #fff;
-  margin-top: 62px;
-  padding-top: 70px;
+  padding-top: 10px;
 }
 
 @media (max-width: 576px) {
@@ -4237,7 +4251,7 @@ body {
   padding: 20px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
-.cart_part .cart_product {
+.cart_part .cart_area {
   padding: 20px 15px;
 }
 .cart_part .cart_item {
@@ -4322,12 +4336,12 @@ body {
 .cart_part .cart_item .product_count .ti-plus:hover {
   background-color: #f3f3f3;
 }
-.cart_part .cart_item a {
-  color: #000;
+.cart_part .cart_item .remove_item {
+  color: #9c9c9c;
+  cursor: pointer;
 }
-.cart_part .cart_item a i {
-  text-align: center;
-  margin: auto;
+.cart_part .cart_item .remove_item:hover {
+  color: #000;
 }
 .cart_part .card .card-header {
   padding: 15px 15px;
@@ -4471,72 +4485,78 @@ body {
 .quick_cart {
   overflow: auto;
 }
-.quick_cart .q_cart_area {
+.quick_cart .cart_area {
   width: 100%;
   display: inline-block;
 }
-.quick_cart .q_cart_area .q_cart_item {
+.quick_cart .cart_area .cart_item {
   margin-bottom: 20px;
 }
-.quick_cart .q_cart_area .q_cart_item .product_img {
+.quick_cart .cart_area .cart_item .product_img {
   width: 50px;
   height: 50px;
   object-fit: cover;
   object-position: center;
 }
-.quick_cart .q_cart_area .q_cart_item .product_text {
+.quick_cart .cart_area .cart_item .product_text {
   gap: 5px;
   width: 160px;
 }
-.quick_cart .q_cart_area .q_cart_item .product_text .product_title {
+.quick_cart .cart_area .cart_item .product_text .product_title {
   font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 @media (max-width: 576px) {
-  .quick_cart .q_cart_area .q_cart_item .product_text {
+  .quick_cart .cart_area .cart_item .product_text {
     width: 130px;
   }
 }
-.quick_cart .q_cart_area .q_cart_item .product_count {
+.quick_cart .cart_area .cart_item .product_count {
   border: 1px solid #ddd;
   border-radius: 50px;
   display: flex;
   align-items: center;
   padding: 10px;
+  margin: 0;
 }
-.quick_cart .q_cart_area .q_cart_item .product_count input {
+.quick_cart .cart_area .cart_item .product_count input {
   border: 0px solid transparent;
   text-align: center;
 }
-.quick_cart .q_cart_area .q_cart_item .product_count .input-number {
+.quick_cart .cart_area .cart_item .product_count .input-number {
   display: inline-block;
+  padding: 0;
   width: 30px;
 }
 @media (max-width: 576px) {
-  .quick_cart .q_cart_area .q_cart_item .product_count .input-number {
+  .quick_cart .cart_area .cart_item .product_count .input-number {
     width: 60px;
   }
 }
-.quick_cart .q_cart_area .q_cart_item .product_count .ti-minus {
+.quick_cart .cart_area .cart_item .product_count .ti-minus {
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
 }
-.quick_cart .q_cart_area .q_cart_item .product_count .ti-minus:hover {
+.quick_cart .cart_area .cart_item .product_count .ti-minus:hover {
   background-color: #f3f3f3;
 }
-.quick_cart .q_cart_area .q_cart_item .product_count .ti-plus {
+.quick_cart .cart_area .cart_item .product_count .ti-plus {
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
 }
-.quick_cart .q_cart_area .q_cart_item .product_count .ti-plus:hover {
+.quick_cart .cart_area .cart_item .product_count .ti-plus:hover {
   background-color: #f3f3f3;
 }
-.quick_cart .q_cart_area .q_cart_item a i {
-  margin: 0;
+.quick_cart .cart_area .cart_item .remove_item {
+  color: #9c9c9c;
+  cursor: pointer;
+}
+.quick_cart .cart_area .cart_item .remove_item:hover {
+  color: #000;
 }
 .quick_cart .total_area {
   width: 100%;

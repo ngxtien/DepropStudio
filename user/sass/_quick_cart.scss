@@ -1,9 +1,9 @@
 .quick_cart {
     overflow: auto;
-    .q_cart_area {
+    .cart_area {
         width: 100%;
         display: inline-block;
-        .q_cart_item{
+        .cart_item{
             margin-bottom: 20px;
             .product_img {
                 width: 50px;
@@ -31,12 +31,15 @@
                 display: flex;
                 align-items: center;
                 padding: 10px;
+                margin: 0;
                 input {
                   border: 0px solid transparent;
                   text-align: center;
                 }
+                
                 .input-number {
                   display: inline-block;
+                  padding: 0;
                   width: 30px;
                   @media #{$small_mobile}{
                     width: 60px;
@@ -58,10 +61,13 @@
                       background-color: #f3f3f3;
                     }
                 }
+                
             }
-            a {
-                i {
-                    margin: 0;
+            .remove_item {
+                color: $subtext2;
+                cursor: pointer;
+                &:hover {
+                    color: $black;
                 }
             }
         }
