@@ -78,7 +78,9 @@
   }
 
   .single_feature_slider {
-    @include background("../img/bg_1.jpg");
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     margin-right: 10px;
     margin-left: 10px;
     padding: 30px;
