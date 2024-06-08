@@ -14,11 +14,11 @@
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 	@media #{$small_mobile} {
-		font-size: 12px;
+		font-size: 14px;
 		padding: 15px 24px;
 	}
 	@media #{$tab_device}{
-		font-size: 12px;
+		font-size: 14px;
 		padding: 14px 20px;
 	}
 	@media #{$medium_device}{

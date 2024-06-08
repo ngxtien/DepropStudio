@@ -1,0 +1,56 @@
+.error_part {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: $white;
+        .error_area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 700px;
+            .error_code {
+                font-size: 100px;
+                font-weight: 700;
+                line-height: 120px;
+                @media #{$small_mobile} {
+                    font-size: 100px;
+                }
+            }
+            .error_title {
+                font-size: 30px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            .error_subtitle {
+                color: $subtext1;
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+    }
+    
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        position: absolute;
+        top: 0%;
+        bottom: auto;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%);
+        img {
+            width: 100px;
+            display: inline-block;
+        }
+    }
+    
+}

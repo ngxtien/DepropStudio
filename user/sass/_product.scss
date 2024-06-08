@@ -179,14 +179,17 @@
     ul {
       li {
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        gap: 10px;
 
         &:hover {
-          a {
-            color: $btn_bg;
+          label {
+            cursor: pointer;
+            width: 100%;
+            font-weight: 500;
           }
 
-          color: $btn_bg;
+          font-weight: 500;
         }
       }
     }
@@ -256,7 +259,12 @@
     li {
       margin-bottom: 18px;
 
-      a {
+      input {
+        cursor: pointer;
+      }
+
+      label {
+        margin: 0;
         font-size: 14px;
         font-family: $body-font;
         font-weight: normal;
@@ -266,7 +274,7 @@
 
       &.active,
       &:hover {
-        a {
+        label {
           &:before {
             background: $primary-color;
             border-color: $primary-color;

@@ -118,35 +118,39 @@
                         <div class="l_w_title">
                             <h3>Danh mục</h3>
                         </div>
-                        <div class="widgets_inner">
+                        <div class="widgets_inner category">
                             <ul class="list">
                                 <li>
-                                    <a href="#">Nội thất</a>
-                                    <span>(250)</span>
+                                    <input type="checkbox" value="all" id="cat_all" checked>
+                                    <label for="cat_all">Tất cả</label>
                                 </li>
                                 <li>
-                                    <a href="#">Cây cảnh</a>
-                                    <span>(250)</span>
+                                    <input type="checkbox" value="furniture" id="cat_furniture">
+                                    <label for="cat_furniture">Nội thất</label>
                                 </li>
                                 <li>
-                                    <a href="#">Đèn trang trí</a>
-                                    <span>(250)</span>
+                                    <input type="checkbox" value="tree" id="cat_tree">
+                                    <label for="cat_tree">Cây cảnh</label>
                                 </li>
                                 <li>
-                                    <a href="#">Phụ kiện</a>
-                                    <span>(250)</span>
+                                    <input type="checkbox" value="lamp" id="cat_lamp">
+                                    <label for="cat_lamp">Đèn trang trí</label>
                                 </li>
                                 <li>
-                                    <a href="#">Trang trí tường</a>
-                                    <span>(250)</span>
+                                    <input type="checkbox" value="accessory" id="cat_accessory">
+                                    <label for="cat_accessory">Phụ kiện</label>
                                 </li>
                                 <li>
-                                    <a href="#">Sự kiện</a>
-                                    <span>(250)</span>
+                                    <input type="checkbox" value="walldecor" id="cat_walldecor">
+                                    <label for="cat_walldecor">Trang trí tường</label>
                                 </li>
                                 <li>
-                                    <a href="#">DIY</a>
-                                    <span>(250)</span>
+                                    <input type="checkbox" value="event" id="cat_event">
+                                    <label for="cat_event">Sự kiện</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="diy" id="cat_diy">
+                                    <label for="cat_diy">DIY</label>
                                 </li>
                             </ul>
                         </div>
@@ -156,22 +160,27 @@
                         <div class="l_w_title">
                             <h3>Phong cách</h3>
                         </div>
-                        <div class="widgets_inner">
+                        <div class="widgets_inner style">
                             <ul class="list">
                                 <li>
-                                    <a href="#">Cổ điển</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#">Hiện đại</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#">Tối giản</a>
+                                    <input type="checkbox" value="modern" id="sty_modern">
+                                    <label for="sty_modern">Hiện đại</label>
                                 </li>
                                 <li>
-                                    <a href="#">Sang trọng</a>
+                                    <input type="checkbox" value="classic" id="sty_classic">
+                                    <label for="sty_classic">Cổ điển</label>
                                 </li>
                                 <li>
-                                    <a href="#">Thiên nhiên</a>
+                                    <input type="checkbox" value="simplify" id="sty_simplify">
+                                    <label for="sty_simplify">Tối giản</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="luxury" id="sty_luxury">
+                                    <label for="sty_luxury">Sang trọng</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" value="natural" id="sty_natural">
+                                    <label for="sty_natural">Thiên nhiên</label>
                                 </li>
                             </ul>
                         </div>
@@ -181,22 +190,23 @@
                         <div class="l_w_title">
                             <h3>Màu sắc</h3>
                         </div>
-                        <div class="widgets_inner">
+                        <div class="widgets_inner color">
                             <ul class="list">
                                 <li>
-                                    <a href="#">Black</a>
+                                    <input type="checkbox" value="red" id="cor_red">
+                                    <label for="cor_red">Red</label>
                                 </li>
                                 <li>
-                                    <a href="#">Black Leather</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#">Black with red</a>
+                                    <input type="checkbox" value="blue" id="cor_blue">
+                                    <label for="cor_blue">Blue</label>
                                 </li>
                                 <li>
-                                    <a href="#">Gold</a>
+                                    <input type="checkbox" value="green" id="cor_green">
+                                    <label for="cor_green">Green</label>
                                 </li>
                                 <li>
-                                    <a href="#">Spacegrey</a>
+                                    <input type="checkbox" value="black" id="cor_black">
+                                    <label for="cor_black">Black</label>
                                 </li>
                             </ul>
                         </div>
@@ -230,11 +240,11 @@
                         <div class="col-lg-12">
                             <div class="product_top_bar d-flex justify-content-between align-items-center">
                                 <div class="single_product_menu">
-                                    <p><span>10000 </span> sản phẩm tìm thấy</p>
+                                    <p><span id="total_product_founded"></span> sản phẩm tìm thấy</p>
                                 </div>
                                 <div class="single_product_menu d-flex">
                                     <h5>short by : </h5>
-                                    <select>
+                                    <select id="sort_select">
                                         <option value="1">A &#8594; Z</option>
                                         <option value="2">Z &#8594; A</option>
                                         <option value="3">Giá tăng dần</option>
@@ -246,7 +256,87 @@
                     </div>
 
                     <div class="row align-items-center latest_product_inner">
-                        <div class="col-lg-4 col-sm-6 col-6">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture red">
+                            <div class="single_product_item">
+                                <a href="single-product.html">
+                                    <img src="img/bg1.jpg">
+                                    <span class="product_tag">Nổi bật</span>
+                                </a>
+                                
+                                <div class="single_product_text">
+                                    <h5 class="product_category">
+                                        <a class="text-muted-1" href="#">Furniture</a>
+                                    </h5>
+                                    <h4 class="product_title">
+                                        <a href="single-product.html">red</a>
+                                    </h4>
+                                    <div class="product_price current_prefix">
+                                        1000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture blue red">
+                            <div class="single_product_item">
+                                <a href="single-product.html">
+                                    <img src="img/bg1.jpg">
+                                    <span class="product_tag">Nổi bật</span>
+                                </a>
+                                
+                                <div class="single_product_text">
+                                    <h5 class="product_category">
+                                        <a class="text-muted-1" href="#">Category</a>
+                                    </h5>
+                                    <h4 class="product_title">
+                                        <a href="single-product.html">furniture blue red</a>
+                                    </h4>
+                                    <div class="product_price current_prefix">
+                                        2000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter tree">
+                            <div class="single_product_item">
+                                <a href="single-product.html">
+                                    <img src="img/bg1.jpg">
+                                    <span class="product_tag">Nổi bật</span>
+                                </a>
+                                
+                                <div class="single_product_text">
+                                    <h5 class="product_category">
+                                        <a class="text-muted-1" href="#">Category</a>
+                                    </h5>
+                                    <h4 class="product_title">
+                                        <a href="single-product.html">Product Name</a>
+                                    </h4>
+                                    <div class="product_price current_prefix">
+                                        200
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter">
+                            <div class="single_product_item">
+                                <a href="single-product.html">
+                                    <img src="img/bg1.jpg">
+                                    <span class="product_tag">Nổi bật</span>
+                                </a>
+                                
+                                <div class="single_product_text">
+                                    <h5 class="product_category">
+                                        <a class="text-muted-1" href="#">Category</a>
+                                    </h5>
+                                    <h4 class="product_title">
+                                        <a href="single-product.html">Product Name</a>
+                                    </h4>
+                                    <div class="product_price current_prefix">
+                                        300
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter lamp">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -266,7 +356,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter accessory">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -286,7 +376,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter walldecor">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -306,7 +396,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -321,92 +411,12 @@
                                         <a href="single-product.html">Product Name</a>
                                     </h4>
                                     <div class="product_price current_prefix">
-                                        100
+                                        200
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
-                            <div class="single_product_item">
-                                <a href="single-product.html">
-                                    <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
-                            <div class="single_product_item">
-                                <a href="single-product.html">
-                                    <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
-                            <div class="single_product_item">
-                                <a href="single-product.html">
-                                    <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
-                            <div class="single_product_item">
-                                <a href="single-product.html">
-                                    <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-6">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter tree">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -552,7 +562,6 @@
     <script src="js/masonry.pkgd.js"></script>
     <!-- particles js -->
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
     <!-- slick js -->
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
@@ -566,7 +575,7 @@
     <script src="js/price_rangs.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <script src="js/all.js"></script>
+    <script src="/user/js/all.js"></script>
 </body>
 
 </html>

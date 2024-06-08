@@ -376,13 +376,13 @@ ul {
 }
 @media (max-width: 576px) {
   .custom_btn {
-    font-size: 12px;
+    font-size: 14px;
     padding: 15px 24px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .custom_btn {
-    font-size: 12px;
+    font-size: 14px;
     padding: 14px 20px;
   }
 }
@@ -1196,13 +1196,16 @@ ul {
 
 .left_sidebar_area .widgets_inner ul li {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 10px;
 }
 .left_sidebar_area .widgets_inner ul li:hover {
-  color: #ff3368;
+  font-weight: 500;
 }
-.left_sidebar_area .widgets_inner ul li:hover a {
-  color: #ff3368;
+.left_sidebar_area .widgets_inner ul li:hover label {
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
 }
 
 .left_widgets {
@@ -1258,14 +1261,18 @@ ul {
 .p_filter_widgets .list li {
   margin-bottom: 18px;
 }
-.p_filter_widgets .list li a {
+.p_filter_widgets .list li input {
+  cursor: pointer;
+}
+.p_filter_widgets .list li label {
+  margin: 0;
   font-size: 14px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: normal;
   color: #000;
   position: relative;
 }
-.p_filter_widgets .list li.active a:before, .p_filter_widgets .list li:hover a:before {
+.p_filter_widgets .list li.active label:before, .p_filter_widgets .list li:hover label:before {
   background: #ff3368;
   border-color: #ff3368;
 }
@@ -4242,6 +4249,18 @@ body {
   }
 }
 
+.product_filter {
+  display: none;
+}
+
+.product_filter.show {
+  display: block !important;
+}
+
+.product_filter.hide {
+  display: none !important;
+}
+
 .cart_part {
   background-color: #fff;
   padding-bottom: 100px;
@@ -4678,6 +4697,63 @@ body {
 }
 .footer_part .copyright_part span a {
   color: #fff !important;
+}
+
+.error_part {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #fff;
+}
+.error_part .error_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+}
+.error_part .error_area .error_code {
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 120px;
+}
+@media (max-width: 576px) {
+  .error_part .error_area .error_code {
+    font-size: 100px;
+  }
+}
+.error_part .error_area .error_title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.error_part .error_area .error_subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.error_part .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  position: absolute;
+  top: 0%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%);
+}
+.error_part .logo img {
+  width: 100px;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=style.css.map */

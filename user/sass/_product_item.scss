@@ -108,3 +108,15 @@
         
     }
 }
+
+.product_filter {
+    display: none;
+}
+
+.product_filter.show {
+    display: block !important;
+}
+
+.product_filter.hide {
+    display: none !important;
+}
