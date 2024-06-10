@@ -63,7 +63,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="category.html">
-                                        Dịch vụ
+                                        Chính sách
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -121,35 +121,39 @@
                         <div class="widgets_inner category">
                             <ul class="list">
                                 <li>
-                                    <input type="checkbox" value="all" id="cat_all" checked>
+                                    <input type="radio" value="all" id="cat_all" checked>
                                     <label for="cat_all">Tất cả</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="furniture" id="cat_furniture">
+                                    <input type="radio" value="special" id="cat_special">
+                                    <label for="cat_special">Nổi bật</label>
+                                </li>
+                                <li>
+                                    <input type="radio" value="furniture" id="cat_furniture">
                                     <label for="cat_furniture">Nội thất</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="tree" id="cat_tree">
+                                    <input type="radio" value="tree" id="cat_tree">
                                     <label for="cat_tree">Cây cảnh</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="lamp" id="cat_lamp">
+                                    <input type="radio" value="lamp" id="cat_lamp">
                                     <label for="cat_lamp">Đèn trang trí</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="accessory" id="cat_accessory">
+                                    <input type="radio" value="accessory" id="cat_accessory">
                                     <label for="cat_accessory">Phụ kiện</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="walldecor" id="cat_walldecor">
+                                    <input type="radio" value="walldecor" id="cat_walldecor">
                                     <label for="cat_walldecor">Trang trí tường</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="event" id="cat_event">
+                                    <input type="radio" value="event" id="cat_event">
                                     <label for="cat_event">Sự kiện</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="diy" id="cat_diy">
+                                    <input type="radio" value="diy" id="cat_diy">
                                     <label for="cat_diy">DIY</label>
                                 </li>
                             </ul>
@@ -171,8 +175,8 @@
                                     <label for="sty_classic">Cổ điển</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="simplify" id="sty_simplify">
-                                    <label for="sty_simplify">Tối giản</label>
+                                    <input type="checkbox" value="minimalism" id="sty_minimalism">
+                                    <label for="sty_minimalism">Tối giản</label>
                                 </li>
                                 <li>
                                     <input type="checkbox" value="luxury" id="sty_luxury">
@@ -242,9 +246,9 @@
                                 <div class="single_product_menu">
                                     <p><span id="total_product_founded"></span> sản phẩm tìm thấy</p>
                                 </div>
-                                <div class="single_product_menu d-flex">
-                                    <h5>short by : </h5>
-                                    <select id="sort_select">
+                                <div class="single_product_menu d-flex align-items-center">
+                                    <h5>Sắp xếp theo: </h5>
+                                    <select id="sort_select" class="sort_select">
                                         <option value="1">A &#8594; Z</option>
                                         <option value="2">Z &#8594; A</option>
                                         <option value="3">Giá tăng dần</option>
@@ -256,7 +260,7 @@
                     </div>
 
                     <div class="row align-items-center latest_product_inner">
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture red">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture special red modern">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -268,15 +272,34 @@
                                         <a class="text-muted-1" href="#">Furniture</a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="single-product.html">red</a>
+                                        <a href="single-product.html">red modern</a>
                                     </h4>
                                     <div class="product_price current_prefix">
-                                        1000
+                                        1
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture blue red">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture blue classic">
+                            <div class="single_product_item">
+                                <a href="single-product.html">
+                                    <img src="img/bg1.jpg">
+                                </a>
+                                
+                                <div class="single_product_text">
+                                    <h5 class="product_category">
+                                        <a class="text-muted-1" href="#">furniture</a>
+                                    </h5>
+                                    <h4 class="product_title">
+                                        <a href="single-product.html">blue classic</a>
+                                    </h4>
+                                    <div class="product_price current_prefix">
+                                        20
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter tree special green natural">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -285,50 +308,10 @@
                                 
                                 <div class="single_product_text">
                                     <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
+                                        <a class="text-muted-1" href="#">tree</a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="single-product.html">furniture blue red</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        2000
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter tree">
-                            <div class="single_product_item">
-                                <a href="single-product.html">
-                                    <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        200
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter">
-                            <div class="single_product_item">
-                                <a href="single-product.html">
-                                    <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
+                                        <a href="single-product.html">green natural</a>
                                     </h4>
                                     <div class="product_price current_prefix">
                                         300
@@ -336,7 +319,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter lamp">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter lamp minimalism black">
+                            <div class="single_product_item">
+                                <a href="single-product.html">
+                                    <img src="img/bg1.jpg">
+                                </a>
+                                
+                                <div class="single_product_text">
+                                    <h5 class="product_category">
+                                        <a class="text-muted-1" href="#">lamp</a>
+                                    </h5>
+                                    <h4 class="product_title">
+                                        <a href="single-product.html">minimalism black</a>
+                                    </h4>
+                                    <div class="product_price current_prefix">
+                                        30
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter event special modern red">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -345,10 +347,10 @@
                                 
                                 <div class="single_product_text">
                                     <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
+                                        <a class="text-muted-1" href="#">event</a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
+                                        <a href="single-product.html">modern red</a>
                                     </h4>
                                     <div class="product_price current_prefix">
                                         100
@@ -356,7 +358,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter accessory">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter accessory special modern blue">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -365,10 +367,10 @@
                                 
                                 <div class="single_product_text">
                                     <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
+                                        <a class="text-muted-1" href="#">accessory</a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
+                                        <a href="single-product.html">modern blue</a>
                                     </h4>
                                     <div class="product_price current_prefix">
                                         100
@@ -376,7 +378,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter walldecor">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter walldecor special natural black">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
@@ -385,10 +387,10 @@
                                 
                                 <div class="single_product_text">
                                     <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
+                                        <a class="text-muted-1" href="#">walldecor</a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
+                                        <a href="single-product.html">natural black</a>
                                     </h4>
                                     <div class="product_price current_prefix">
                                         100
@@ -396,19 +398,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter furniture minimalism blue">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
                                 </a>
                                 
                                 <div class="single_product_text">
                                     <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
+                                        <a class="text-muted-1" href="#">furniture</a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
+                                        <a href="single-product.html">minimalism blue</a>
                                     </h4>
                                     <div class="product_price current_prefix">
                                         200
@@ -416,19 +417,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-6 product_filter tree">
+                        <div class="col-lg-4 col-sm-6 col-6 product_filter tree luxury blue">
                             <div class="single_product_item">
                                 <a href="single-product.html">
                                     <img src="img/bg1.jpg">
-                                    <span class="product_tag">Nổi bật</span>
                                 </a>
                                 
                                 <div class="single_product_text">
                                     <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
+                                        <a class="text-muted-1" href="#">tree</a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="single-product.html">Product Name</a>
+                                        <a href="single-product.html">luxury blue</a>
                                     </h4>
                                     <div class="product_price current_prefix">
                                         100
@@ -436,29 +436,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <div class="pageination">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <i class="ti-angle-left"></i>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <i class="ti-angle-right"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
+                        
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="pageination">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <i class="ti-angle-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <i class="ti-angle-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>

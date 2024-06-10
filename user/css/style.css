@@ -1198,14 +1198,83 @@ ul {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  /* Style the unchecked radio button */
+  /* Style the checked radio button */
 }
-.left_sidebar_area .widgets_inner ul li:hover {
-  font-weight: 500;
-}
-.left_sidebar_area .widgets_inner ul li:hover label {
+.left_sidebar_area .widgets_inner ul li input[type=checkbox] {
+  appearance: none; /* Remove default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  background-color: white;
   cursor: pointer;
-  width: 100%;
-  font-weight: 500;
+  position: relative;
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.left_sidebar_area .widgets_inner ul li input[type=checkbox]:checked {
+  background-color: #000;
+  border-color: #000;
+}
+.left_sidebar_area .widgets_inner ul li input[type=checkbox]::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+  box-sizing: border-box;
+}
+.left_sidebar_area .widgets_inner ul li input[type=checkbox]:checked::before {
+  display: block;
+}
+.left_sidebar_area .widgets_inner ul li input[type=checkbox]:hover {
+  border-color: #888;
+}
+.left_sidebar_area .widgets_inner ul li input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+.left_sidebar_area .widgets_inner ul li input[type=radio]::before {
+  content: "";
+  display: block;
+  width: 8px; /* Smaller width */
+  height: 8px; /* Smaller height */
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s;
+}
+.left_sidebar_area .widgets_inner ul li input[type=radio]:checked {
+  background-color: #000;
+  border: 2px solid #000; /* Change to your desired color */
+}
+.left_sidebar_area .widgets_inner ul li input[type=radio]:hover {
+  border-color: #888;
+}
+.left_sidebar_area .widgets_inner ul li label {
+  cursor: pointer;
+}
+.left_sidebar_area .widgets_inner ul li label:hover {
+  font-weight: 700;
 }
 
 .left_widgets {
@@ -1374,25 +1443,39 @@ ul {
   }
 }
 .product_top_bar .single_product_menu p span {
-  color: #ff3368;
+  color: #000;
+  font-weight: 700;
 }
 .product_top_bar .single_product_menu h5 {
   font-size: 13px;
   font-weight: 500;
-  text-transform: capitalize;
   margin-bottom: 0;
 }
-.product_top_bar .single_product_menu .nice-select {
-  height: 0;
-  border: 0px;
-  line-height: 15px;
-  font-weight: 300;
+.product_top_bar .single_product_menu .sort_select {
+  width: 120px;
+  height: 30px;
+  font-size: 13px;
+  line-height: 1.1;
+  padding: 5px 10px;
+  color: #4D4E50;
+  border: 1.5px solid rgba(129, 129, 139, 0.2);
+  border-radius: 3px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><polyline points="10,50 70,110 130,50" style="fill:none;stroke:%238B8C8F;stroke-width:15;stroke-linecap:round"/></svg>') no-repeat right 15px center;
+  background-size: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  margin: 0px;
+  box-sizing: border-box;
+  display: block;
 }
-.product_top_bar .single_product_menu .nice-select:after {
-  margin-top: 0;
-  border-bottom: 1px solid #999;
-  border-right: 1px solid #999;
-  right: 0px;
+.product_top_bar .single_product_menu .sort_select::-ms-expand {
+  display: none;
+}
+.product_top_bar .single_product_menu .sort_select:focus {
+  outline: none;
+  border-color: #000;
 }
 .product_top_bar .single_product_menu .top_pageniation {
   line-height: 15px;
@@ -4187,6 +4270,7 @@ body {
   margin: 0;
 }
 .single_product_item .single_product_text .product_category a {
+  text-transform: capitalize;
   font-size: 13px;
   margin-bottom: 5px;
 }
@@ -4197,6 +4281,7 @@ body {
   margin: 0;
 }
 .single_product_item .single_product_text .product_title a {
+  text-transform: capitalize;
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 10px;
@@ -4754,6 +4839,91 @@ body {
 .error_part .logo img {
   width: 100px;
   display: inline-block;
+}
+
+.policy_part {
+  background-color: white;
+  padding: 10px 0;
+}
+.policy_part .policy_title {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0px;
+}
+.policy_part .policy_title h2 {
+  margin: 0;
+}
+.policy_part .policy_area {
+  margin-bottom: 50px;
+}
+.policy_part .policy_area b {
+  font-size: 16px;
+  color: #000;
+  line-height: 40px;
+  padding-bottom: 10px;
+}
+@media (max-width: 576px) {
+  .policy_part .policy_area b {
+    line-height: 30px;
+  }
+}
+.policy_part .policy_area .policy_welcome {
+  margin-bottom: 20px;
+}
+.policy_part .policy_area .policy_welcome div {
+  line-height: 30px;
+}
+.policy_part .policy_area .policy_list {
+  padding: 20px 0;
+  gap: 20px;
+}
+@media (max-width: 576px) {
+  .policy_part .policy_area .policy_list {
+    flex-direction: column;
+  }
+}
+.policy_part .policy_area .policy_nav .nav-link {
+  width: 200px;
+}
+@media (max-width: 576px) {
+  .policy_part .policy_area .policy_nav .nav-link {
+    width: 170px;
+  }
+}
+@media (max-width: 576px) {
+  .policy_part .policy_area .policy_nav {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.policy_part .policy_area .policy_nav {
+  background-color: rgba(129, 129, 139, 0.2);
+  border-radius: 0.25rem;
+  padding: 10px 10px;
+}
+.policy_part .policy_area .nav-link {
+  color: #000;
+}
+.policy_part .policy_area .nav-link.active {
+  color: #fff;
+  background-color: #000;
+}
+.policy_part .policy_area .policy_content {
+  border: 2px solid rgba(129, 129, 139, 0.2);
+  border-radius: 0.25rem;
+  padding: 10px 15px;
+}
+.policy_part .policy_area .policy_content b {
+  font-size: 14px;
+  line-height: 30px;
+}
+.policy_part .policy_area .policy_content ul li {
+  line-height: 30px;
+  margin-bottom: 8px;
+}
+.policy_part .policy_area .policy_content ul li b {
+  padding: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

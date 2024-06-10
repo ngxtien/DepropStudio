@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Select Dropdown</title>
+    <style>
+        /* Styling the select element */
+        select {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: lightblue; /* Background color for the select box */
+            color: black; /* Text color */
+        }
+    </style>
+</head>
+<body>
+    <select id="mySelect">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+    </select>
+
+    <script>
+        const select = document.getElementById('mySelect');
+
+        select.addEventListener('mouseover', (event) => {
+            const options = select.options;
+            for (let i = 0; i < options.length; i++) {
+                options[i].style.backgroundColor = ''; // Reset background color
+            }
+            if (event.target.tagName === 'OPTION') {
+                event.target.style.backgroundColor = '#ddd'; // Change background color on hover
+            }
+        });
+
+        select.addEventListener('mouseout', (event) => {
+            if (event.target.tagName === 'OPTION') {
+                event.target.style.backgroundColor = ''; // Reset background color
+            }
+        });
+    </script>
+</body>
+</html>
