@@ -21,8 +21,8 @@ public class BillConfirmController {
     }
 
     @PostMapping("/sendBill")
-    public String proccesingBill(@RequestParam(value = "email") String email) {
-        String template = BillConfirm.getTemplete("thaideptrai");
+    public String proccesingBill(@RequestParam(value = "email") String email, @RequestParam(value = "name") String name) {
+        String template = BillConfirm.getTemplete(name);
         Thread emailThread = new Thread(() -> {
             try {
                 gmailSender.send(template, email);
@@ -31,6 +31,6 @@ public class BillConfirmController {
             }
         });
         emailThread.start();
-        return "redirect:/login";
+        return "redirect:/mailSender";
     }
 }

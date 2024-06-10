@@ -21,7 +21,7 @@ public class GmailSender implements EmailSender{
         MimeMessageHelper helper = new MimeMessageHelper(message);
         String randomBillNumber = Math.round((Math.random() * 89999 + 10000)) + "";
         System.out.println(randomBillNumber);
-        helper.setFrom("VaccineHubCentral@gmail.com", "Admin");
+        helper.setFrom("deprop.contact@gmail.com", "DepropStu");
         helper.setTo(email);
         helper.setSubject("Xác nhận đơn hàng#" + randomBillNumber);
         helper.setText(template, true);

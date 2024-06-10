@@ -19,6 +19,5 @@ public class DepropdemoApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-//		sender.send(BillConfirm.getTemplete(" thaideptrai"), "tn102341@gmail.com");
 	}
 }
