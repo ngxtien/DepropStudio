@@ -7,8 +7,15 @@
 }
 
 body {
-    background-color: black;
+    display: flex;
+    flex-direction: column;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 
 ::-webkit-scrollbar-track
 {
@@ -28,3 +35,5 @@ body {
 	background-color: $subtext;
     border-radius: 10px;
 }
+
+

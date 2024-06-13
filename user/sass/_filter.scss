@@ -1,0 +1,148 @@
+.filter_area {
+  background-color: $white;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  gap: 0;
+  .widgets_inner {
+    ul.filter_list {
+      li {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+        input {
+          cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+          appearance: none; /* Remove default styling */
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #ccc;
+          border-radius: 3px;
+          background-color: white;
+          cursor: pointer;
+          position: relative;
+          box-sizing: border-box;
+          transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        input[type="checkbox"]:checked {
+          background-color: $black;
+          border-color: $black;
+        }
+
+        input[type="checkbox"]::before {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 5px;
+          width: 6px;
+          height: 12px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          display: none;
+          box-sizing: border-box;
+        }
+
+        input[type="checkbox"]:checked::before {
+          display: block;
+        }
+
+        input[type="checkbox"]:hover {
+          border-color: #888;
+        }
+
+        input[type="radio"] {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #ccc;
+          border-radius: 50%;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+        }
+
+        /* Style the unchecked radio button */
+        input[type="radio"]::before {
+          content: "";
+          display: block;
+          width: 8px; /* Smaller width */
+          height: 8px; /* Smaller height */
+          border-radius: 50%;
+          background-color: #fff;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: background 0.3s;
+        }
+
+        /* Style the checked radio button */
+        input[type="radio"]:checked {
+          background-color: $black;
+          border: 2px solid $black; /* Change to your desired color */
+        }
+
+        input[type="radio"]:hover {
+          border-color: #888;
+        }
+
+        label {
+          margin: 0;
+          font-size: 14px;
+          cursor: pointer;
+          &:hover {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .filter_list {
+    .search_filter {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+  }
+
+  .dropdown-menu {
+    width: 250px;
+    border: 1px solid $grey;
+    border-top-width: 0;
+    border-radius: 0;
+  }
+
+  .widgets_inner:first-child .dropdown_btn{
+    border-left-width: 1px;
+  }
+
+  .dropdown_btn {
+    width: 150px;
+  }
+
+  @media #{$small_mobile} {
+    flex-direction: column;
+    .filter_widget {
+        width: 100%;
+        .dropdown_btn {
+            width: 100%;
+        }
+    }
+    .dropdown-menu {
+        width: 100%;
+    }
+    
+  }
+}

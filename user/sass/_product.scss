@@ -174,130 +174,9 @@
   }
 }
 
-.left_sidebar_area {
-  .widgets_inner {
-    ul {
-      li {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-
-        input[type="checkbox"] {
-          appearance: none; /* Remove default styling */
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          width: 20px;
-          height: 20px;
-          border: 2px solid #ccc;
-          border-radius: 3px;
-          background-color: white;
-          cursor: pointer;
-          position: relative;
-          box-sizing: border-box;
-          transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        input[type="checkbox"]:checked {
-            background-color: $black;
-            border-color: $black;
-        }
-
-        input[type="checkbox"]::before {
-            content: '';
-            position: absolute;
-            top: 0px;
-            left: 5px;
-            width: 6px;
-            height: 12px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-            display: none;
-            box-sizing: border-box;
-        }
-
-        input[type="checkbox"]:checked::before {
-            display: block;
-        }
-
-        input[type="checkbox"]:hover {
-            border-color: #888;
-        }
-
-        input[type="radio"] {
-          appearance: none;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          width: 20px;
-          height: 20px;
-          border: 2px solid #ccc;
-          border-radius: 50%;
-          outline: none;
-          cursor: pointer;
-          position: relative;
-        }
-        
-        /* Style the unchecked radio button */
-        input[type="radio"]::before {
-          content: '';
-          display: block;
-          width: 8px; /* Smaller width */
-          height: 8px; /* Smaller height */
-          border-radius: 50%;
-          background-color: #fff;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          transition: background 0.3s;
-        }
-        
-        /* Style the checked radio button */
-        input[type="radio"]:checked {
-            background-color: $black;
-            border: 2px solid $black; /* Change to your desired color */
-        }
-
-        input[type="radio"]:hover {
-          border-color: #888;
-        }
-      
-
-        label {
-          cursor: pointer;
-          &:hover {
-            font-weight: 700;
-          }
-        }
-
-      }
-    }
-  }
-}
 
 
 
-.left_widgets {
-  margin-bottom: 30px;
-
-  &:last-child {
-    margin-bottom: 0px;
-  }
-}
-
-.widgets_inner {
-  padding-right: 50px;
-  padding-top: 0px;
-  padding-bottom: 15px;
-  @media #{$tab}{
-    padding-left: 0;
-    padding-right: 0;
-  }
-  @media #{$medium_device}{
-  
-  }
-  
-}
 
 .l_w_title {
   @media #{$tab}{
@@ -318,65 +197,13 @@
   }
 }
 
-.p_filter_widgets {
-  .widgets_inner {
-    border-bottom: 1px solid #eeeeee;
-
-    &:last-child {
-      border-bottom: 0px;
-    }
-  }
-
-  .list {
-    border-top: 1px solid #ddd;
-    padding-top: 25px;
-    margin-top: 25px;
-
-    &:first-child {
-      padding-top: 0;
-      margin-top: 0;
-      border-top: 0px solid transparent;
-    }
-
-    li {
-      margin-bottom: 18px;
-
-      input {
-        cursor: pointer;
-      }
-
-      label {
-        margin: 0;
-        font-size: 14px;
-        font-family: $body-font;
-        font-weight: normal;
-        color: $black-color;
-        position: relative;
-      }
-
-      &.active,
-      &:hover {
-        label {
-          &:before {
-            background: $primary-color;
-            border-color: $primary-color;
-          }
-        }
-      }
-
-      &:last-child {
-        margin-bottom: 0px;
-      }
-    }
-  }
-}
 
 .product_top_bar {
   clear: both;
   display: flex;
   padding: 10px 0;
   @media #{$small_mobile}{
-    display: block !important;
+    
   }
   @media #{$large_mobile}{
   

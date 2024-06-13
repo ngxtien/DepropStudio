@@ -1,0 +1,124 @@
+.contact_part {
+    display: flex;
+    background-color: black;
+    margin-top: 60px;
+    height: 100%;
+    color: $white;
+    .contact_text {
+        max-width: 70%;
+        text-align: center;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        color: $white;
+        @media #{$small_mobile} {
+            max-width: 85%;
+        }
+        @media #{$tab_device} {
+            max-width: 75%;
+        }
+
+        .contact_title {
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 70px;
+            margin-bottom: 20px;
+            span {
+                font-family: Caveat, cursive;
+                font-size: 80px;
+                margin-right: 10px;
+                font-weight: 200;
+            }
+            @media #{$small_mobile} {
+                font-size: 30px;
+                line-height: 50px;
+                span {
+                    font-size: 70px;
+                }
+            }
+            @media #{$tab_device} {
+                font-size: 40px;
+                line-height: 60px;
+                span {
+                    font-size: 60px;
+                }
+            }
+        }
+        .contact_subtitle {
+            font-size: 24px;
+            color: $subtext2;
+            @media #{$small_mobile} {
+                font-size: 20px;
+            }
+        }
+        
+    }
+
+    .contact_content{
+        padding: 50px 0;
+        .contact_info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+            .contact_info_text {
+                font-size: 24px;
+                font-weight: 600;
+                color: $white;
+                &:hover {
+                    text-decoration:underline;
+                }
+            }
+            .contact_info_title {
+                font-size: 16px;
+                color: $subtext2;
+            }
+        }
+        
+
+        .contact_social {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            .contact_social_title {
+                font-size: 16px;
+                color: $subtext2;
+                margin-bottom: 10px;
+            }
+            .contact_social_icon {
+                gap: 25px;
+                img {
+                    width: 50px;
+                }
+            }
+            @media #{$tab_device} {
+                margin-top: 20px;
+            }
+            @media #{$small_mobile} {
+                margin-top: 20px;
+            }
+        }
+
+        .contact_content_area {
+            @media #{$tab_device} {
+                gap: 20px;
+            }
+            @media #{$small_mobile} {
+                gap: 20px;
+            }
+            
+        }
+    }
+
+    .container {
+        margin: auto;
+    }
+
+
+
+
+    
+
+}

@@ -6,6 +6,10 @@
   padding-top: 10px;
 }
 
+.s_product_img {
+  cursor:zoom-in;
+}
+
 .s_product_text {
   @media #{$small_mobile} {
     margin-top: 30px;

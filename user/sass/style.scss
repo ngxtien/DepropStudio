@@ -32,6 +32,9 @@
 @import "single_product";
 @import "product_item";
 
+//filter
+@import "filter";
+
 //cart
 @import "cart";
 
@@ -48,6 +51,16 @@
 @import "404";
 
 //policy
-@import "policy"
+@import "policy";
+
+//contact
+@import "contact";
+
+//payment success
+@import "pay_success";
+
+//loading
+@import "loading";
+
 
 

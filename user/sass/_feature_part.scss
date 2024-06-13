@@ -1,5 +1,6 @@
 /**************** service_part css start ****************/
 .feature_part {
+  background-color: $black;
   .section_tittle {
     margin-top: 70px;
     @media #{$small_mobile} {
@@ -78,13 +79,13 @@
   }
 
   .single_feature_slider {
-    background-color: transparent;
+    background-color: $white;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     margin-right: 10px;
     margin-left: 10px;
     padding: 30px;
-    border-radius: 18px;
+    border-radius: .25rem;
 
     @media #{$small_mobile} {
       padding: 35px 20px;

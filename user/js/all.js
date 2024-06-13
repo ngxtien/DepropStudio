@@ -23,7 +23,7 @@ document.querySelectorAll(".accordion-button").forEach((button) => {
   });
 });
 
-//date range picker calendar
+/*------------------- date-range-picker start -------------------*/
 $(function () {
   var today = moment().startOf("day");
 
@@ -139,8 +139,10 @@ $(function () {
     }
   });
 });
+/*------------------- date-range-picker end -------------------*/
 
-//form validation
+
+/*------------------- form-validation start -------------------*/
 (function () {
   "use strict";
 
@@ -163,8 +165,10 @@ $(function () {
     );
   });
 })();
+/*------------------- formvalidation end -------------------*/
 
-//add to cart
+
+/*------------------- addtocart start -------------------*/
 document.addEventListener("DOMContentLoaded", function () {
   const addToCartBtn = document.querySelector(".add_to_cart");
   const productQuantityInput = document.querySelector(".product_quantity");
@@ -303,12 +307,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadCartData();
 });
+/*------------------- addtocart end -------------------*/
 
-//filter
+
+/*------------------- filter start -------------------*/
 // Attach event listeners to checkboxes
 var categoryCheckboxes = document.querySelectorAll(".category input");
 var colorCheckboxes = document.querySelectorAll(".color input");
 var styleCheckboxes = document.querySelectorAll(".style input");
+var priceCheckboxes = document.querySelectorAll(".price input");
 
 //Category Filter
 for (var i = 0; i < categoryCheckboxes.length; i++) {
@@ -331,6 +338,11 @@ for(var i = 0; i < colorCheckboxes.length; i++) {
 // Style filter
 for (var i = 0; i < styleCheckboxes.length; i++) {
   styleCheckboxes[i].addEventListener("change", filter);
+}
+
+// Price filter
+for (var i = 0; i < priceCheckboxes.length; i++) {
+  priceCheckboxes[i].addEventListener("change", filter);
 }
 
 filter();
@@ -359,18 +371,27 @@ function filter() {
     }
   }
 
+  // Get selected price ranges
+  var selectedPriceRanges = [];
+  for (var i = 0; i < priceCheckboxes.length; i++) {
+    if (priceCheckboxes[i].checked) {
+      selectedPriceRanges.push(priceCheckboxes[i].value);
+    }
+  }
+
   // Filter items
   var items = document.querySelectorAll(".product_filter");
-  var item, showCategory, showColor, showStyle;
   var count = 0;
 
   for (i = 0; i < items.length; i++) {
-    item = items[i];
-    showCategory = (selectedCategory === "all") || item.classList.contains(selectedCategory);
-    showColor = (selectedColors.length === 0) || selectedColors.some(color => item.classList.contains(color));
-    showStyle = (selectedStyles.length === 0) || selectedStyles.some(style => item.classList.contains(style));
+    var item = items[i];
+    var showCategory = (selectedCategory === "all") || item.classList.contains(selectedCategory);
+    var showColor = (selectedColors.length === 0) || selectedColors.some(color => item.classList.contains(color));
+    var showStyle = (selectedStyles.length === 0) || selectedStyles.some(style => item.classList.contains(style));
+    var itemPrice = parseInt(item.querySelector(".product_price").textContent, 10);
+    var showPrice = (selectedPriceRanges.length === 0) || selectedPriceRanges.some(range => isPriceInRange(itemPrice, range));
 
-    if (showCategory && showColor && showStyle) {
+    if (showCategory && showColor && showStyle && showPrice) {
       item.classList.add("show");
       item.classList.remove("hide");
       count++;
@@ -379,9 +400,65 @@ function filter() {
       item.classList.remove("show");
     }
   }
-    // Update product count founded
+
+  // Update product count founded
   document.getElementById("total_product_founded").textContent = count;
 }
+
+function isPriceInRange(price, range) {
+  var [min, max] = range.split("-").map(Number);
+  return price >= min && price <= max;
+}
+
+//search in filter
+// Function to remove Vietnamese diacritics
+function removeDiacritics(str) {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+document.getElementById('categorySearchFilter').addEventListener('keyup', function() {
+  var filter = removeDiacritics(this.value.toLowerCase());
+  var items = document.querySelectorAll('.category_menu li');
+  items.forEach(function(item) {
+    var text = removeDiacritics(item.textContent.toLowerCase());
+    if (text.indexOf(filter) === -1) {
+      item.style.display = 'none';
+    } else {
+      item.style.display = 'flex';
+    }
+  });
+});
+
+document.getElementById('styleSearchFilter').addEventListener('keyup', function() {
+  var filter = removeDiacritics(this.value.toLowerCase());
+  var items = document.querySelectorAll('.style_menu li');
+  items.forEach(function(item) {
+    var text = removeDiacritics(item.textContent.toLowerCase());
+    if (text.indexOf(filter) === -1) {
+      item.style.display = 'none';
+    } else {
+      item.style.display = 'flex';
+    }
+  });
+});
+
+document.getElementById('colorSearchFilter').addEventListener('keyup', function() {
+  var filter = removeDiacritics(this.value.toLowerCase());
+  var items = document.querySelectorAll('.color_menu li');
+  items.forEach(function(item) {
+    var text = removeDiacritics(item.textContent.toLowerCase());
+    if (text.indexOf(filter) === -1) {
+      item.style.display = 'none';
+    } else {
+      item.style.display = 'flex';
+    }
+  });
+});
+
+/*------------------- filter end -------------------*/
+
+
+/*------------------- sort start -------------------*/
 
 // Attach event listener to the sort select element
 var sortSelect = document.getElementById("sort_select");
@@ -427,6 +504,8 @@ function sortProducts() {
 
 // Initial sorting
 sortProducts();
+
+/*------------------- sort end -------------------*/
 
 
 

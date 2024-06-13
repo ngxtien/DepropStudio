@@ -1,19 +1,7 @@
 /**********************footer part css*******************/
 .footer_part {
+	background-color: $black;
 	border-top: 0.5px solid #222222;
-	@media #{$small_mobile} {
-		padding: 70px 0px 25px;
-	}
-
-	@media #{$large_mobile} {
-		padding: 70px 0px 25px;
-	}
-
-	@media #{$tab_device} {
-		padding: 70px 0px 25px;
-	}
-
-	@media #{$medium_device} {}
 
 	img {
 		margin-bottom: 35px;
@@ -21,6 +9,7 @@
 	.footlink_part {
 		padding: 50px;
 	}
+	
 	.navbar {
 		padding: 0 15px;
 		@media #{$small_mobile} {

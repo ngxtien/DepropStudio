@@ -1,24 +1,15 @@
 /***************** single product item css *******************/
 .single_product_item {
-    border-radius: 10px;
+    border-radius: 0.25rem;
     margin-bottom: 20px;
     background-color: none;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
     img{
         width: 100%;
-        height: 300px;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
         object-position: center;
-        border-radius: 8px 8px 0 0;
-        @media #{$small_mobile} {
-            height: 200px;
-        }
-        @media #{$tab_device}{
-            height: 400px;
-        }
-        @media #{$medium_device} {
-            height: 250px;
-        }
+        border-radius: 0.25rem 0.25rem 0 0;
     }
 
     .product_tag {
@@ -33,7 +24,7 @@
     }
     
     .single_product_text {
-        border-radius: 0 0 8px 8px;
+        border-radius: 0 0 0.25rem 0.25rem;
         padding: 20px 15px;
         background-color: $white_color;
         @include transform_time(0.5s);

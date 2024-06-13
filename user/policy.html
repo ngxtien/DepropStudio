@@ -5,34 +5,24 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Deprop Studio</title>
+    <title>Chính sách</title>
     <link rel="icon" href="img/logo/favicon_black.svg">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <!-- nice select CSS -->
-    <link rel="stylesheet" href="css/nice-select.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="css/all.css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <!-- swiper CSS -->
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/price_rangs.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
@@ -48,7 +38,7 @@
     
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item active">
+                                <li class="nav-item">
                                     <a class="nav-link" href="index.html">Trang chủ</a>
                                 </li>
                                 <li class="nav-item">
@@ -61,8 +51,8 @@
                                         Combo
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="category.html">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="policy.html">
                                         Chính sách
                                     </a>
                                 </li>
@@ -95,9 +85,7 @@
     </header>
     <!-- Header part end-->
 
-    <!--================Home Banner Area =================-->
     <!-- breadcrumb start-->
-
     <nav class="breadcrumb_area" aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
         <div class="container">
             <ol class="breadcrumb">
@@ -137,7 +125,7 @@
                             <li><b>Bước 2 : </b>Khách hàng tiến hành thanh toán <b>tiền đơn hàng</b> và <b>tiền đặt cọc 50% giá trị sản phẩm hoặc 100% giá trị đơn hàng</b> để xác nhận việc thuê.</li>
                             <li><b>Bước 3 : </b>Chúng tôi sẽ xác nhận đơn hàng và chuẩn bị đồ decor setup theo yêu cầu của khách hàng.</li>
                             <li><b>Bước 4 : </b>Khách hàng đến studio để nhận đồ decor setup hoặc chúng tôi sẽ giao hàng đến địa điểm theo yêu cầu.</li>
-                            <li><b>Bước 5 : </b>Sau khi sử dụng, khách hàng trả lại đồ decor setup cho studio và studio sẽ thanh toán phần <b>50% tiền đặt cọc</b> mà khách hàng đã thanh toán trước đó. </li>
+                            <li><b>Bước 5 : </b>Sau khi sử dụng, khách hàng hoàn trả lại đồ decor setup và studio sẽ thanh toán tiền đặt cọc mà khách hàng đã thanh toán trước đó. </li>
                         </ul>
                         <b>Lưu ý:</b>
                         <ul>
@@ -190,6 +178,7 @@
         </div>
         
     </section>
+
     <!--::footer_part start::-->
     <footer class="footer_part">
         <div class="footlink_part">
@@ -270,35 +259,28 @@
     </div>
     <!-- quick_cart end-->
 
+    <button id="toTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- jquery plugins here-->
-    <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="js/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <!-- bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- easing js -->
     <script src="js/jquery.magnific-popup.js"></script>
-    <!-- swiper js -->
-    <script src="js/swiper.min.js"></script>
-    <!-- swiper js -->
-    <script src="js/masonry.pkgd.js"></script>
     <!-- particles js -->
     <script src="js/owl.carousel.min.js"></script>
     <!-- slick js -->
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/stellar.js"></script>
-    <script src="js/price_rangs.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
-    <script src="/user/js/all.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/backtotop.js"></script>
+    <script src="js/loading.js"></script>
 </body>
 
 </html>
