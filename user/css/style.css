@@ -4020,6 +4020,7 @@ html, body {
   margin-bottom: 20px;
   background-color: none;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  position: relative;
 }
 .single_product_item img {
   width: 100%;
@@ -4035,7 +4036,7 @@ html, body {
   border-radius: 0 20px 20px 0;
   position: absolute;
   top: 20px;
-  left: 12px;
+  left: 0px;
   font-size: 13px;
 }
 .single_product_item .single_product_text {
@@ -4979,6 +4980,9 @@ html, body {
   font-weight: 600;
 }
 .successnoti_part .ordercode_text b {
+  color: black;
+}
+.successnoti_part b {
   color: black;
 }
 .successnoti_part .logo {

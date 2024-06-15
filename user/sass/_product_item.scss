@@ -4,6 +4,7 @@
     margin-bottom: 20px;
     background-color: none;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    position: relative;
     img{
         width: 100%;
         aspect-ratio: 1 / 1;
@@ -19,7 +20,7 @@
         border-radius: 0 20px 20px 0;
         position: absolute;
         top: 20px;
-        left: 12px;
+        left: 0px;
         font-size: 13px;
     }
     
