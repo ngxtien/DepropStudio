@@ -9,14 +9,12 @@ var categoryLinks = document.querySelectorAll(".category-link");
 //Category Filter
 for (var i = 0; i < categoryCheckboxes.length; i++) {
   categoryCheckboxes[i].addEventListener("change", function () {
-    // Uncheck the "all" category if any other category is selected
-    if (this.value !== "all") {
-      document.getElementById("cat_all").checked = false;
-    }
-    // Uncheck all checkboxes except the one that was clicked
-    for (var j = 0; j < categoryCheckboxes.length; j++) {
-      if (categoryCheckboxes[j] !== this && this.value !== "all") {
-        categoryCheckboxes[j].checked = false;
+    // Uncheck all other categories when one category is selected
+    if (this.checked) {
+      for (var j = 0; j < categoryCheckboxes.length; j++) {
+        if (categoryCheckboxes[j] !== this) {
+          categoryCheckboxes[j].checked = false;
+        }
       }
     }
     filter();
@@ -59,8 +57,11 @@ function readUrlParameters() {
     var categoryInput = document.querySelector(`.category input[value="${category}"]`);
     if (categoryInput) {
       categoryInput.checked = true;
-      if (category !== "all") {
-        document.getElementById("cat_all").checked = false;
+      // Uncheck all other categories
+      for (var j = 0; j < categoryCheckboxes.length; j++) {
+        if (categoryCheckboxes[j] !== categoryInput) {
+          categoryCheckboxes[j].checked = false;
+        }
       }
     }
   }
