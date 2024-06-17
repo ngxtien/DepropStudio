@@ -5,29 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/test form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Config/SecurityConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/BillConfirmController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/LoginController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/handler/CustomAccessDeniedHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/mail/BillConfirm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/mail/EmailSender.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/mail/GmailSender.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/mailSender.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/test form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/payos.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/type/ConfirmWebhookRequestBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/type/CreatePaymentLinkRequestBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cancel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/GmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/GmailSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mailSender.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mailSender.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test form.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Config/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/DepropdemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/DepropdemoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test form.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,20 +48,61 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2hfyvoHpCgbYRit7M0jqSGT8sjA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;thaidanglam&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Máy tính/FPTU/Sem 8/DepropStudio&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Máy tính/FPTU/Sem 8/DepropStudio/src/main/resources/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\java\com\example\depropdemo" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin\src\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\static" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin\src" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin\src\lib" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.depropdemo.Controller" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DepropdemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="depropdemo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.depropdemo.DepropdemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,10 +116,20 @@
       <workItem from="1717999885319" duration="95000" />
       <workItem from="1717999989211" duration="68000" />
       <workItem from="1718000065055" duration="39000" />
+      <workItem from="1718000378768" duration="33000" />
+      <workItem from="1718000423987" duration="190000" />
+      <workItem from="1718000639322" duration="3951000" />
+      <workItem from="1718115705778" duration="605000" />
+      <workItem from="1718116327622" duration="358000" />
+      <workItem from="1718116698472" duration="3200000" />
+      <workItem from="1718240004364" duration="673000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
