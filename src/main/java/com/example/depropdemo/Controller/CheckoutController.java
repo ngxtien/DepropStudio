@@ -20,9 +20,9 @@ public class CheckoutController {
     super();
     this.payOS = payOS;
   }
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/checkout")
     public String Index() {
-        return "index";
+        return "/user/checkout";
     }
     @RequestMapping(value = "/success")
     public String Success() {

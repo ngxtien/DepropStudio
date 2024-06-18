@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{@icon/themify-icons, bootstrap, bootstrap-icons, daterangepicker, font-awesome, jquery-3.7.1, moment}" />
+    <file url="file://$PROJECT_DIR$" libraries="{bootstrap, bootstrap-icons, dataTables, dataTables.bootstrap5, dataTables.select, daterangepicker, font-awesome, jquery-3.7.1, moment, select.dataTables}" />
   </component>
 </project>
