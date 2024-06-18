@@ -1,11 +1,8 @@
 package com.example.depropdemo.Controller;
 
 import com.example.depropdemo.Model.Products;
-import com.example.depropdemo.Service.CartService;
 import com.example.depropdemo.Service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
@@ -28,13 +25,13 @@ public class ProductsController {
     @GetMapping("/")
     public String index(Model model){
         model.addAttribute("product", productsService.getAllProducts());
-        return "/index";
+        return "Test/index";
     }
 
     @GetMapping("/category")
     public String category(Model model){
         model.addAttribute("product", productsService.getAllProducts());
-        return "/category";
+        return "Test/category";
     }
 
     @GetMapping("/product_detail/{id}")
@@ -45,7 +42,7 @@ public class ProductsController {
         } else {
             return "redirect:/products"; // Hoặc một trang lỗi phù hợp
         }
-        return "/product_detail";
+        return "Test/product_detail";
     }
 
 
@@ -55,7 +52,7 @@ public class ProductsController {
         List<Products> products = productsService.getAllProducts();
         model.addAttribute("products", products);
         model.addAttribute("product", new Products());
-        return "products";
+        return "Test/products";
     }
     // add thi product (khong co "s"), show thi co
     @PostMapping("/products")
@@ -91,7 +88,7 @@ public class ProductsController {
     public String updateProducts(@PathVariable Long id, Model model){
         Optional<Products> productExisting = productsService.getProductById(id);
         model.addAttribute("product", productExisting.orElse(new Products()));
-        return "update-products";
+        return "Test/update-products";
     }
 
     @PostMapping("/update-products/{id}")
@@ -113,7 +110,7 @@ public class ProductsController {
     public String getProductDetail(@PathVariable Long id, Model model) {
         Optional<Products> product = productsService.getProductById(id);
         model.addAttribute("product", product.orElse(new Products()));
-        return "product_detail";
+        return "Test/product_detail";
     }
 
 

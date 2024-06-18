@@ -29,7 +29,7 @@ public class CartController {
         List<CartItem> cartItems = cartService.getCartItems();
         model.addAttribute("cartItems", cartItems);
         model.addAttribute("total", cartItems.stream().mapToDouble(item -> item.getUnitPrice() * item.getQuantity()).sum());
-        return "cart";
+        return "Test/cart";
     }
 
     @PostMapping("/cart/update/{productId}")
