@@ -36,7 +36,7 @@
 
 
 <h2>Add product</h2>
-<form th:action="@{/products}" th:object="${product}" method="post" enctype="multipart/form-data">
+<form th:action="@{/test-products}" th:object="${product}" method="post" enctype="multipart/form-data">
     <label for="name">Name:</label>
     <input type="text" id="name" th:field="*{name}"  />
 

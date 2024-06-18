@@ -1,9 +1,21 @@
 package com.example.depropdemo.Controller;
 
+import com.example.depropdemo.Model.Products;
+import com.example.depropdemo.Service.ProductsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+import java.util.Optional;
 
 @org.springframework.stereotype.Controller
 public class Controller {
+
+    @Autowired
+    private ProductsService productsService;
+
     @GetMapping("/dashboard")
     public String adminindex(){
         return "admin/index";
@@ -36,48 +48,46 @@ public class Controller {
         return "user/404";
     }
 
-    @GetMapping("/user-cart")
-    public String User_cart(){
-        return "user/cart";
-    }
-
-    @GetMapping("/user-category")
-    public String User_category(){
+    @GetMapping("/category")
+    public String User_category(Model model){
+        model.addAttribute("product", productsService.getAllProducts());
         return "user/category";
     }
 
-    @GetMapping("/user-checkout")
-    public String User_checkout(){
-        return "user/checkout";
-    }
 
-    @GetMapping("/user-contact")
+    @GetMapping("/contact")
     public String User_contact(){
-        return "user/checkout";
+        return "user/contact";
     }
 
-    @GetMapping("/user")
+    @GetMapping("/")
     public String User_index(){
         return "user/index";
     }
 
-    @GetMapping("/user-orderfail")
+    @GetMapping("/orderfail")
     public String User_orderfailed(){
         return "user/order-failure";
     }
 
-    @GetMapping("/user-ordersuccess")
+    @GetMapping("/ordersuccess")
     public String User_ordersuccess(){
         return "user/order-success";
     }
 
-    @GetMapping("/user-policy")
+    @GetMapping("/policy")
     public String User_policy(){
         return "user/policy";
     }
 
-    @GetMapping("/user-singleproduct")
-    public String User_singleproduct(){
-        return "user/single-product";
+    @GetMapping("/product/{id}")
+    public String User_product(@PathVariable String id, Model model){
+        Optional<Products> productOptional = productsService.getProductById(Long.parseLong(id));
+        if (productOptional.isPresent()) {
+            model.addAttribute("product", productOptional.get());
+        } else {
+            return "redirect:/404"; // Hoặc một trang lỗi phù hợp
+        }
+        return "user/product";
     }
 }
