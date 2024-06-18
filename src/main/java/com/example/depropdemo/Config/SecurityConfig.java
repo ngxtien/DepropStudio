@@ -20,26 +20,27 @@ import org.springframework.security.web.authentication.SimpleUrlAuthenticationSu
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-public class SecurityConfig{
+public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .cors(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/login").permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/dashboard/login").permitAll()
+                        .requestMatchers("/css/**","/fonts/**", "/images/**","/img/**", "/js/**", "/plugins/**", "/sass/**", "/webfonts/**").permitAll()
+                        .requestMatchers("/dashboard/**").hasRole("ADMIN")
                         .requestMatchers("/**").access(new WebExpressionAuthorizationManager("!hasRole('ADMIN')"))
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .loginPage("/login")
+                        .loginPage("/dashboard/login")
                         .successHandler(successHandler())
                         .permitAll()
                 )
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login")
+                        .logoutSuccessUrl("/dashboard/login")
                         .invalidateHttpSession(true)
                         .clearAuthentication(true)
                         .deleteCookies("JSESSIONID")
@@ -67,7 +68,6 @@ public class SecurityConfig{
 
     @Bean
     public AuthenticationSuccessHandler successHandler() {
-        return new SimpleUrlAuthenticationSuccessHandler("/admin/dashboard/");
+        return new SimpleUrlAuthenticationSuccessHandler("/dashboard");
     }
 }
-

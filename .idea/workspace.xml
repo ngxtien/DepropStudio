@@ -5,32 +5,69 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/payos.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/type/ConfirmWebhookRequestBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/type/CreatePaymentLinkRequestBody.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/cancel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Model/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Model/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/handler/CustomAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/handler/CustomAccessDeniedHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/DepropdemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/depropdemo/DepropdemoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/test form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/BillConfirmController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/ProductsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Controller/TrackingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/CartItemRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/CartRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/CategoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/CustomerOrderRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/OrderDetailRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/ProductsRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Dao/TrackingRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/DepropdemoApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/CartItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/CustomerOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/OrderDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/Products.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Model/Tracking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/CartItemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/CartService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/CategoryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/CustomerOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/OrderDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/ProductsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/Service/TrackingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/handler/CustomAccessDeniedHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/mail/BillConfirm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/mail/EmailSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/depropdemo/mail/GmailSender.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/mailSender.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -66,7 +103,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;thaidanglam&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;merge-test&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Máy tính/FPTU/Sem 8/DepropStudio/src/main/resources/templates&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -123,6 +160,7 @@
       <workItem from="1718116327622" duration="358000" />
       <workItem from="1718116698472" duration="3200000" />
       <workItem from="1718240004364" duration="673000" />
+      <workItem from="1718696797746" duration="5077000" />
     </task>
     <servers />
   </component>

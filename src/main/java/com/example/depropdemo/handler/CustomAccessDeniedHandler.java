@@ -16,7 +16,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null && auth.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
-            response.sendRedirect("/admin/dashboard");
+            response.sendRedirect("/dashboard");
         } else {
             response.sendRedirect("/access-denied");
         }
