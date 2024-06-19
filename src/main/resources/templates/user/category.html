@@ -249,7 +249,7 @@
                 <div class="row align-items-center latest_product_inner">
                     <div class="col-lg-3 col-sm-4 col-6 product_filter furniture special red modern" th:each="product : ${product}">
                         <div class="single_product_item">
-                            <a href="/single-product">
+                            <a th:href="@{'/product/' + ${product.id}}">
                                 <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
                                 <span class="product_tag">Nổi bật</span>
                             </a>
@@ -458,8 +458,8 @@
                         <div class="single_footer_part">
                             <h4>Our Social</h4>
                             <ul class="list-unstyled">
-                                <li><a href="/https://www.facebook.com/profile.php?id=61560555539153">Facebook</a></li>
-                                <li><a href="/https://tiktok.com">Tiktok</a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=61560555539153">Facebook</a></li>
+                                <li><a href="https://tiktok.com">Tiktok</a></li>
                             </ul>
                         </div>
                     </div>

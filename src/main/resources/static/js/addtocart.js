@@ -7,9 +7,21 @@ document.addEventListener("DOMContentLoaded", function() {
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
 
     // Function to format price with commas (or dots for some locales) and maintain decimals
+    // function formatPrice(price) {
+    //     let formattedPrice;
+    //     if (price >= 1000) {
+    //         // Nếu giá trị lớn hơn hoặc bằng 1000, sử dụng định dạng phân cách hàng nghìn
+    //         formattedPrice = price.toLocaleString('vi-VN', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + " đ";
+    //     } else {
+    //         // Nếu giá trị nhỏ hơn 1000, sử dụng định dạng có ba chữ số thập phân
+    //         formattedPrice = price.toFixed(3) + " đ";
+    //     }
+    //     return formattedPrice;
+    // }
     function formatPrice(price) {
         const formattedPrice = price.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.');
-        return formattedPrice.substring(0, formattedPrice.length + 4) + " VND";
+
+        return formattedPrice.substring(0, formattedPrice.length - 4) + " đ";
     }
 
     function updateTotalQuantity() {
@@ -41,9 +53,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function parsePrice(priceString) {
-        // Convert price string to a number, e.g., "100.000đ" to 100000
-        return parseFloat(priceString.replace(/[^\d.-]/g, ''));
+        // Loại bỏ tất cả các ký tự không phải số và dấu chấm
+        console.log(priceString+'  A');
+
+        const numericString = priceString.replace(/[^\d]/g, '');
+        console.log(numericString +'  B');
+
+
+        // Chuyển đổi chuỗi số thành số thực
+        const parsedPrice = parseFloat(numericString);
+        console.log(parsedPrice);
+
+        return parsedPrice;
     }
+
 
     function createCartItem(product) {
         const cartItem = document.createElement("div");

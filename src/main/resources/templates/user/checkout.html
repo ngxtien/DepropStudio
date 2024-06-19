@@ -45,7 +45,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index/">
+                <a class="navbar-brand" href="/">
                   <img src="/images/logo/white_logo.png" alt="logo" />
                 </a>
                 <button
@@ -69,16 +69,16 @@
                       <a class="nav-link" href="/">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="category/"> Sản phẩm </a>
+                      <a class="nav-link" href="/category"> Sản phẩm </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="category/"> Combo </a>
+                      <a class="nav-link" href="/category"> Combo </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="category/"> Dịch vụ </a>
+                      <a class="nav-link" href="/policy"> Chính sách </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="contact/">liên hệ</a>
+                      <a class="nav-link" href="/contact">liên hệ</a>
                     </li>
                   </ul>
                 </div>
@@ -89,7 +89,7 @@
                   <a
                     class="cart"
                     data-bs-toggle="offcanvas"
-                    href="cart/"
+                    href="/cart"
                     role="button"
                     aria-controls="quickCart"
                   >
@@ -133,7 +133,7 @@
             <a href="/">Trang chủ</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="/cart/">Giỏ hàng</a>
+            <a href="/cart">Giỏ hàng</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">Check out</li>
         </ol>
@@ -145,12 +145,9 @@
         <div class="row">
           <div class="col-md-5 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-              <span
-                >Giỏ hàng của bạn
-                <span class="total_quantity badge badge-dark rounded-pill ms-2"
-                  >3</span
-                ></span
-              >
+              <span>Giỏ hàng của bạn
+                <span class="total_quantity badge badge-dark rounded-pill ms-2">5</span>
+              </span>
 
               <a
                 href="/cart"
@@ -295,7 +292,7 @@
           </div>
           <div class="col-md-7 order-md-1">
             <h4 class="mb-3">Thông tin đơn hàng</h4>
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" th:action="@{/check-out}" th:object="${customer}" method="post">
               <div class="row">
                 <div class="form-floating col-md-6 mb-3">
                   <input
@@ -304,7 +301,7 @@
                     id="firstName"
                     placeholder=""
                     required=""
-                  />
+                    th:field="*{firstname}"/>
                   <label for="firstName">Họ</label>
                   <div class="invalid-feedback">Vui lòng nhập Họ.</div>
                 </div>
@@ -315,7 +312,7 @@
                     id="lastName"
                     placeholder=""
                     required=""
-                  />
+                    th:field="*{lastname}"/>
                   <label for="lastName">Tên</label>
                   <div class="invalid-feedback">Vui lòng nhập Tên.</div>
                 </div>
@@ -326,7 +323,7 @@
                   class="form-control"
                   id="company"
                   placeholder=""
-                />
+                  th:field="*{company}"/>
                 <label for="company">Tên công ty <span>(tuỳ chọn)</span></label>
               </div>
               <div class="form-floating mb-3">
@@ -337,6 +334,7 @@
                   pattern="[0-9]{10}"
                   placeholder=""
                   required=""
+                  th:field="*{phonenumber}"
                 />
                 <label for="tel">Số điện thoại</label>
                 <div class="invalid-feedback">
@@ -350,7 +348,7 @@
                   id="email"
                   placeholder=""
                   required=""
-                />
+                  th:field="*{email}"/>
                 <label for="email">Địa chỉ email</label>
                 <div class="invalid-feedback">
                   Vui lòng nhập đúng Địa chỉ email. Ví dụ: you@gmail.com.
@@ -369,7 +367,7 @@
                   id="address"
                   placeholder=""
                   required=""
-                />
+                  th:field="*{address}"/>
                 <label for="address"
                   >Địa chỉ - quận/huyện, phường/xã, đường, số nhà</label
                 >
@@ -383,7 +381,7 @@
                   placeholder="Leave a comment here"
                   id="floatingTextarea2"
                   style="height: 200px"
-                ></textarea>
+                  ></textarea>
                 <label for="floatingTextarea2"
                   >Ghi chú đơn hàng (tuỳ chọn)</label
                 >
@@ -394,7 +392,7 @@
                     class="form-check-input"
                     type="checkbox"
                     id="VATCheck"
-                  />
+                   />
                   <label class="form-check-label" for="VATCheck">
                     Xuất hoá đơn VAT (hoá đơn đỏ)
                   </label>

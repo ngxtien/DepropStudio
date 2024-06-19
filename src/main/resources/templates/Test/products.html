@@ -56,7 +56,7 @@
 </form>
 
 <h2>Update product</h2>
-<form th:action="@{/update-products/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
+<form th:action="@{/test-update-products/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
     <!-- Các trường dữ liệu sản phẩm -->
     <label for="name">Name:</label>
     <input type="text" id="name-update" th:field="*{name}" />
@@ -111,7 +111,7 @@
 
             if(checkboxes.length === 1){
                 console.log(id);
-                window.location.href = `/update-products/${id}`;
+                window.location.href = `/test-update-products/${id}`;
             }
             else {
                 console.log("Choose 1");
