@@ -1,0 +1,98 @@
+/* Main Button Area css
+============================================================================================ */
+.custom_btn{
+	display: inline;
+	padding: 12px 40px;
+	line-height: 24px;
+	text-align: center;
+	border-radius: 30px;
+	border: none;
+	font-size: 14px;
+	font-family: $font_stack_2;
+	font-weight: 600;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+	@media #{$small_mobile} {
+		font-size: 14px;
+		padding: 15px 24px;
+	}
+	@media #{$tab_device}{
+		font-size: 14px;
+		padding: 14px 20px;
+	}
+	@media #{$medium_device}{
+		padding: 14px 30px;
+	}
+}
+
+.btn_block {
+	display: block !important;
+	width: 100%;
+}
+
+.btn_black{
+	background-color: $black;
+	color: $white;
+	&:hover{
+		background-color: #252525;
+		color: $white;
+		-o-transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+		transition: all .2s ease-in-out;
+	}
+}
+
+.btn_white{
+	background-color: $white;
+	color: $black;
+	&:hover{
+		background-color: $hover;
+		color: $white;
+		-o-transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+		transition: all .2s ease-in-out;
+	}
+}
+
+.btn_greylight{
+	background-color: $grey;
+	color: $black;
+	&:hover{
+		background-color: $hover;
+		color: $black;
+		-o-transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+		transition: all .2s ease-in-out;
+	}
+}
+
+.dropdown_btn {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 20px;
+	line-height: 24px;
+	text-align: center;
+	background-color: transparent;
+	border: 1px solid $grey;
+	border-left-width: 0;
+	font-size: 14px;
+	font-weight: 600;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+	
+}
+
+
+.nav_btn {
+	display: inline-block;
+}
+
+ 
+
+
+/* End Main Button Area css
+============================================================================================ */

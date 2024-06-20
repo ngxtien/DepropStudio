@@ -1,0 +1,174 @@
+/**************** banner part css start ****************/
+.banner_part{
+    margin-top: 60px;
+    background-color: $section_bg;
+   
+    .single_banner_slider{
+        .banner_img {
+            width: 100%;
+            height: 640px;
+            @media #{$small_mobile} {
+                height: 300px;
+            }
+            @media #{$tab_device} {
+                height: 500px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: right;
+            }
+        }
+        .banner_text{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            @media #{$tab_device} {
+                
+            }
+            @media #{$small_mobile} {
+                background: linear-gradient(90deg, #000000 0%, rgba(24, 25, 27, 0.9) 47.4%, rgba(29, 32, 39, 0) 100%);
+            }
+
+            .banner_text_iner{
+                max-width: 700px;
+                margin-left: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                @media #{$small_mobile} {
+                    max-width: 250px;
+                    margin-left: 20px;
+                }
+                @media #{$tab_device} {
+                    max-width: 350px;
+                    margin-left: 50px;
+                }
+                @media #{$medium_device} {
+                    max-width: 400px;
+                    margin-left: 50px;
+                }
+            }
+
+            h1{
+                font-size: 66px;
+                font-weight: 700;
+                margin-bottom: 35px;
+                line-height: 72px;
+                color: $title-color;
+                @media #{$small_mobile}{
+                    font-size: 25px;
+                    margin-bottom: 15px;
+                    line-height: 1.3;
+                }
+                @media #{$tab_device}{
+                    font-size: 40px;
+                    margin-bottom: 15px;
+                    line-height: 1.3;
+                }
+                @media #{$medium_device}{
+                    font-size: 40px;
+                    margin-bottom: 15px;
+                    line-height: 1.4;
+                }
+                span{
+                    color: $btn_bg;
+                }
+            }
+            p{
+                font-size: 15px;
+                line-height: 1.8;
+                font-family: $font_stack_2;
+                color: $title-color;
+                margin-bottom: 70px;
+                padding-right: 80px;
+                @media #{$small_mobile} {
+                    padding-right: 0;
+                    margin-bottom: 20px;
+                    font-size: 12px;
+                }
+                @media #{$tab_device}{
+                    padding-right: 0;
+                    margin-bottom: 20px;
+                 }
+                 @media #{$medium_device}{
+                    padding-right: 0;
+                    margin-bottom: 20px;
+                 }
+            }
+
+            .btn_2 {
+                @media #{$small_mobile} {
+                  padding: 10px 30px;
+                }
+                @media #{$large_mobile} {
+                  padding: 10px 30px;
+                }
+              }
+            }
+        }
+
+
+    .owl-theme {
+        .owl-dots {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+
+            padding: 20px 0;
+            @media #{$tab_device} {
+                padding: 0 0 20px;
+            }
+
+            .owl-dot {
+                span {
+                    background: #747474 !important;
+                }
+            }
+            .owl-dot.active,
+            .owl-dot:hover {
+                span {
+                    background: white !important;
+                }
+            }
+        }
+
+        .owl-nav{
+            margin: 0;
+            .owl-next,.owl-prev {
+                position: absolute;
+                top: 45%;
+                @media #{$tab} {
+                    display: none;
+                }
+                @media #{$medium_device} {
+                    display: none;
+                }
+            }
+            .owl-next {
+                right: 20px;
+                
+            }
+            .owl-prev {
+                left: 20px;
+            }
+            .owl-prev:hover,
+            .owl-next:hover {
+            background: none !important;
+        }
+        }
+
+        
+    }
+    
+
+} 
+/**************** hero part css end ****************/

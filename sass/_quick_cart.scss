@@ -1,0 +1,90 @@
+.quick_cart {
+    overflow: auto;
+    .cart_area {
+        width: 100%;
+        display: inline-block;
+        .cart_item{
+            margin-bottom: 20px;
+            .product_img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                object-position: center;
+            }
+            .product_text {
+                gap: 5px;
+                width: 160px;
+                .product_title {
+                    font-size: 14px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                @media #{$small_mobile} {
+                    width: 130px;
+                }
+    
+            }
+            .product_count {
+                border: 1px solid #ddd;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                margin: 0;
+                input {
+                  border: 0px solid transparent;
+                  text-align: center;
+                }
+                
+                .input-number {
+                  display: inline-block;
+                  padding: 0;
+                  width: 30px;
+                  @media #{$small_mobile}{
+                    width: 60px;
+                  }
+                }
+                .ti-minus {
+                    padding: 5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    &:hover {
+                      background-color: #f3f3f3;
+                    }
+                }
+                .ti-plus {
+                    padding: 5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    &:hover {
+                      background-color: #f3f3f3;
+                    }
+                }
+                
+            }
+            .remove_item {
+                color: $subtext2;
+                cursor: pointer;
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .total_area {
+        width: 100%;
+        background-color: #f5f5f5;
+        padding: 20px 20px;
+    }
+
+    .cart_button {
+        width: 100%;
+        margin: 0;
+        .custom_btn {
+            border-radius: 0;
+        }
+    }
+}
+

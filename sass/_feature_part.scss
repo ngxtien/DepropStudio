@@ -1,0 +1,184 @@
+/**************** service_part css start ****************/
+.feature_part {
+  background-color: $black;
+  .section_tittle {
+    margin-top: 70px;
+    @media #{$small_mobile} {
+      margin-top: 50px;
+    }
+    h4 {
+      color: $white;
+      margin-bottom: 30px;
+      @media #{$small_mobile} {
+        font-size: 15px;
+      }
+    }
+
+    h2 {
+      font-family: $special_font;
+      color: $white;
+      width: 100%;
+      font-size: 70px;
+      @media #{$small_mobile} {
+        font-size: 60px;
+      }
+    }
+  }
+  .owl-theme {
+    .owl-dots {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0 50px;
+        @media #{$small_mobile} {
+          padding: 20px 0 50px;
+        }
+        @media #{$tab_device} {
+            padding: 30px 0 50px;
+        }
+        @media #{$medium_device} {
+          padding: 30px 0 50px;
+        }
+
+        .owl-dot {
+            span {
+                background: #747474 !important;
+            }
+        }
+        .owl-dot.active,
+        .owl-dot:hover {
+            span {
+                background: white !important;
+            }
+        }
+    }
+
+    .owl-nav{
+        margin: 0;
+        .owl-next,.owl-prev {
+            position: absolute;
+            top: 35%;
+            @media #{$tab} {
+                display: none;
+            }
+            @media #{$medium_device} {
+                display: none;
+            }
+        }
+        .owl-next {
+            right: -50px;
+            
+        }
+        .owl-prev {
+            left: -50px;
+        }
+        .owl-prev:hover,
+        .owl-next:hover {
+        background: none !important;
+    }
+    } 
+  }
+
+  .single_feature_slider {
+    background-color: $white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 30px;
+    border-radius: .25rem;
+
+    @media #{$small_mobile} {
+      padding: 35px 20px;
+    }
+
+    @media #{$large_mobile} {
+      padding: 35px 20px;
+    }
+
+    @media #{$tab_device} {
+      padding: 35px 20px;
+    }
+
+    @media #{$medium_device} {
+
+    }
+
+    
+    .feature_text {
+      padding: 30px 20px;
+
+      @media #{$small_mobile} {
+        padding: 0px 20px;
+        margin-bottom: 30px;
+      }
+      @media #{$large_mobile} {
+        padding: 0px 20px;
+        margin-bottom: 30px;
+      }
+      p {
+        color: $subtext;
+        line-height: 13px;
+      }
+  
+      h3 {
+        color: $black;
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 21px;
+  
+        @media #{$small_mobile} {
+          margin-top: 10px;
+          margin-bottom: 20px;
+        }
+  
+        @media #{$large_mobile} {
+          margin-top: 10px;
+          margin-bottom: 20px;
+        }
+      }
+
+      .custom_btn {
+        position: absolute;
+        left: 20px;
+        bottom: 30px;
+        @media #{$small_mobile} {
+          padding: 10px 30px;
+          position:unset;
+        }
+        @media #{$large_mobile} {
+          padding: 10px 30px;
+          position:unset;
+        }
+        @media #{$tab_device} {
+          right: 30px;
+          left: auto;
+          top: 30px;
+          bottom: auto;
+        }
+
+        i {
+          margin-left: 5px;
+        }
+      }
+
+    }
+
+
+    .feature_img {
+      height: 400px;
+      @media #{$small_mobile} {
+        height: 300px;
+      }
+
+      img {
+        display: inline-block;
+        border-radius: 9px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+    
+  }
+}

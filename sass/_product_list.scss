@@ -1,0 +1,76 @@
+/***************** product list css *******************/
+.product_list {
+    background-color: $black;
+    border-top: 0.5px solid #222222;
+    .section_tittle {
+        text-align: left !important;
+        h2 {
+            font-size: 35px;
+            color: $text-color;
+            span {
+                font-family: Caveat;
+                font-size: 60px;
+            }
+        }
+
+    }
+
+    .product_list_slider {
+        padding-bottom: 70px;
+    }
+
+    .owl-theme {
+        .owl-dots {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+
+            padding: 20px 0;
+            @media #{$tab_device} {
+                padding: 0 0 20px;
+            }
+
+            .owl-dot {
+                span {
+                    background: #747474 !important;
+                }
+            }
+            .owl-dot.active,
+            .owl-dot:hover {
+                span {
+                    background: white !important;
+                }
+            }
+        }
+
+        .owl-nav{
+            margin: 0;
+            position: absolute;
+            right: 0;
+            top: -115px;
+            @media #{$small_mobile} {
+                display: none;
+            }
+            @media #{$tab_device} {
+                display: none;
+            }
+            @media #{$medium_device} {
+                display: none;
+            }
+            button.owl-next, button.owl-prev{
+                margin: 10px;
+            }
+            .owl-prev:hover,
+            .owl-next:hover {
+            background: none !important;
+        }
+        } 
+    }
+}
+
+
+

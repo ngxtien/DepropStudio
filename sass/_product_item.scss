@@ -1,0 +1,116 @@
+/***************** single product item css *******************/
+.single_product_item {
+    border-radius: 0.25rem;
+    margin-bottom: 20px;
+    background-color: none;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    position: relative;
+    img{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.25rem 0.25rem 0 0;
+    }
+
+    .product_tag {
+        background-color: $black;
+        color: $white;
+        padding: 8px 15px 8px 10px;
+        border-radius: 0 20px 20px 0;
+        position: absolute;
+        top: 20px;
+        left: 0px;
+        font-size: 13px;
+    }
+    
+    .single_product_text {
+        border-radius: 0 0 0.25rem 0.25rem;
+        padding: 20px 15px;
+        background-color: $white_color;
+        @include transform_time(0.5s);
+        .product_category {
+            margin: 0;
+            a {
+                text-transform: capitalize;
+                font-size: 13px;
+                margin-bottom: 5px;
+                &:hover {
+                    color: $black-color;
+                }
+            }
+            
+        }
+
+        .product_title {
+            margin: 0;
+            a {
+                text-transform: capitalize;
+                font-weight: 700;
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: $black_color;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+
+        .product_price {
+            .price_regular {
+                font-size: 16px;
+                color: $black_color;
+            }
+
+            .sale {
+                color: #adadad !important;
+                font-size: 14px !important;
+                text-decoration: line-through;
+            }
+
+            .price_sale {
+                padding-left: 5px;
+                font-size: 16px;
+                color: $btn_bg;
+                font-weight: 500;
+            }
+
+            .price_regular, .price_sale {
+                @media #{$small_mobile} {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        a {
+            display: inline-block;
+            width: 100%;
+            @media #{$tab} {
+                font-size: 12px;
+            }
+            @media #{$medium_device} {
+                font-size: 13px;
+            }
+            i {
+                margin-right: 5px;
+                font-size: 15px;
+                @media #{$tab} {
+                    font-size: 12px;
+                }
+            }
+        }
+        
+    }
+}
+
+.product_filter {
+    display: none;
+}
+
+.product_filter.show {
+    display: block !important;
+}
+
+.product_filter.hide {
+    display: none !important;
+}

@@ -5,7 +5,7 @@
 /**************** common css start ****************/
 @font-face {
   font-family: Caveat;
-  src: url(../fonts/Fz-Caveat-Regular.ttf);
+  src: url(/fonts/Fz-Caveat-Regular.ttf);
 }
 body {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -406,6 +406,11 @@ ul {
   .custom_btn {
     padding: 14px 30px;
   }
+}
+
+.btn_block {
+  display: block !important;
+  width: 100%;
 }
 
 .btn_black {
@@ -5021,4 +5026,4 @@ html, body {
   height: 50px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=user.css.map */
