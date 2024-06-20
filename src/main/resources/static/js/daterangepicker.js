@@ -105,7 +105,7 @@ $(function () {
     var dayCount = parseInt($("#dayCount").text());
     if (dayCount > 0) {
       // Continue to the next page
-      window.location.href = "/user/checkout.html";
+      window.location.href = "/check-out";
     } else {
       // Show feedback message
       $("#feedbackMsg")

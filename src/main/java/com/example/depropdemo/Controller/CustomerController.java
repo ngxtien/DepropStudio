@@ -29,7 +29,8 @@ public class CustomerController {
             return "user/order-failure";
         }
         customerService.saveCustomer(customer);
-        return "redirect:user/order_success"; //
+
+        return "redirect:/ordersuccess"; //
     }
 
 }
