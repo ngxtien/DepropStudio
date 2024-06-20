@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +55,6 @@ public class Controller {
         return "user/category";
     }
 
-
     @GetMapping("/contact")
     public String User_contact(){
         return "user/contact";
@@ -65,15 +65,10 @@ public class Controller {
         return "user/index";
     }
 
-    @GetMapping("/orderfail")
-    public String User_orderfailed(){
-        return "user/order-failure";
-    }
-
-    @GetMapping("/ordersuccess")
-    public String User_ordersuccess(){
-        return "user/order-success";
-    }
+//    @GetMapping("/ordersuccess")
+//    public String User_ordersuccess(){
+//        return "success";
+//    }
 
     @GetMapping("/policy")
     public String User_policy(){
