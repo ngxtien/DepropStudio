@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Update Product</h2>
-<form th:action="@{/update-products/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
+<form th:action="@{/test-update-products/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
     <label for="name">Name:</label>
     <input type="text" id="name" th:field="*{name}" />

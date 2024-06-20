@@ -21,16 +21,16 @@ public class CartService {
     @Autowired
     private ProductsService productsService;
 
-    public void addProduct(Long productId, int quantity) {
-        Optional<Products> productOptional = productsService.getProductById(productId);
-        if (productOptional.isPresent()) {
-            Products product = productOptional.get();
-            CartItem cartItem = cartItemRepository.findByProducts_Id(productId)
-                    .orElse(new CartItem(null, null, product, 0, product.getPrice(), null, null));
-            cartItem.setQuantity(cartItem.getQuantity() + quantity);
-            cartItemRepository.save(cartItem);
-        }
-    }
+//    public void addProduct(Long productId, int quantity) {
+//        Optional<Products> productOptional = productsService.getProductById(productId);
+//        if (productOptional.isPresent()) {
+//            Products product = productOptional.get();
+//            CartItem cartItem = cartItemRepository.findByProducts_Id(productId)
+//                    .orElse(new CartItem(null, null, product, 0, product.getPrice(), null, null));
+//            cartItem.setQuantity(cartItem.getQuantity() + quantity);
+//            cartItemRepository.save(cartItem);
+//        }
+//    }
 
     public List<CartItem> getCartItems() {
         return cartItemRepository.findAll();

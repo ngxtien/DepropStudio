@@ -17,12 +17,20 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String firstname;
+
+    private String lastname;
 
     private String phonenumber;
 
     private String address;
 
     private String email;
+
+    private String company;
+
+//    private String note;
+
+//    private Boolean vat;
 
 }

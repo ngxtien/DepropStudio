@@ -22,32 +22,32 @@ public class ProductsController {
 //    @Autowired
 //    private CartService cartService;
 
-    @GetMapping("/")
-    public String index(Model model){
-        model.addAttribute("product", productsService.getAllProducts());
-        return "Test/index";
-    }
+//    @GetMapping("/")
+//    public String index(Model model){
+//        model.addAttribute("product", productsService.getAllProducts());
+//        return "/user/index";
+//    }
 
-    @GetMapping("/category")
+    @GetMapping("/test-category")
     public String category(Model model){
         model.addAttribute("product", productsService.getAllProducts());
         return "Test/category";
     }
 
-    @GetMapping("/product_detail/{id}")
+    @GetMapping("/test-product_detail/{id}")
         public String productsDetail(@PathVariable String id, Model model){
         Optional<Products> productOptional = productsService.getProductById(Long.parseLong(id));
         if (productOptional.isPresent()) {
             model.addAttribute("product", productOptional.get());
         } else {
-            return "redirect:/products"; // Hoặc một trang lỗi phù hợp
+            return "redirect:/test-products"; // Hoặc một trang lỗi phù hợp
         }
         return "Test/product_detail";
     }
 
 
 
-    @GetMapping("/products")
+    @GetMapping("/test-products")
     public String getAllProducts(Model model) {
         List<Products> products = productsService.getAllProducts();
         model.addAttribute("products", products);
@@ -55,7 +55,7 @@ public class ProductsController {
         return "Test/products";
     }
     // add thi product (khong co "s"), show thi co
-    @PostMapping("/products")
+    @PostMapping("/test-products")
     public String addProduct(@ModelAttribute("product") Products product,
                              @RequestParam(value = "imaged", required = false) MultipartFile imageFile) throws IOException {
         if (!imageFile.isEmpty()) {
@@ -66,32 +66,32 @@ public class ProductsController {
             } catch (IOException e) {
                 e.printStackTrace();
                 // Xử lý lỗi lưu ảnh
-                return "redirect:/products";
+                return "redirect:/test-products";
             }
         }
         productsService.saveProduct(product);
-        return "redirect:/products";
+        return "redirect:/test-products";
     }
 
 
 //    =========================================================================
-    @GetMapping("/delete-products/{ids}")
+    @GetMapping("/test-delete-products/{ids}")
     public String deleteProducts(@PathVariable String ids) {
         String[] idArray = ids.split(",");
         for (String id : idArray) {
             productsService.deleteProduct(Long.parseLong(id));
         }
-        return "redirect:/products";
+        return "redirect:/test-products";
     }
 
-    @GetMapping("/update-products/{id}")
+    @GetMapping("/test-update-products/{id}")
     public String updateProducts(@PathVariable Long id, Model model){
         Optional<Products> productExisting = productsService.getProductById(id);
         model.addAttribute("product", productExisting.orElse(new Products()));
         return "Test/update-products";
     }
 
-    @PostMapping("/update-products/{id}")
+    @PostMapping("/test-update-products/{id}")
     public String updateProducts(@PathVariable("id") Long id, Model model,
                                  @ModelAttribute("product") Products product,
                                  @RequestParam("image-update") MultipartFile imageFile) throws IOException {
@@ -102,11 +102,11 @@ public class ProductsController {
             product.setImage(base64Image);
         }
         productsService.saveProduct(product);
-        return "redirect:/products";
+        return "redirect:/test-products";
     }
 
 //
-    @GetMapping("/product/{id}")
+    @GetMapping("/test-product/{id}")
     public String getProductDetail(@PathVariable Long id, Model model) {
         Optional<Products> product = productsService.getProductById(id);
         model.addAttribute("product", product.orElse(new Products()));
