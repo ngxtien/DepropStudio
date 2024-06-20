@@ -5007,6 +5007,100 @@ html, body {
   display: inline-block;
 }
 
+.order_confirmation {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 25px;
+  font-size: 13px;
+  line-height: 24px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.logo {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.order_title h1 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 40px;
+}
+.order_title .customer_name {
+  font-weight: 700;
+}
+
+.order_summary {
+  background-color: rgba(129, 129, 139, 0.2);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.order_summary .deliver_time, .order_summary .payment_status {
+  font-weight: 700;
+}
+
+.order_details .details_title {
+  font-weight: 700;
+  font-size: 15px;
+}
+.order_details .order_time {
+  font-weight: 700;
+}
+.order_details .order_item .product_name, .order_details .order_item .subtotal_price {
+  font-weight: 700;
+}
+.order_details .order_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.order_details .order_item .item_details {
+  display: flex;
+  gap: 10px;
+}
+.order_details .order_item img {
+  height: 80px;
+  width: 80px;
+}
+.order_details .order_item .item_quantity {
+  border-bottom: 1px solid #ddd;
+}
+.order_details .order_item:last-child {
+  border-bottom: none;
+}
+
+.order_total {
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+}
+.order_total .order_total_text {
+  text-align: right;
+}
+.order_total .total_payment {
+  font-weight: 700;
+}
+
+.thank_you {
+  text-align: center;
+  margin-top: 40px;
+}
+.thank_you a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+.thank_you a:hover {
+  text-decoration: underline;
+}
+
 .spinner-wrapper {
   z-index: 9999;
   background-color: #000;

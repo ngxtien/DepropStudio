@@ -56,8 +56,11 @@
 //contact
 @import "contact";
 
-//payment success
-@import "order_success";
+//order success
+@import "order_status";
+
+//order confirm
+@import "order_confirm";
 
 //loading
 @import "loading";
