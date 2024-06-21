@@ -5018,39 +5018,62 @@ html, body {
   background-color: #ffffff;
 }
 
-.logo {
-  margin-bottom: 40px;
-  text-align: center;
+.order_code_text {
+  font-size: 16px;
+  color: #9c9c9c;
 }
 
+.order_title {
+  margin-bottom: 10px;
+}
 .order_title h1 {
-  text-align: center;
   font-size: 20px;
   font-weight: 600;
   color: #333;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .order_title .customer_name {
   font-weight: 700;
 }
 
-.order_summary {
+.info_title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.order_info {
   background-color: rgba(129, 129, 139, 0.2);
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  gap: 0;
+}
+.order_info .customer_name, .order_info .customer_phone, .order_info .customer_address {
+  font-weight: 700;
+}
+
+.order_summary {
+  width: 50%;
+  padding-left: 10px;
+  border-left: 1px solid rgba(74, 74, 80, 0.2);
 }
 .order_summary .deliver_time, .order_summary .payment_status {
   font-weight: 700;
 }
 
+.order_customer {
+  width: 50%;
+  padding-right: 10px;
+}
+
+.order_details {
+  padding: 10px 0;
+}
 .order_details .details_title {
   font-weight: 700;
   font-size: 15px;
 }
-.order_details .order_time {
-  font-weight: 700;
-}
-.order_details .order_item .product_name, .order_details .order_item .subtotal_price {
+.order_details .order_time, .order_details .product_name, .order_details .subtotal_price {
   font-weight: 700;
 }
 .order_details .order_item {
@@ -5078,10 +5101,13 @@ html, body {
 
 .order_total {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   justify-content: right;
 }
 .order_total .order_total_text {
+  text-align: right;
+}
+.order_total .order_total_price {
   text-align: right;
 }
 .order_total .total_payment {

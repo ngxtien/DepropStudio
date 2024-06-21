@@ -1,119 +1,298 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zxx">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title></title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- style CSS -->
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Xác nhận đơn hàng</title>
-  <link rel="icon" href="/images/logo/favicon_black.svg">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- plugin CSS -->
-  <link rel="stylesheet" href="/plugins/owl.carousel.min.css" type="text/css">
-  <link rel="stylesheet" href="/plugins/owl.theme.default.min.css" type="text/css">
-  <link rel="stylesheet" href="/plugins/magnific-popup.css" type="text/css">
-  <!-- icon CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="/css/themify-icons.css" type="text/css">
-  <!-- style CSS -->
-  <link rel="stylesheet" href="/css/user.css" type="text/css">
-</head>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      ::-webkit-scrollbar {
+        width: 0;
+      }
 
-<body>
-  <div class="order_confirmation">
-    <div class="logo">
-        <a href="/user/index.html" target="_blank">
-            <img src="/images/logo/black_logo.png" alt="logo" style="max-width: 100px;">
-        </a>
-    </div>
-    
-    <div class="order_title mb-3">
+      .order_confirmation {
+        max-width: 600px;
+        margin: auto;
+        padding: 30px 25px;
+        font-size: 13px;
+        line-height: 24px;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+      }
+
+      .order_code_text {
+        font-size: 16px;
+        color: #9c9c9c;
+      }
+
+      .order_title {
+        margin-bottom: 10px;
+      }
+      .order_title h1 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .order_title .customer_name {
+        font-weight: 700;
+      }
+
+      .info_title {
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+
+      .order_info {
+        background-color: rgba(129, 129, 139, 0.2);
+        padding: 10px 10px;
+        margin-bottom: 10px;
+        gap: 0;
+      }
+      .order_info .customer_name,
+      .order_info .customer_phone,
+      .order_info .customer_address {
+        font-weight: 700;
+      }
+
+      .order_summary {
+        width: 50%;
+        padding-left: 10px;
+        border-left: 1px solid rgba(74, 74, 80, 0.2);
+      }
+      .order_summary .deliver_time,
+      .order_summary .payment_status {
+        font-weight: 700;
+      }
+
+      .order_customer {
+        width: 50%;
+        padding-right: 10px;
+      }
+
+      .order_details {
+        padding: 10px 0;
+      }
+      .order_details .details_title {
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .order_details .order_time,
+      .order_details .product_name,
+      .order_details .subtotal_price {
+        font-weight: 700;
+      }
+      .order_details .order_item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+      .order_details .order_item .item_details {
+        display: flex;
+        gap: 10px;
+      }
+      .order_details .order_item img {
+        height: 80px;
+        width: 80px;
+      }
+      .order_details .order_item .item_quantity {
+        border-bottom: 1px solid #ddd;
+      }
+      .order_details .order_item:last-child {
+        border-bottom: none;
+      }
+
+      .order_total {
+        display: flex;
+        gap: 20px;
+        justify-content: right;
+      }
+      .order_total .order_total_text {
+        text-align: right;
+      }
+      .order_total .order_total_price {
+        text-align: right;
+      }
+      .order_total .total_payment {
+        font-weight: 700;
+      }
+
+      .thank_you {
+        text-align: center;
+        margin-top: 40px;
+      }
+      .thank_you a {
+        color: #000;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .thank_you a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="order_confirmation">
+      <div class="d-flex justify-content-between align-items-center mb-5">
+        <div class="logo">
+          <a href="/user/index.html" target="_blank">
+            <img
+              src="/images/logo/black_logo.png"
+              alt="logo"
+              style="max-width: 100px"
+            />
+          </a>
+        </div>
+        <div class="order_code_text">
+          Đơn hàng #<span class="order_code">1234</span>
+        </div>
+      </div>
+
+      <div class="order_title">
         <h1>Đơn hàng của bạn đã được xác nhận!!!</h1>
         <div>Hello <span class="customer_name">Custom Name</span>,</div>
-        <div>Đơn hàng của bạn đã được xác nhận và đang trong quá trình vận chuyển.</div>
-    </div>
-    
-    <div class="order_summary mb-3">
-        <div>Thời gian ước tính bạn sẽ nhận được đơn hàng:<br> <span class="deliver_time">Thứ 7, 22/06/2024 - Chủ nhật, 23/06/2024</span></div>
-        <div>Tình trạng thanh toán:<br> <span class="payment_status">Chuyển khoản ngân hàng</span></div>
-    </div>
-
-    <div class="order_details">
-        <div class="details_title">Chi tiết đơn hàng:</div>
-        <div>Đơn hàng của bạn đặt vào <span class="order_time">23:23 thứ 6, 21/06/2024</span>.</div>
-        <div class="order_product">
-            <div class="order_item">
-                <div class="item_details">
-                    <img class="product_img" src="/images/product/item.jpg">
-                    <div class="item_detail">
-                        <div class="product_name">Product Name</div>
-                        <div>Số lượng: <span class="product_quantity">02</span></div>
-                    </div>
-                </div>
-                
-                <div class="item_price">
-                    <div class="product_price current_prefix">170</div>
-                    <div class="item_quantity">x<span class="product_quantity">2</span></div>
-                    <div class="subtotal_price current_prefix">340</div>
-                </div>
-            </div>
-            <div class="order_item">
-                <div class="item_details">
-                    <img class="product_img" src="/images/product/item.jpg">
-                    <div class="item_detail">
-                        <div class="product_name">Product Name</div>
-                        <div>Số lượng: <span class="product_quantity">01</span></div>
-                    </div>
-                </div>
-                
-                <div class="item_price">
-                    <div class="product_price current_prefix">50</div>
-                    <div class="item_quantity">x<span class="product_quantity">1</span></div>
-                    <div class="subtotal_price current_prefix">50</div>
-                </div>
-            </div>
+        <div>
+          Đơn hàng của bạn đã được xác nhận và đang trong quá trình vận chuyển.
         </div>
-    </div>
-    <div class="order_total">
+      </div>
+
+      <div class="info_title">Thông tin khách hàng:</div>
+      <div class="order_info d-flex align-items-start">
+        <div class="order_customer">
+          <div class="info_name">
+            Họ và tên: <span class="customer_name">Diệp Tuấn Ngọc</span>
+          </div>
+          <div class="info_phone">
+            Số điện thoại: <span class="customer_phone">0901131465</span>
+          </div>
+          <div class="info_address">
+            Địa chỉ: <span class="customer_address">Quận 9, TPHCM</span>
+          </div>
+        </div>
+        <div class="order_summary">
+          <div>
+            Thời gian nhận hàng dự kiến:<br />
+            <span class="deliver_time">Thứ 7, 22/06/2024</span>
+          </div>
+          <div>
+            Phương thức thanh toán:<br />
+            <span class="payment_status">Chuyển khoản ngân hàng</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="order_details">
+        <div class="details_title">Chi tiết đơn hàng:</div>
+        <div>
+          Đơn hàng của bạn đặt vào
+          <span class="order_time">23:23 thứ 6, 21/06/2024</span>.
+        </div>
+        <div class="order_product">
+          <div class="order_item">
+            <div class="item_details">
+              <img class="product_img" src="/images/product/item.jpg" />
+              <div class="item_detail">
+                <div class="product_name">Product Name</div>
+                <div>Số lượng: <span class="product_quantity">02</span></div>
+              </div>
+            </div>
+
+            <div class="item_price">
+              <div class="product_price current_prefix">170</div>
+              <div class="item_quantity">
+                x<span class="product_quantity">2</span>
+              </div>
+              <div class="subtotal_price current_prefix">340</div>
+            </div>
+          </div>
+          <div class="order_item">
+            <div class="item_details">
+              <img class="product_img" src="/images/product/item.jpg" />
+              <div class="item_detail">
+                <div class="product_name">Product Name</div>
+                <div>Số lượng: <span class="product_quantity">01</span></div>
+              </div>
+            </div>
+
+            <div class="item_price">
+              <div class="product_price current_prefix">50</div>
+              <div class="item_quantity">
+                x<span class="product_quantity">1</span>
+              </div>
+              <div class="subtotal_price current_prefix">50</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order_total">
         <div class="order_total_text">
-            <div>Tổng tiền:</div>
-            <div>Số ngày thuê:</div>
-            <div>Phí vận chuyển:</div>
-            <div>Tổng thanh toán:</div>
+          <div>Tổng tiền:</div>
+          <div>Số ngày thuê:</div>
+          <div>Phí vận chuyển:</div>
+          <div>Tổng thanh toán:</div>
         </div>
         <div class="order_total_price">
-            <div class="totalprice current_prefix">390</div>
-            <div>x<span class="rent_day">2</span> ngày</div>
-            <div class="deliver_fee current_prefix">50</div>
-            <div class="total_payment current_prefix">830</div>
+          <div class="totalprice current_prefix">390</div>
+          <div>x<span class="rent_day">2</span> ngày</div>
+          <div class="deliver_fee current_prefix">50</div>
+          <div class="total_payment current_prefix">830</div>
         </div>
-        
-    </div>
-    <div class="thank_you">
+      </div>
+      <div class="thank_you">
         <div>Deprop Studio xin cảm ơn bạn !</div>
         <a href="https://depropstudio.com" target="_blank">depropstudio.com</a>
+      </div>
     </div>
-</div>
 
-  <!-- jquery plugins here-->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/min/moment.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <!-- owl carousel plugin-->
-  <script src="/plugins/owl.carousel.min.js"></script>
-  <!-- manific-popup plugin-->
-  <script src="/plugins/jquery.magnific-popup.js"></script>
-  <!-- main js -->
-  <script src="/js/jquery.js"></script>
-  <script src="/js/common.js"></script>
-  <script src="/js/addtocart.js"></script>
-  <script src="/js/filter_sort.js"></script>
-  <!-- extra js --> 
-  <script src="/js/backtotop.js"></script>
-  <script src="/js/loading.js"></script>
-</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        function formatPrice(price) {
+            const formattedPrice = price.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.');
+            return formattedPrice.substring(0, formattedPrice.length - 4) + ".000 đ";
+        }
 
+        let prices = document.querySelectorAll(".current_prefix");
+        prices.forEach((priceElement) => {
+            let price = parseFloat(priceElement.textContent.trim());
+            let formattedPrice = formatPrice(price);
+            priceElement.textContent = formattedPrice;
+        });
+        });
+    </script>
+  </body>
 </html>
