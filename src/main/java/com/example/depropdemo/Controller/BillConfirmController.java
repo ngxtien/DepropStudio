@@ -22,7 +22,7 @@ public class BillConfirmController {
 
     @PostMapping("/sendBill")
     public String proccesingBill(@RequestParam(value = "email") String email, @RequestParam(value = "name") String name) {
-        String template = BillConfirm.getTemplete(name);
+        String template = BillConfirm.getTemplate(name);
         Thread emailThread = new Thread(() -> {
             try {
                 gmailSender.send(template, email);
