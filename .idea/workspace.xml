@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="Loading...">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/java-cicd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/java-cicd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="Loading..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +147,7 @@
       <workItem from="1719213863968" duration="20000" />
       <workItem from="1719213893542" duration="31000" />
       <workItem from="1719214295335" duration="1992000" />
-      <workItem from="1719302130373" duration="6694000" />
+      <workItem from="1719302130373" duration="7057000" />
     </task>
     <task id="LOCAL-00001" summary="Loading...">
       <option name="closed" value="true" />
