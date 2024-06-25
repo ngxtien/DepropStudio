@@ -84,7 +84,6 @@ public class CheckoutController {
                 }
             });
             emailThread.start();
-            customerService.delete(customer.getId());
             session.removeAttribute("customer");
             return "user/order-success";
         }
@@ -95,7 +94,6 @@ public class CheckoutController {
     public String orderFailure(HttpSession session) {
         Customer customer = (Customer) session.getAttribute("customer");
         if (customer != null) {
-            customerService.delete(customer.getId());
             session.removeAttribute("customer");
             return "user/order-failure";
         }
