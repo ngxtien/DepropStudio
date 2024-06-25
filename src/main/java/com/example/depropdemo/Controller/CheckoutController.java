@@ -85,6 +85,7 @@ public class CheckoutController {
             });
             emailThread.start();
             customerService.delete(customer.getId());
+            session.removeAttribute("customer");
             return "user/order-success";
         }
         return "redirect:/404";
@@ -95,6 +96,7 @@ public class CheckoutController {
         Customer customer = (Customer) session.getAttribute("customer");
         if (customer != null) {
             customerService.delete(customer.getId());
+            session.removeAttribute("customer");
             return "user/order-failure";
         }
         return "redirect:/404";
