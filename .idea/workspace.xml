@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="Loading...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirmTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/checkout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/order-confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/order-confirm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,13 +65,18 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;merge-test&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Máy tính/FPTU/Sem 8/DepropStudio/src/main/resources/templates&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Máy tính/DepropStudio-merge-test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlserver&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -73,11 +87,11 @@
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin\src\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\java\com\" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\user" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\css" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\js" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\sass" />
-      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.depropdemo.Controller" />
@@ -117,7 +131,12 @@
       <workItem from="1718843045914" duration="3022000" />
       <workItem from="1718894614385" duration="9374000" />
       <workItem from="1718958516053" duration="2774000" />
-      <workItem from="1719125139032" duration="8423000" />
+      <workItem from="1719125139032" duration="8516000" />
+      <workItem from="1719200810005" duration="1459000" />
+      <workItem from="1719208879905" duration="5160000" />
+      <workItem from="1719293014834" duration="4226000" />
+      <workItem from="1719297334968" duration="373000" />
+      <workItem from="1719298155475" duration="6738000" />
     </task>
     <task id="LOCAL-00001" summary="Loading...">
       <option name="closed" value="true" />
@@ -151,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719129124228</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Loading...">
+      <option name="closed" value="true" />
+      <created>1719133702660</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719133702660</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

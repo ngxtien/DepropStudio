@@ -30,4 +30,6 @@ public class CustomerService {
         customerRepository.deleteById(id);
     }
 
+    public void delete(Long id){customerRepository.deleteById(id);}
+
 }
