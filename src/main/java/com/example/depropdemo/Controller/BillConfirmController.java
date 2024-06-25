@@ -14,23 +14,23 @@ public class BillConfirmController {
 
     @Autowired
     private EmailSender gmailSender;
-
-    @GetMapping("/mailSender")
-    public String formBill(){
-        return "mailSender";
-    }
-
-    @PostMapping("/sendBill")
-    public String proccesingBill(@RequestParam(value = "email") String email, @RequestParam(value = "name") String name) {
-        String template = BillConfirm.getTemplate(name);
-        Thread emailThread = new Thread(() -> {
-            try {
-                gmailSender.send(template, email);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        });
-        emailThread.start();
-        return "redirect:/mailSender";
-    }
+//
+//    @GetMapping("/mailSender")
+//    public String formBill(){
+//        return "mailSender";
+//    }
+//
+//    @PostMapping("/sendBill")
+//    public String proccesingBill(@RequestParam(value = "email") String email, @RequestParam(value = "name") String name) {
+//        String template = BillConfirm.getTemplate(name);
+//        Thread emailThread = new Thread(() -> {
+//            try {
+//                gmailSender.send(template, email);
+//            } catch (Exception e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
+//        emailThread.start();
+//        return "redirect:/mailSender";
+//    }
 }
