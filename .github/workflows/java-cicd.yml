@@ -36,15 +36,12 @@ jobs:
           mysql user: 'testuser'
           mysql password: 'testpassword'
           mysql root password: 'rootpassword'
-
       - name: Build with Maven
         run: mvn clean install
-
         env:
           SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/testdb?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8
           SPRING_DATASOURCE_USERNAME: testuser
           SPRING_DATASOURCE_PASSWORD: testpassword
-
   docker:
     name: Docker
     needs: build
