@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
 import java.util.Optional;
 
 @org.springframework.stereotype.Controller
@@ -84,5 +82,10 @@ public class Controller {
             return "redirect:/404"; // Hoặc một trang lỗi phù hợp
         }
         return "user/product";
+    }
+
+    @GetMapping("/cart")
+    public String User_cart(Model model){
+        return "user/cart";
     }
 }

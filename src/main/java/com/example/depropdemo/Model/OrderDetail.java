@@ -31,10 +31,8 @@ public class OrderDetail {
 
     private Double unitPrice;
 
-    @Temporal(TemporalType.DATE)
-    private Date rentalStartDate;
+    private String startDate;
 
-    @Temporal(TemporalType.DATE)
-    private Date rentalEndDate;
+    private String endDate;
 
 }

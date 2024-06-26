@@ -1,11 +1,11 @@
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const cartArea = document.querySelector(".list-group");
     const totalPriceElement = document.querySelector(".total_price");
+    const submitOrderBtn = document.querySelector(".submit_order");
     let productCount = 0;
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
-
+    const startDate = localStorage.getItem("startDate");
+    const endDate = localStorage.getItem("endDate");
 
     function formatPrice(price) {
         const formattedPrice = price.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -22,12 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateCartCount() {
         updateTotalQuantity();
     }
-
-    // function updateSubtotalPrice(cartItem, product) {
-    //     const subtotalPriceElement = cartItem.querySelector(".subtotal_price");
-    //     const newSubtotal = product.price * product.quantity;
-    //     subtotalPriceElement.textContent = formatPrice(newSubtotal);
-    // }
 
     function updateTotalPrice() {
         const totalPrice = cartData.reduce((total, product) => {
@@ -53,32 +47,50 @@ document.addEventListener("DOMContentLoaded", function() {
             cartArea.insertBefore(cartItem, cartArea.querySelector(".total_area"));
             productCount += product.quantity;
             console.log(product);
-
         });
 
         updateCartCount();
         updateTotalPrice();
-        sendCartDataToServer(cartData);
-
+        sendCartDataToServer(cartData, startDate, endDate);
     }
 
-    function sendCartDataToServer(cartData) {
-        fetch('/add-to-cart/', {
+    // function displayDates() {
+    //     const dateElement = document.querySelector(".date_display");
+    //     if (dateElement) {
+    //         dateElement.innerHTML = `
+    //             <p>Start Date: ${startDate ? startDate : 'Not Set'}</p>
+    //             <p>End Date: ${endDate ? endDate : 'Not Set'}</p>
+    //         `;
+    //     }
+    // }
+
+    function sendCartDataToServer(cartData, startDate, endDate) {
+        fetch('/check-out/add-to-cart', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(cartData),
+            body: JSON.stringify({ cartData, startDate, endDate }),
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
             .then(data => {
                 console.log('Success:', data);
-                // Đoạn này có thể thực hiện các hành động khác sau khi lưu dữ liệu thành công
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
     }
+    const checkoutForm = document.getElementById("checkoutForm");
+    checkoutForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Ngăn chặn gửi form theo cách truyền thống
+        sendCartDataToServer(cartData, startDate, endDate);
+    });
 
     loadCartData();
+
 });
