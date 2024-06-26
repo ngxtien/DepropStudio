@@ -1,298 +1,449 @@
-<!DOCTYPE html>
-<html lang="zxx">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title></title>
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <!-- style CSS -->
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        font-family: "Be Vietnam Pro", sans-serif;
-      }
-
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-      }
-      ::-webkit-scrollbar {
-        width: 0;
-      }
-
-      .logo {
-        width: 100px;
-      }
-
-      .order_confirmation {
-        max-width: 600px;
-        margin: auto;
-        padding: 30px 25px;
-        font-size: 13px;
-        line-height: 24px;
-        border: 1px solid #ddd;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        background-color: #ffffff;
-      }
-
-      .order_code_text {
-        font-size: 16px;
-        color: #9c9c9c;
-      }
-
-      .order_title {
-        margin-bottom: 10px;
-      }
-      .order_title h1 {
-        font-size: 20px;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 20px;
-      }
-      .order_title .customer_name {
-        font-weight: 700;
-      }
-
-      .info_title {
-        font-weight: 700;
-        font-size: 15px;
-        margin-bottom: 10px;
-      }
-
-      .order_info {
-        background-color: rgba(129, 129, 139, 0.2);
-        padding: 10px 10px;
-        margin-bottom: 10px;
-        gap: 0;
-      }
-      .order_info .customer_name,
-      .order_info .customer_phone,
-      .order_info .customer_address {
-        font-weight: 700;
-      }
-
-      .order_summary {
-        width: 50%;
-        padding-left: 10px;
-        border-left: 1px solid rgba(74, 74, 80, 0.2);
-      }
-      .order_summary .deliver_time,
-      .order_summary .payment_status {
-        font-weight: 700;
-      }
-
-      .order_customer {
-        width: 50%;
-        padding-right: 10px;
-      }
-
-      .order_details {
-        padding: 10px 0;
-      }
-      .order_details .details_title {
-        font-weight: 700;
-        font-size: 15px;
-      }
-      .order_details .order_time,
-      .order_details .product_name,
-      .order_details .subtotal_price {
-        font-weight: 700;
-      }
-      .order_details .order_item {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: start;
-        padding: 10px 0;
-        border-bottom: 1px solid #ddd;
-      }
-      .order_details .order_item .item_details {
-        display: flex;
-        gap: 10px;
-      }
-      .order_details .order_item img {
-        height: 80px;
-        width: 80px;
-      }
-      .order_details .order_item .item_quantity {
-        border-bottom: 1px solid #ddd;
-      }
-      .order_details .order_item:last-child {
-        border-bottom: none;
-      }
-
-      .order_total {
-        display: flex;
-        gap: 20px;
-        justify-content: right;
-      }
-      .order_total .order_total_text {
-        text-align: right;
-      }
-      .order_total .order_total_price {
-        text-align: right;
-      }
-      .order_total .total_payment {
-        font-weight: 700;
-      }
-
-      .thank_you {
-        text-align: center;
-        margin-top: 40px;
-      }
-      .thank_you a {
-        color: #000;
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .thank_you a:hover {
-        text-decoration: underline;
-      }
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="vi">
+ <head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="telephone=no" name="format-detection">
+  <title></title><!--[if (mso 16)]>
+    <style type="text/css">
+    a {text-decoration: none;}
     </style>
-  </head>
-
-  <body>
-    <div class="order_confirmation">
-      <div class="d-flex justify-content-between align-items-center mb-5">
-        <div class="logo">
-          <a href="/user/index.html" target="_blank">
-            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 761.5"><defs><style>.cls-1{stroke-width:0px;}</style></defs><path class="cls-1" d="m192.3,112.88c34.66-.53,78.25,16.28,102.41,41.49,8.4,8.4,14.18,23.63,17.86,34.66h1.05c-3.68-11.55-6.83-26.78-6.83-38.86V11h51.47v367.63h-51.47v-32.04c0-12.08,3.15-27.31,6.83-38.34l-1.05-.53c-3.68,11.03-9.45,26.26-17.86,34.66-24.68,24.68-67.75,39.39-102.41,39.39-78.25,0-125-43.59-125-134.45s46.74-133.92,125-134.45Zm-73.53,134.45c0,61.97,26.79,90.34,90.34,90.34,46.74,0,97.69-33.61,97.69-90.34s-50.95-92.43-97.69-91.91c-64.07.53-90.34,29.94-90.34,91.91Z"/><path class="cls-1" d="m385.04,247.33c0-90.86,66.18-134.97,143.9-134.45,77.2.53,139.7,43.59,139.7,134.45,0,7.35,0,7.88-1.05,14.71h-228.98c7.88,51.99,43.06,78.25,91.38,77.73,40.44-.53,72.48-13.13,87.18-51.99l47.27,6.3c-19.96,63.55-73.52,87.18-135.5,87.7-77.73.53-143.9-43.59-143.9-134.45Zm53.57,14.71c7.88-28.36,20.48-31.51,45.69-31.51h135.5c-7.35-53.57-42.02-76.68-89.81-77.2-46.74-.53-96.64,35.19-91.38,108.71Z"/><path class="cls-1" d="m699.62,116.04h51.99v33.61c0,12.08-3.15,27.31-6.83,38.86h1.05c3.68-11.03,9.45-26.26,17.86-34.66,24.16-25.21,67.22-41.49,101.36-40.97,78.25.53,124.99,43.59,124.99,134.45s-46.74,134.45-124.99,134.45c-34.14,0-77.2-15.23-101.36-39.91-8.4-8.41-14.18-23.63-17.86-34.66h-1.05c3.68,11.55,6.83,26.78,6.83,38.86v79.39h-51.47l-.53-309.42Zm148.63,223.21c64.07,0,90.34-29.94,90.34-91.91s-25.74-89.81-90.34-90.33c-46.22-.53-96.64,33.61-96.64,90.33s50.42,91.91,96.64,91.91Z"/><path class="cls-1" d="m1088.25,116.04h105.56v48.32l-88.76.53c-29.41,0-35.19,3.15-35.19,39.39v174.36h-51.47v-192.22c0-47.27,22.06-70.37,69.85-70.37Z"/><path class="cls-1" d="m1193.81,247.33c0-90.86,67.22-134.97,144.95-134.45,78.25.53,145.48,43.59,145.48,134.45s-67.22,134.45-145.48,134.45-144.95-43.59-144.95-134.45Zm51.47,0c0,61.45,41.49,90.34,93.48,90.34s94.01-29.94,94.01-90.34-44.12-90.33-94.01-90.86c-48.32-.53-93.48,31.51-93.48,90.86Z"/><path class="cls-1" d="m1511.53,116.04h51.99v33.61c0,12.08-3.15,27.31-6.83,38.86h1.05c3.68-11.03,9.45-26.26,17.86-34.66,24.16-25.21,67.22-41.49,101.36-40.97,78.25.53,125,43.59,125,134.45s-46.74,134.45-125,134.45c-34.14,0-77.2-15.23-101.36-39.91-8.4-8.41-14.18-23.63-17.86-34.66h-1.05c3.68,11.55,6.83,26.78,6.83,38.86v79.39h-51.47l-.53-309.42Zm148.63,223.21c64.07,0,90.33-29.94,90.33-91.91s-25.74-89.81-90.33-90.33c-46.22-.53-96.64,33.61-96.64,90.33s50.42,91.91,96.64,91.91Z"/><path class="cls-1" d="m126.24,643.89c4.73,35.19,32.04,47.27,78.78,47.27,49.89,0,76.68-13.65,76.68-47.79,0-49.37-200.63-2.1-200.63-99.79,0-75.63,91.91-81.4,124.47-81.4,40.97,0,112.92,12.61,120.8,70.9l-46.74,6.83c-5.26-28.89-29.41-37.29-75.1-37.29s-71.95,9.45-71.95,42.54c0,50.42,200.62,3.15,200.62,99.26,0,80.35-96.11,87.18-129.2,87.18-30.46,0-121.32-8.93-127.62-78.78l49.89-8.93Z"/><path class="cls-1" d="m344.19,512.06v-48.32h9.98c24.16,0,54.62-43.59,54.62-79.83l51.99-.53c-1.05,28.89-14.18,57.25-38.34,73.53-8.93,5.77-23.63,7.35-34.14,9.45v1.05c10.5-2.1,24.68-3.68,35.19-3.68h92.96v48.32h-66.7v139.7c0,23.11,12.6,28.36,28.89,28.36h50.42v48.32h-47.79c-68.8,0-82.98-25.74-82.98-86.66v-129.72h-54.09Z"/><path class="cls-1" d="m544.8,598.72v-133.92h51.47v133.92c0,55.67,21.53,80.88,64.07,80.88,22.58,0,73-18.38,73-116.59v-98.21h51.47v262.6h-51.47v-50.42c0-11.03,2.1-24.68,4.2-35.19l-1.05-.53c-9.98,49.37-38.86,90.33-94.54,90.33-76.15,0-97.16-63.55-97.16-132.87Z"/><path class="cls-1" d="m956.02,462.69c34.66-.53,78.25,16.28,102.41,41.49,8.4,8.4,14.18,23.63,17.86,34.66h1.05c-3.68-11.55-6.83-26.78-6.83-38.86v-118.25h51.47v346.71h-51.47v-32.04c0-12.08,3.15-27.31,6.83-38.34l-1.05-.53c-3.68,11.03-9.45,26.26-17.86,34.66-24.68,24.68-67.75,39.39-102.41,39.39-78.25,0-125-43.59-125-134.45s46.74-133.92,125-134.45Zm-73.53,134.45c0,61.97,26.79,90.34,90.34,90.34,46.74,0,97.69-33.61,97.69-90.34s-50.95-92.43-97.69-91.91c-64.07.53-90.34,29.94-90.34,91.91Z"/><path class="cls-1" d="m1152.43,425.63v-44.64h53.04v44.64h-53.04Zm1.05,302.81h50.94v-262.6h-50.94v262.6Z"/><path class="cls-1" d="m1377.2,462.69c-77.68-.52-144.87,43.55-144.94,134.31,0,.05,0,.09,0,.14,0,90.86,67.23,134.45,144.95,134.45s145.48-43.59,145.48-134.45v-.14c-.07-90.76-67.26-133.78-145.48-134.31Zm94.01,134.45c0,60.4-43.06,90.34-94.01,90.34s-93.48-28.89-93.48-90.34v-.14c.08-59.25,45.2-91.24,93.48-90.72,49.86.53,93.94,31.47,94.01,90.72v.14Z"/><polygon class="cls-1" points="1838.8 484.21 1725.83 514.64 1709.31 573.46 1852.25 534.95 1838.8 484.21"/><polygon class="cls-1" points="1691.69 415.32 1661.57 528.37 1704.24 572.09 1742.36 429.04 1691.69 415.32"/><polygon class="cls-1" points="1558.48 508.27 1641.32 590.88 1700.52 575.79 1595.7 471.25 1558.48 508.27"/><polygon class="cls-1" points="1572.37 670.11 1685.34 639.67 1701.87 580.86 1558.93 619.37 1572.37 670.11"/><polygon class="cls-1" points="1719.48 739 1749.6 625.95 1706.93 582.23 1668.81 725.28 1719.48 739"/><polygon class="cls-1" points="1852.69 646.05 1769.85 563.44 1710.65 578.53 1815.47 683.06 1852.69 646.05"/></svg>
-          </a>
-        </div>
-        <div class="order_code_text">
-          Đơn hàng #<span class="order_code">1234</span>
-        </div>
-      </div>
-
-      <div class="order_title">
-        <h1>Đơn hàng của bạn đã được xác nhận!!!</h1>
-        <div>Hello <span class="customer_name">Custom Name</span>,</div>
-        <div>
-          Đơn hàng của bạn đã được xác nhận và đang trong quá trình vận chuyển.
-        </div>
-      </div>
-
-      <div class="info_title">Thông tin khách hàng:</div>
-      <div class="order_info d-flex align-items-start">
-        <div class="order_customer">
-          <div class="info_name">
-            Họ và tên: <span class="customer_name">Diệp Tuấn Ngọc</span>
-          </div>
-          <div class="info_phone">
-            Số điện thoại: <span class="customer_phone">0901131465</span>
-          </div>
-          <div class="info_address">
-            Địa chỉ: <span class="customer_address">Quận 9, TPHCM</span>
-          </div>
-        </div>
-        <div class="order_summary">
-          <div>
-            Thời gian nhận hàng dự kiến:<br />
-            <span class="deliver_time">Thứ 7, 22/06/2024</span>
-          </div>
-          <div>
-            Phương thức thanh toán:<br />
-            <span class="payment_status">Chuyển khoản ngân hàng</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="order_details">
-        <div class="details_title">Chi tiết đơn hàng:</div>
-        <div>
-          Đơn hàng của bạn đặt vào
-          <span class="order_time">23:23 thứ 6, 21/06/2024</span>.
-        </div>
-        <div class="order_product">
-          <div class="order_item">
-            <div class="item_details">
-              <img class="product_img" src="/images/product/item.jpg" />
-              <div class="item_detail">
-                <div class="product_name">Product Name</div>
-                <div>Số lượng: <span class="product_quantity">02</span></div>
-              </div>
-            </div>
-
-            <div class="item_price">
-              <div class="product_price current_prefix">170</div>
-              <div class="item_quantity">
-                x<span class="product_quantity">2</span>
-              </div>
-              <div class="subtotal_price current_prefix">340</div>
-            </div>
-          </div>
-          <div class="order_item">
-            <div class="item_details">
-              <img class="product_img" src="/images/product/item.jpg" />
-              <div class="item_detail">
-                <div class="product_name">Product Name</div>
-                <div>Số lượng: <span class="product_quantity">01</span></div>
-              </div>
-            </div>
-
-            <div class="item_price">
-              <div class="product_price current_prefix">50</div>
-              <div class="item_quantity">
-                x<span class="product_quantity">1</span>
-              </div>
-              <div class="subtotal_price current_prefix">50</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="order_total">
-        <div class="order_total_text">
-          <div>Tổng tiền:</div>
-          <div>Số ngày thuê:</div>
-          <div>Phí vận chuyển:</div>
-          <div>Tổng thanh toán:</div>
-        </div>
-        <div class="order_total_price">
-          <div class="totalprice current_prefix">390</div>
-          <div>x<span class="rent_day">2</span> ngày</div>
-          <div class="deliver_fee current_prefix">50</div>
-          <div class="total_payment current_prefix">830</div>
-        </div>
-      </div>
-      <div class="thank_you">
-        <div>Deprop Studio xin cảm ơn bạn !</div>
-        <a href="https://depropstudio.com" target="_blank">depropstudio.com</a>
-      </div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        function formatPrice(price) {
-            const formattedPrice = price.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.');
-            return formattedPrice.substring(0, formattedPrice.length - 4) + ".000 đ";
-        }
-
-        let prices = document.querySelectorAll(".current_prefix");
-        prices.forEach((priceElement) => {
-            let price = parseFloat(priceElement.textContent.trim());
-            let formattedPrice = formatPrice(price);
-            priceElement.textContent = formattedPrice;
-        });
-        });
-    </script>
-  </body>
+    <![endif]--><!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]--><!--[if gte mso 9]>
+<xml>
+    <o:OfficeDocumentSettings>
+    <o:AllowPNG></o:AllowPNG>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+  <style type="text/css">
+#mttContainer {
+      left: 0 !important;
+      top: 0 !important;
+      width: 1000px !important;
+      margin: 0px !important;
+      margin-left: -500px !important;
+      position: fixed !important;
+      z-index: 100000200 !important;
+      background: none !important;
+      pointer-events: none !important;
+      display: inline-block !important;
+      visibility: visible  !important;
+      white-space: pre-line;
+    }
+    .tippy-box[data-theme~="custom"], .tippy-content *{
+      font-size: 14px  !important;
+      text-align: center !important;
+      overflow-wrap: break-word !important;
+      color: #ffffffff !important;
+      font-family: 
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif  !important;
+      white-space: pre-line;
+    }
+    .tippy-box[data-theme~="custom"]{
+      max-width: 200px  !important;
+      backdrop-filter: blur(2px) !important;
+      background-color: #000000b8 !important;
+      border: 1px solid #ffffff00; 
+    }
+    [data-tippy-root] {
+      display: inline-block !important;
+      visibility: visible  !important;
+      position: absolute !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before { 
+      border-top-color: #000000b8 !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+      border-bottom-color: #000000b8 !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
+      border-left-color: #000000b8 !important;
+    }
+    .tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
+      border-right-color: #000000b8 !important;
+    }
+    .mtt-highlight{
+      background-color: #21dc6d40  !important;
+      position: absolute !important;   
+      z-index: 100000100 !important;
+      pointer-events: none !important;
+      display: inline !important;
+      border-radius: 3px !important;
+    }
+    .mtt-image{
+      width: 180px  !important;
+      border-radius: 3px !important;
+    }
+    .ocr_text_div{
+      position: absolute;
+      opacity: 0.5;
+      color: transparent !important;
+      border: 2px solid CornflowerBlue;
+      background: none !important;
+      border-radius: 3px !important;
+    }
+#outlook a {
+	padding:0;
+}
+.es-button {
+	mso-style-priority:100!important;
+	text-decoration:none!important;
+}
+a[x-apple-data-detectors] {
+	color:inherit!important;
+	text-decoration:none!important;
+	font-size:inherit!important;
+	font-family:inherit!important;
+	font-weight:inherit!important;
+	line-height:inherit!important;
+}
+.es-desk-hidden {
+	display:none;
+	float:left;
+	overflow:hidden;
+	width:0;
+	max-height:0;
+	line-height:0;
+	mso-hide:all;
+}
+@media only screen and (max-width:600px) {p, ul li, ol li, a { line-height:150%!important } h1, h2, h3, h1 a, h2 a, h3 a { line-height:120%!important } h1 { font-size:36px!important; text-align:left } h2 { font-size:26px!important; text-align:left } h3 { font-size:20px!important; text-align:left } .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a { font-size:36px!important; text-align:left } .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a { font-size:26px!important; text-align:left } .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a { font-size:20px!important; text-align:left } .es-menu td a { font-size:12px!important } .es-header-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body a { font-size:14px!important } .es-content-body p, .es-content-body ul li, .es-content-body ol li, .es-content-body a { font-size:14px!important } .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size:14px!important } .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .es-infoblock a { font-size:12px!important } *[class="gmail-fix"] { display:none!important } .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c h3 { text-align:center!important } .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h3 { text-align:right!important } .es-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align:left!important } .es-m-txt-r img, .es-m-txt-c img, .es-m-txt-l img { display:inline!important } .es-button-border { display:inline-block!important } a.es-button, button.es-button { font-size:20px!important; display:inline-block!important } .es-adaptive table, .es-left, .es-right { width:100%!important } .es-content table, .es-header table, .es-footer table, .es-content, .es-footer, .es-header { width:100%!important; max-width:600px!important } .es-adapt-td { display:block!important; width:100%!important } .adapt-img { width:100%!important; height:auto!important } .es-m-p0 { padding:0!important } .es-m-p0r { padding-right:0!important } .es-m-p0l { padding-left:0!important } .es-m-p0t { padding-top:0!important } .es-m-p0b { padding-bottom:0!important } .es-m-p20b { padding-bottom:20px!important } .es-mobile-hidden, .es-hidden { display:none!important } tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden { width:auto!important; overflow:visible!important; float:none!important; max-height:inherit!important; line-height:inherit!important } tr.es-desk-hidden { display:table-row!important } table.es-desk-hidden { display:table!important } td.es-desk-menu-hidden { display:table-cell!important } .es-menu td { width:1%!important } table.es-table-not-adapt, .esd-block-html table { width:auto!important } table.es-social { display:inline-block!important } table.es-social td { display:inline-block!important } .es-m-p5 { padding:5px!important } .es-m-p5t { padding-top:5px!important } .es-m-p5b { padding-bottom:5px!important } .es-m-p5r { padding-right:5px!important } .es-m-p5l { padding-left:5px!important } .es-m-p10 { padding:10px!important } .es-m-p10t { padding-top:10px!important } .es-m-p10b { padding-bottom:10px!important } .es-m-p10r { padding-right:10px!important } .es-m-p10l { padding-left:10px!important } .es-m-p15 { padding:15px!important } .es-m-p15t { padding-top:15px!important } .es-m-p15b { padding-bottom:15px!important } .es-m-p15r { padding-right:15px!important } .es-m-p15l { padding-left:15px!important } .es-m-p20 { padding:20px!important } .es-m-p20t { padding-top:20px!important } .es-m-p20r { padding-right:20px!important } .es-m-p20l { padding-left:20px!important } .es-m-p25 { padding:25px!important } .es-m-p25t { padding-top:25px!important } .es-m-p25b { padding-bottom:25px!important } .es-m-p25r { padding-right:25px!important } .es-m-p25l { padding-left:25px!important } .es-m-p30 { padding:30px!important } .es-m-p30t { padding-top:30px!important } .es-m-p30b { padding-bottom:30px!important } .es-m-p30r { padding-right:30px!important } .es-m-p30l { padding-left:30px!important } .es-m-p35 { padding:35px!important } .es-m-p35t { padding-top:35px!important } .es-m-p35b { padding-bottom:35px!important } .es-m-p35r { padding-right:35px!important } .es-m-p35l { padding-left:35px!important } .es-m-p40 { padding:40px!important } .es-m-p40t { padding-top:40px!important } .es-m-p40b { padding-bottom:40px!important } .es-m-p40r { padding-right:40px!important } .es-m-p40l { padding-left:40px!important } .es-desk-hidden { display:table-row!important; width:auto!important; overflow:visible!important; max-height:inherit!important } .h-auto { height:auto!important } }
+@media screen and (max-width:384px) {.mail-message-content { width:414px!important } }
+</style>
+ </head>
+ <body style="width:100%;font-family:arial, 'helvetica neue', helvetica, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+  <div dir="ltr" class="es-wrapper-color" lang="vi" style="background-color:#FAFAFA"><!--[if gte mso 9]>
+			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
+				<v:fill type="tile" color="#fafafa"></v:fill>
+			</v:background>
+		<![endif]-->
+   <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#FAFAFA">
+     <tr>
+      <td valign="top" style="padding:0;Margin:0">
+       <table cellpadding="0" cellspacing="0" class="es-content" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+         <tr>
+          <td align="center" style="padding:0;Margin:0">
+           <table bgcolor="#ffffff" class="es-content-body" align="center" cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+             <tr>
+              <td class="es-m-p0r es-m-p0l esdev-adapt-off" align="left" style="padding:0;Margin:0;padding-top:30px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:540px">
+                 <tr>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:285px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;padding-top:10px;padding-bottom:10px;font-size:0px"><a target="_blank" href="https://depropstudio.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#5C68E2;font-size:14px"><img src="https://i.ibb.co/ZBbBrGP/black-logo.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="100"></a></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:255px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="right" class="es-m-txt-c es-m-p10t es-m-p10b" style="padding:0;Margin:0;padding-bottom:15px;padding-top:20px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#333333;font-size:16px;margin-left:40px;vertical-align:middle"><strong>Đơn hàng <a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#929292;font-size:16px;vertical-align:middle" href="">#65000500</a></strong></p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr>
+              <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:30px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                 <tr>
+                  <td align="center" valign="top" style="padding:0;Margin:0;width:540px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="left" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px"><h1 style="Margin:0;line-height:25px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:25px;font-style:normal;font-weight:bold;color:#333333">Đơn hàng của bạn đã được xác nhận!!!</h1></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr>
+              <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                 <tr>
+                  <td align="center" valign="top" style="padding:0;Margin:0;width:540px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px">Chào <strong>Customer Name,</strong></p></td>
+                     </tr>
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px">Đơn hàng của bạn đã được xác nhận và đang trong quá trình vận chuyển.</p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+           </table></td>
+         </tr>
+       </table>
+       <table cellpadding="0" cellspacing="0" class="es-content" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+         <tr>
+          <td align="center" style="padding:0;Margin:0">
+           <table bgcolor="#ffffff" class="es-content-body" align="center" cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+             <tr>
+              <td class="es-m-p20r es-m-p20l" align="left" style="Margin:0;padding-bottom:10px;padding-top:20px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                 <tr>
+                  <td align="center" valign="top" style="padding:0;Margin:0;width:540px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:23px;color:#333333;font-size:15px"><strong>Chi tiết đơn hàng:</strong></p></td>
+                     </tr>
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px">Đơn hàng của bạn đặt vào <b>23:23 thứ 6, 21/06/2024</b></p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr>
+              <td class="esdev-adapt-off es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:540px">
+                 <tr>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:42px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px">1.</p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                     <tr>
+                      <td align="center" style="padding:0;Margin:0;width:407px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>Bàn</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px">Số lượng: 2</p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:91px">
+                       <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-bottom:1px solid #cccccc" role="presentation">
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>20.000 đ</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>x2</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="center" height="5" style="padding:0;Margin:0"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:91px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0;padding-top:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>40.000 đ</strong></p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr>
+              <td class="esdev-adapt-off es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:540px">
+                 <tr>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:42px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px">2.</p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                     <tr>
+                      <td align="center" style="padding:0;Margin:0;width:407px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>Ghế</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px">Số lượng: 1</p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:91px">
+                       <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-bottom:1px solid #cccccc" role="presentation">
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>10.000 đ</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>x1</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="center" height="5" style="padding:0;Margin:0"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:91px">
+                       <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0;padding-top:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px"><strong>10.000 đ</strong></p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr>
+              <td class="esdev-adapt-off es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" class="esdev-mso-table" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:540px">
+                 <tr>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:418px">
+                       <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-top:1px solid #cccccc;border-bottom:1px solid #cccccc" role="presentation">
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px">Tổng tiền:</p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px">Số ngày thuê:</p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px">Phí vận chuyển:</p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px">Tổng thanh toán:</p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                  <td class="esdev-mso-td" valign="top" style="padding:0;Margin:0">
+                   <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0;width:122px">
+                       <table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-top:1px solid #cccccc;border-bottom:1px solid #cccccc" role="presentation">
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0;padding-top:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px"><strong>50.000 đ</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px"><strong>x2 ngày</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px"><strong>50.000 đ</strong></p></td>
+                         </tr>
+                         <tr>
+                          <td align="right" style="padding:0;Margin:0;padding-bottom:10px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px"><b>150.000 đ</b></p></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr>
+              <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                 <tr>
+                  <td align="center" valign="top" style="padding:0;Margin:0;width:540px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:23px;color:#333333;font-size:15px"><strong>Thông tin khách hàng:</strong></p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr>
+              <td class="es-m-p20r es-m-p20l" align="left" style="padding:0;Margin:0;padding-top:10px;padding-left:30px;padding-right:30px"><!--[if mso]><table style="width:540px" cellpadding="0" cellspacing="0"><tr><td style="width:260px" valign="top"><![endif]-->
+               <table cellpadding="0" cellspacing="0" class="es-left" align="left" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr>
+                  <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:260px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px">Họ và tên: <strong>Diệp Tuấn Ngọc</strong></p></td>
+                     </tr>
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px">Số điện thoại: <strong>0901131465</strong></p></td>
+                     </tr>
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px">Địa chỉ: <strong>Quận 9, TP. HCM</strong></p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td><td style="width:20px"></td><td style="width:260px" valign="top"><![endif]-->
+               <table cellpadding="0" cellspacing="0" class="es-right" align="right" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr>
+                  <td align="left" style="padding:0;Margin:0;width:260px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">Thời gian nhận hàng dự kiến:</p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px"><strong>Thứ 7, 22/06/2024</strong></p></td>
+                     </tr>
+                     <tr>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px">Phương thức thanh toán:</p><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px"><strong>Chuyển khoản ngân hàng</strong></p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td></tr></table><![endif]--></td>
+             </tr>
+           </table></td>
+         </tr>
+       </table>
+       <table cellpadding="0" cellspacing="0" class="es-content" align="center" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+         <tr>
+          <td align="center" style="padding:0;Margin:0">
+           <table bgcolor="#ffffff" class="es-content-body" align="center" cellpadding="0" cellspacing="0" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+             <tr>
+              <td align="left" style="Margin:0;padding-bottom:20px;padding-top:30px;padding-left:30px;padding-right:30px">
+               <table cellpadding="0" cellspacing="0" width="100%" role="none" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                 <tr>
+                  <td align="center" valign="top" style="padding:0;Margin:0;width:540px">
+                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr>
+                      <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;color:#333333;font-size:14px">Deprop Studio xin cảm ơn bạn !</p></td>
+                     </tr>
+                     <tr>
+                      <td align="center" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:28px;color:#333333;font-size:14px"><strong><a target="_blank" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#000000;font-size:14px;line-height:28px" href="">depropstudio.com</a></strong></p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+           </table></td>
+         </tr>
+       </table></td>
+     </tr>
+   </table>
+  </div>
+ </body>
 </html>
