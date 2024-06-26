@@ -2,15 +2,10 @@ package com.example.depropdemo.mail;
 
 import com.example.depropdemo.Model.Customer;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.TextStyle;
-import java.util.Locale;
-
 public class BillConfirmTemplate {
 
-    public static String getTemplate(Customer customer, String getDay, String getDayExp) {
-        String template = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
+    public static String getTemplate(Customer customer, String getDay, String getDayExp, String text) {
+        String template ="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
                 "<html dir=\"ltr\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"vi\">\n" +
                 " <head>\n" +
                 "  <meta charset=\"UTF-8\">\n" +
@@ -222,194 +217,20 @@ public class BillConfirmTemplate {
                 "                 </tr>\n" +
                 "               </table></td>\n" +
                 "             </tr>\n" +
-                "             <tr>\n" +
-                "              <td class=\"esdev-adapt-off es-m-p20r es-m-p20l\" align=\"left\" style=\"padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px\">\n" +
-                "               <table cellpadding=\"0\" cellspacing=\"0\" class=\"esdev-mso-table\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:540px\">\n" +
-                "                 <tr>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-left\" align=\"left\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:42px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\">1.</p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-left\" align=\"left\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"center\" style=\"padding:0;Margin:0;width:407px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>Bàn</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\">Số lượng: 2</p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-right\" align=\"right\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:91px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-bottom:1px solid #cccccc\" role=\"presentation\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>20.000 đ</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>x2</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"center\" height=\"5\" style=\"padding:0;Margin:0\"></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:91px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0;padding-top:5px\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>40.000 đ</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                 </tr>\n" +
-                "               </table></td>\n" +
-                "             </tr>\n" +
-                "             <tr>\n" +
-                "              <td class=\"esdev-adapt-off es-m-p20r es-m-p20l\" align=\"left\" style=\"padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px\">\n" +
-                "               <table cellpadding=\"0\" cellspacing=\"0\" class=\"esdev-mso-table\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:540px\">\n" +
-                "                 <tr>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-left\" align=\"left\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:42px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\">2.</p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-left\" align=\"left\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"center\" style=\"padding:0;Margin:0;width:407px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>Ghế</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\">Số lượng: 1</p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-right\" align=\"right\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:91px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-bottom:1px solid #cccccc\" role=\"presentation\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>10.000 đ</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>x1</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"center\" height=\"5\" style=\"padding:0;Margin:0\"></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:91px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0;padding-top:5px\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:20px;color:#333333;font-size:13px\"><strong>10.000 đ</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                 </tr>\n" +
-                "               </table></td>\n" +
-                "             </tr>\n" +
-                "             <tr>\n" +
-                "              <td class=\"esdev-adapt-off es-m-p20r es-m-p20l\" align=\"left\" style=\"padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px\">\n" +
-                "               <table cellpadding=\"0\" cellspacing=\"0\" class=\"esdev-mso-table\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:540px\">\n" +
-                "                 <tr>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-left\" align=\"left\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:418px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-top:1px solid #cccccc;border-bottom:1px solid #cccccc\" role=\"presentation\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0;padding-top:10px\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Tổng tiền:</p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Số ngày thuê:</p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Phí vận chuyển:</p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0;padding-bottom:10px\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Tổng thanh toán:</p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                  <td class=\"esdev-mso-td\" valign=\"top\" style=\"padding:0;Margin:0\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-right\" align=\"right\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0;width:122px\">\n" +
-                "                       <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-top:1px solid #cccccc;border-bottom:1px solid #cccccc\" role=\"presentation\">\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0;padding-top:10px\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\"><strong>50.000 đ</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\"><strong>x2 ngày</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\"><strong>50.000 đ</strong></p></td>\n" +
-                "                         </tr>\n" +
-                "                         <tr>\n" +
-                "                          <td align=\"right\" style=\"padding:0;Margin:0;padding-bottom:10px\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\"><b>150.000 đ</b></p></td>\n" +
-                "                         </tr>\n" +
-                "                       </table></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                 </tr>\n" +
-                "               </table></td>\n" +
-                "             </tr>\n" +
-                "             <tr>\n" +
-                "              <td class=\"es-m-p20r es-m-p20l\" align=\"left\" style=\"padding:0;Margin:0;padding-top:20px;padding-left:30px;padding-right:30px\">\n" +
-                "               <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                 <tr>\n" +
-                "                  <td align=\"center\" valign=\"top\" style=\"padding:0;Margin:0;width:540px\">\n" +
-                "                   <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
-                "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:23px;color:#333333;font-size:15px\"><strong>Thông tin khách hàng:</strong></p></td>\n" +
-                "                     </tr>\n" +
-                "                   </table></td>\n" +
-                "                 </tr>\n" +
-                "               </table></td>\n" +
-                "             </tr>\n" +
-                "             <tr>\n" +
+                                text +
                 "              <td class=\"es-m-p20r es-m-p20l\" align=\"left\" style=\"padding:0;Margin:0;padding-top:10px;padding-left:30px;padding-right:30px\"><!--[if mso]><table style=\"width:540px\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"width:260px\" valign=\"top\"><![endif]-->\n" +
                 "               <table cellpadding=\"0\" cellspacing=\"0\" class=\"es-left\" align=\"left\" role=\"none\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left\">\n" +
                 "                 <tr>\n" +
                 "                  <td class=\"es-m-p20b\" align=\"left\" style=\"padding:0;Margin:0;width:260px\">\n" +
                 "                   <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
                 "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Họ và tên: <strong>"+ customer.getFirstname() + " " + customer.getLastname() +"</strong></p></td>\n" +
+                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Họ và tên: <strong>"+ customer.getLastname() +" "+customer.getFirstname()+"</strong></p></td>\n" +
                 "                     </tr>\n" +
                 "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Số điện thoại: <strong>"+ customer.getPhonenumber() +"</strong></p></td>\n" +
+                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Số điện thoại: <strong>"+ customer.getPhonenumber()+"</strong></p></td>\n" +
                 "                     </tr>\n" +
                 "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Địa chỉ: <strong>"+ customer.getAddress() +"</strong></p></td>\n" +
+                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:26px;color:#333333;font-size:13px\">Địa chỉ: <strong>"+ customer.getAddress()+"</strong></p></td>\n" +
                 "                     </tr>\n" +
                 "                   </table></td>\n" +
                 "                 </tr>\n" +
@@ -419,10 +240,10 @@ public class BillConfirmTemplate {
                 "                  <td align=\"left\" style=\"padding:0;Margin:0;width:260px\">\n" +
                 "                   <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px\">\n" +
                 "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\">Thời gian nhận hàng dự kiến:</p><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\"><strong>"+ getDayExp +"</strong></p></td>\n" +
+                "                      <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\">Thời gian nhận hàng dự kiến:</p><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\"><strong>"+ getDayExp +"</strong></p></td>\n" +
                 "                     </tr>\n" +
                 "                     <tr>\n" +
-                "                      <td align=\"left\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\">Phương thức thanh toán:</p><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\"><strong>Chuyển khoản ngân hàng</strong></p></td>\n" +
+                "                      <td align=\"right\" style=\"padding:0;Margin:0\"><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\">Phương thức thanh toán:</p><p style=\"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#333333;font-size:14px\"><strong>Chuyển khoản ngân hàng</strong></p></td>\n" +
                 "                     </tr>\n" +
                 "                   </table></td>\n" +
                 "                 </tr>\n" +
