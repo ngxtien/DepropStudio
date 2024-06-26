@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="depropdtb@localhost" uuid="2e500301-d0d7-48d0-94d8-d6746ea577e8">
-      <driver-ref>sqlserver.ms</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://localhost:1433;database=depropdtb</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
     <data-source source="LOCAL" name="depropdtb@localhost [2]" uuid="f4713a2b-296d-44c9-81dd-3ea641b55121">
       <driver-ref>sqlserver.ms</driver-ref>
       <synchronize>true</synchronize>

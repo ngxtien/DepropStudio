@@ -10,6 +10,9 @@ import com.lib.payos.PayOS;
 import com.lib.payos.type.ItemData;
 import com.lib.payos.type.PaymentData;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.util.Date;
+import java.util.Locale;
 
 @Controller
 public class CheckoutController {
@@ -46,7 +50,7 @@ public class CheckoutController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/create-payment-link", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public void checkout(HttpServletResponse httpServletResponse, HttpSession session, @ModelAttribute("customer") Customer customer) {
+    public void checkout(HttpServletResponse httpServletResponse, HttpSession session,Customer customer) {
         customerService.saveCustomer(customer);
         session.setAttribute("customer", customer);
         try {
@@ -75,15 +79,16 @@ public class CheckoutController {
     public String orderSuccess(HttpSession session) {
         Customer customer = (Customer) session.getAttribute("customer");
         if (customer != null) {
-            String template = BillConfirmTemplate.getTemplate(customer.getLastname());
+//            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp());
             Thread emailThread = new Thread(() -> {
                 try {
-                    gmailSender.send(template, customer.getEmail());
+//                    gmailSender.send(template, customer.getEmail());
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             });
             emailThread.start();
+            customerService.delete(customer.getId());
             session.removeAttribute("customer");
             return "user/order-success";
         }
@@ -99,4 +104,28 @@ public class CheckoutController {
         }
         return "redirect:/404";
     }
+
+//    public String getDay() {
+//        //Right now
+//        LocalDateTime dateTime = LocalDateTime.now();
+//        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+//        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        String dayOfWeek = dateTime.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("vi", "VN"));
+//        dayOfWeek = dayOfWeek.substring(0, 1).toLowerCase() + dayOfWeek.substring(1);
+//        String formattedDateTime = String.format("Đơn hàng của bạn đặt vào %s %s, %s",
+//                dateTime.format(timeFormatter), dayOfWeek, dateTime.format(dateFormatter) + 1);
+//        System.out.println(formattedDateTime);
+//        return formattedDateTime;
+//    }
+//
+//    public String getDayExp() {
+//        LocalDateTime dateTime = LocalDateTime.now();
+//        LocalDateTime dateTimeExp = dateTime.plusDays(3);
+//        DateTimeFormatter dateFormatterExp = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        String dayOfWeekExp = dateTimeExp.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("vi", "VN"));
+//        dayOfWeekExp = dayOfWeekExp.substring(0, 1).toUpperCase() + dayOfWeekExp.substring(1);
+//        String formattedDateExp = String.format("%s, %s", dayOfWeekExp, dateTimeExp.format(dateFormatterExp));
+//        System.out.println(formattedDateExp);
+//        return formattedDateExp;
+//    }
 }

@@ -57,7 +57,6 @@ public class SecurityConfig {
                 .password(passwordEncoder.encode("123321"))
                 .roles("ADMIN")
                 .build();
-        System.out.println(admin.getPassword());
         return new InMemoryUserDetailsManager(admin);
     }
 

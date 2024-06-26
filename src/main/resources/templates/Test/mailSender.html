@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail Sender</title>
+</head>
+<body>
+<form class="needs-validation" novalidate="" th:action="@{/sendBill}" th:object="${customer}" method="post">
+    <div class="row">
+        <div class="form-floating col-md-6 mb-3">
+            <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder=""
+                    required=""
+                    th:field="*{firstname}"/>
+            <label for="firstName">Họ</label>
+            <div class="invalid-feedback">Vui lòng nhập Họ.</div>
+        </div>
+        <div class="form-floating col-md-6 mb-3">
+            <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder=""
+                    required=""
+                    th:field="*{lastname}"/>
+            <label for="lastName">Tên</label>
+            <div class="invalid-feedback">Vui lòng nhập Tên.</div>
+        </div>
+    </div>
+    <div class="form-floating mb-3">
+        <input
+                type="text"
+                class="form-control"
+                id="company"
+                placeholder=""
+                th:field="*{company}"/>
+        <label for="company">Tên công ty <span>(tuỳ chọn)</span></label>
+    </div>
+    <div class="form-floating mb-3">
+        <input
+                type="tel"
+                class="form-control"
+                id="tel"
+                pattern="[0-9]{10}"
+                placeholder=""
+                required=""
+                th:field="*{phonenumber}"
+        />
+        <label for="tel">Số điện thoại</label>
+        <div class="invalid-feedback">
+            Vui lòng nhập đúng số điện thoại (10 chữ số).
+        </div>
+    </div>
+    <div class="form-floating mb-3">
+        <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder=""
+                required=""
+                th:field="*{email}"/>
+        <label for="email">Địa chỉ email</label>
+        <div class="invalid-feedback">
+            Vui lòng nhập đúng Địa chỉ email. Ví dụ: you@gmail.com.
+        </div>
+    </div>
+    <div class="mb-3">
+        <div>
+            Hiện tại Deprop Studio chỉ hỗ trợ giao hàng trong khu vực
+            TP.Hồ Chí Minh
+        </div>
+    </div>
+    <div class="form-floating mb-3">
+        <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder=""
+                required=""
+                th:field="*{address}"/>
+        <label for="address"
+        >Địa chỉ - quận/huyện, phường/xã, đường, số nhà</label
+        >
+        <div class="invalid-feedback">
+            Vui lòng nhập Địa chỉ của bạn.
+        </div>
+    </div>
+    <div class="form-floating mb-3">
+                <textarea
+                        class="form-control"
+                        placeholder="Leave a comment here"
+                        id="floatingTextarea2"
+                        style="height: 200px"
+                ></textarea>
+        <label for="floatingTextarea2"
+        >Ghi chú đơn hàng (tuỳ chọn)</label
+        >
+    </div>
+    <button
+            class="submit_order custom_btn btn_black btn-block"
+            type="submit"
+    >
+        Đặt hàng
+    </button>
+</form>
+</body>
+</html>

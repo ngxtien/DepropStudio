@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="Loading...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Test/mailSender.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirmTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirmTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/EmailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/order-confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/order-confirm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +38,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -77,11 +88,11 @@
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin\src\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\java\com\" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\Test" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\java\com\example\depropdemo\Controller" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\user" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\java\com\" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\css" />
-      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\js" />
-      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\sass" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.depropdemo.Controller" />
@@ -126,7 +137,8 @@
       <workItem from="1719208879905" duration="5160000" />
       <workItem from="1719293014834" duration="4226000" />
       <workItem from="1719297334968" duration="373000" />
-      <workItem from="1719298155475" duration="7558000" />
+      <workItem from="1719298155475" duration="7723000" />
+      <workItem from="1719380108016" duration="6186000" />
     </task>
     <task id="LOCAL-00001" summary="Loading...">
       <option name="closed" value="true" />
@@ -176,7 +188,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719305540565</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Loading...">
+      <option name="closed" value="true" />
+      <created>1719306068501</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719306068501</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Loading...">
+      <option name="closed" value="true" />
+      <created>1719306176572</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719306176572</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
