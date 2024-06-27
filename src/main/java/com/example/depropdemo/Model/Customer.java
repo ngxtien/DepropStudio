@@ -29,8 +29,8 @@ public class Customer {
 
     private String company;
 
-//    private String note;
+    private String note;
 
-//    private Boolean vat;
+    private Boolean vat;
 
 }

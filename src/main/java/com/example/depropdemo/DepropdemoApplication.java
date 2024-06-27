@@ -31,10 +31,10 @@ public class DepropdemoApplication implements WebMvcConfigurer {
                 .maxAge(3600);
     }
 
-    @Bean
-    public PayOS payOS() {
-        return new PayOS(clientId, apiKey, checksumKey);
-    }
+//    @Bean
+//    public PayOS payOS() {
+//        return new PayOS(clientId, apiKey, checksumKey);
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(DepropdemoApplication.class, args);

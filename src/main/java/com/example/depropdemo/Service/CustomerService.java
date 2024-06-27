@@ -11,22 +11,26 @@ import java.util.Optional;
 
 @Service
 public class CustomerService {
-    @Autowired
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
-    public List<Customer> getAllCustomer() {
+    @Autowired
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
+    public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
 
-    public Optional<Customer> getProductById(Long id) {
+    public Optional<Customer> getCustomerById(Long id) {
         return customerRepository.findById(id);
     }
 
-    public Customer saveCustomer(Customer customer) {
+    public Customer saveOrUpdateCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 
-    public void deleteProduct(Long id) {
+    public void deleteCustomerById(Long id) {
         customerRepository.deleteById(id);
     }
 

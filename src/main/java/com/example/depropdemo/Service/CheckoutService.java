@@ -21,10 +21,10 @@ public class CheckoutService {
     private OrderDetailService orderDetailService;
 
 
-    public void addToCart(List<OrderDetail> cartData, String startDate, String endDate) {
-        for (OrderDetail orderDetail : cartData) {
-            orderDetailService.saveOrderDetail(orderDetail, startDate, endDate);
-        }
-    }
+//    public void addToCart(List<OrderDetail> cartData, String startDate, String endDate) {
+//        for (OrderDetail orderDetail : cartData) {
+//            orderDetailService.saveOrderDetail(orderDetail, startDate, endDate);
+//        }
+//    }
 
 }

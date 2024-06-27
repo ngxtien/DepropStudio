@@ -1,4 +1,7 @@
 package com.example.depropdemo.Dao;
 
-public interface CustomerOrderRepository {
+import com.example.depropdemo.Model.CustomerOrder;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, Long> {
 }

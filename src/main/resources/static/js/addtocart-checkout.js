@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         updateCartCount();
         updateTotalPrice();
-        sendCartDataToServer(cartData, startDate, endDate);
+        // sendCartDataToServer(cartData, startDate, endDate);
     }
 
     // function displayDates() {
@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", function() {
     //     }
     // }
 
-    function sendCartDataToServer(cartData, startDate, endDate) {
+    function sendCartDataToServer(cartData, startDate, endDate, customerData) {
         fetch('/check-out/add-to-cart', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ cartData, startDate, endDate }),
+            body: JSON.stringify({ cartData, startDate, endDate, customerData }),
         })
             .then(response => {
                 if (!response.ok) {
@@ -89,7 +89,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const checkoutForm = document.getElementById("checkoutForm");
     checkoutForm.addEventListener("submit", function(event) {
         event.preventDefault(); // Ngăn chặn gửi form theo cách truyền thống
-        sendCartDataToServer(cartData, startDate, endDate);
+
+        // Lấy dữ liệu từ form
+        const formData = new FormData(checkoutForm);
+        const customerData = {
+            firstname: formData.get('firstname'),
+            lastname: formData.get('lastname'),
+            phonenumber: formData.get('phonenumber'),
+            address: formData.get('address'),
+            email: formData.get('email'),
+            company: formData.get('company'),
+            note: formData.get('note'),
+            vat: formData.get('vat') === 'on'
+        };
+        sendCartDataToServer(cartData, startDate, endDate, customerData);
     });
 
     loadCartData();

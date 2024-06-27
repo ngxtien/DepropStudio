@@ -1,5 +1,6 @@
 package com.example.depropdemo.Controller;
 
+import com.example.depropdemo.Model.Customer;
 import com.example.depropdemo.Model.Products;
 import com.example.depropdemo.Service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,12 @@ public class Controller {
     }
 
 //////////         USER            ////////////////
+
+    @GetMapping("/check-out")
+    public String Customer_checkout(Model model){
+        model.addAttribute("customer", new Customer());
+        return "user/checkout";
+    }
 
     @GetMapping("/404")
     public String Error_page(){

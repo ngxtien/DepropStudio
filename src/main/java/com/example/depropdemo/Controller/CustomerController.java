@@ -16,21 +16,21 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping("/check-out")
-    public String Customer_checkout(Model model){
-        model.addAttribute("customer", new Customer());
-        return "user/checkout";
-    }
+//    @GetMapping("/check-out")
+//    public String Customer_checkout(Model model){
+//        model.addAttribute("customer", new Customer());
+//        return "user/checkout";
+//    }
 
-    @PostMapping("/check-out")
-    public String submitForm(@ModelAttribute("customer") Customer customer,
-                             BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "user/order-failure";
-        }
-        customerService.saveCustomer(customer);
-
-        return "redirect:/ordersuccess"; //
-    }
+//    @PostMapping("/check-out")
+//    public String submitForm(@ModelAttribute("customer") Customer customer,
+//                             BindingResult bindingResult) {
+//        if (bindingResult.hasErrors()) {
+//            return "user/order-failure";
+//        }
+//        customerService.saveCustomer(customer);
+//
+//        return "redirect:/ordersuccess"; //
+//    }
 
 }
