@@ -40,7 +40,6 @@ public class BillConfirmController {
     public String proccesingBill(Customer customer) {
         List<Products> products = productsService.getAllProducts();
         String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(products));
-//        String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp());
         Thread emailThread = new Thread(() -> {
             try {
                 gmailSender.send(template, customer.getEmail());
