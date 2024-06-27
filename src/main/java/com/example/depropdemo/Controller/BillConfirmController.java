@@ -81,9 +81,8 @@ public class BillConfirmController {
         DecimalFormat formatter = new DecimalFormat("#,###");
 
         int index = 1;
-        int totalAmount = 0; // Tổng tiền
+        int totalAmount = 0;
 
-        // Tạo mã HTML cho từng sản phẩm
         for (Products product : products) {
             int totalPrice = (int) (product.getPrice() * product.getQuantity());
             totalAmount += totalPrice;
