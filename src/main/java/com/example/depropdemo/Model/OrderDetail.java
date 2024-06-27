@@ -25,14 +25,18 @@ public class OrderDetail {
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Products products;
+    private Products product;
 
     private Integer quantity;
 
-    private Double unitPrice;
+    private Double Price;
 
     private String startDate;
 
     private String endDate;
+
+    public Long getProductID() {
+        return product != null ? product.getId() : null;
+    }
 
 }

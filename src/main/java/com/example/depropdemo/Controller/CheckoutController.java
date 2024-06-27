@@ -37,7 +37,7 @@ public class CheckoutController {
     }
 
     // Endpoint to handle adding order details
-    @PostMapping("/check-out/add-to-cart")
+    @PostMapping("/add-to-cart")
     public ResponseEntity<?> addToCart(@RequestBody AddToCartRequest addToCartRequest) {
 
         List<OrderDetail> cartData = addToCartRequest.getCartData();

@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch((error) => {
                 console.error('Error:', error);
             });
+
     }
     const checkoutForm = document.getElementById("checkoutForm");
     checkoutForm.addEventListener("submit", function(event) {

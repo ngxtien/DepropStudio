@@ -23,7 +23,7 @@ public class CheckoutService {
 
     public void addToCart(List<OrderDetail> cartData, String startDate, String endDate) {
         for (OrderDetail orderDetail : cartData) {
-            orderDetailService.saveOrderDetail(orderDetail);
+            orderDetailService.saveOrderDetail(orderDetail, startDate, endDate);
         }
     }
 
