@@ -5,6 +5,13 @@ $(function () {
     var dayCount = end.diff(start, "days") - 1; // Include both start and end dates
     dayCount = Math.max(dayCount, 0);
     $("#dayCount").text(dayCount);
+    $(".rent_day").text(dayCount);
+
+    console.log(dayCount);
+    // Save dayCount to localStorage
+    localStorage.setItem("dayCount", dayCount);
+    
+    // Update elements with the class rent_day
     return dayCount;
   }
 
@@ -12,11 +19,14 @@ $(function () {
     var startDate = $("#startdate").data("daterangepicker").startDate;
     var endDate = $("#enddate").data("daterangepicker").startDate;
 
-    // Log the start and end dates to the console
+    // Log start and end dates to the console
     console.log("Start Date:", startDate.format("DD/MM/YYYY"));
     console.log("End Date:", endDate.format("DD/MM/YYYY"));
 
-    // Check if end date is before start date, fix it
+    localStorage.setItem("startDate", startDate.format("DD/MM/YYYY"));
+    localStorage.setItem("endDate", endDate.format("DD/MM/YYYY"));
+
+    // Check if end date is before start date, and fix it
     if (endDate.isBefore(startDate)) {
       endDate = startDate;
       $("#enddate").data("daterangepicker").setStartDate(startDate);
@@ -49,36 +59,46 @@ $(function () {
         "Tháng 9",
         "Tháng 10",
         "Tháng 11",
-        "Tháng 12",
+        "Tháng 12"
       ],
-      firstDay: 1,
-    },
+      firstDay: 1
+    }
   });
 
   $("#startdate").on("apply.daterangepicker", handleDateChange);
   $("#enddate").on("apply.daterangepicker", handleDateChange);
 
-  // Initial calculation and display of day count
-  var startDate = today;
-  var endDate = today.clone().add(1, "days");
+  // Read values from localStorage when the page is reloaded
+  var checkLocalStartDate = localStorage.getItem("startDate");
+  var checkLocalEndDate = localStorage.getItem("endDate");
+  var startDate;
+  var endDate;
 
-  // Log the initial start and end dates to the console
-  console.log("Initial Start Date:", startDate.format("DD/MM/YYYY"));
-  console.log("Initial End Date:", endDate.format("DD/MM/YYYY"));
+  if (checkLocalStartDate === null || checkLocalEndDate === null) {
+    startDate = today;
+    endDate = today.clone().add(1, "days");
+  } else {
+    startDate = moment(checkLocalStartDate, "DD/MM/YYYY");
+    endDate = moment(checkLocalEndDate, "DD/MM/YYYY");
+  }
+
+  // Reset values in the input fields
+  $("#startdate").data("daterangepicker").setStartDate(startDate);
+  $("#startdate").val(startDate.format("DD/MM/YYYY"));
+  $("#enddate").data("daterangepicker").setStartDate(endDate);
+  $("#enddate").val(endDate.format("DD/MM/YYYY"));
 
   updateDayCount(startDate, endDate);
 
-  // Validation button
+  // Set up event for the confirm button
   $("#continueBtn").click(function () {
     var dayCount = parseInt($("#dayCount").text());
     if (dayCount > 0) {
-      // Continue to the next page
-      window.location.href = "/user/checkout.html";
+      window.location.href = "checkout.html";
     } else {
-      // Show feedback message
       $("#feedbackMsg")
-        .html('<div class="feedback-date">Số ngày thuê phải lớn hơn 0.</div>')
-        .show();
+          .html('<div class="feedback-date">Số ngày thuê phải lớn hơn 0.</div>')
+          .show();
     }
   });
 });
