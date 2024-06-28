@@ -30,6 +30,19 @@ document.addEventListener("DOMContentLoaded", function() {
         totalPriceElement.textContent = formatPrice(totalPrice);
     }
 
+    function clearCart() {
+        const cartItems = document.querySelectorAll(".list-group-item");
+        cartItems.forEach(item => {
+            if (!item.classList.contains("total_area")) {
+                item.remove();
+            }
+        });
+        productCount = 0;
+        updateCartCount();
+        totalPriceElement.textContent = formatPrice(0);
+        checkoutForm.reset();
+    }
+
     function loadCartData() {
         cartData.forEach((product) => {
             const cartItem = document.createElement("li");
@@ -76,12 +89,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
                 }
-                return response.json();
+                return response.text();
             })
-            .then(data => {
-                console.log('Success:', data);
+            .then(text => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: text, // Display the plain text response from the server
+                }).then(() => {
+                    localStorage.clear();
+                    clearCart();
+                });
             })
             .catch((error) => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: error.message,
+                });
                 console.error('Error:', error);
             });
 
@@ -104,7 +129,6 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         sendCartDataToServer(cartData, startDate, endDate, customerData);
     });
-
     loadCartData();
 
 });
