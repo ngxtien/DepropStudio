@@ -34,6 +34,16 @@ public class CustomerDTO {
 
     private Boolean vat;
 
+    private Double totalprice;
+
+    public Double getTotalprice() {
+        return totalprice;
+    }
+
+    public void setTotalprice(Double totalprice) {
+        this.totalprice = totalprice;
+    }
+
     public String getFirstname() {
         return firstname;
     }

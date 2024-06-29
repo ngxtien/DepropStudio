@@ -60,9 +60,13 @@ public class OrderDetailService {
         customerOrder.setCustomer(customer); // Gán khách hàng cho đơn hàng
         customerOrder.setOrderDate(new Date()); // Ngày đặt hàng
         customerOrder.setStatus("Pending"); // Trạng thái đơn hàng
+        customerOrder.setTotalprice(customerDTO.getTotalprice());
+
 
         // Lưu đơn hàng vào cơ sở dữ liệu
         customerOrder = customerOrderRepository.save(customerOrder);
+
+        double totalPrice = 0;
 
         // Xử lý từng sản phẩm trong giỏ hàng
         for (OrderDetailDTO dto : orderRequestDTO.getCartData()) {
@@ -79,6 +83,9 @@ public class OrderDetailService {
             orderDetail.setPrice(dto.getPrice());
             orderDetail.setStartDate(orderRequestDTO.getStartDate());
             orderDetail.setEndDate(orderRequestDTO.getEndDate());
+
+//            totalPrice += dto.getPrice() * dto.getQuantity();
+
 
             // Lưu chi tiết đơn hàng vào cơ sở dữ liệu
             orderDetailRepository.save(orderDetail);

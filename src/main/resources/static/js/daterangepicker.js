@@ -10,7 +10,7 @@ $(function () {
 
   function handleDateChange() {
     var startDate = $("#startdate").data("daterangepicker").startDate;
-    var endDate = $("#enddate").data("daterangepicker").startDate;
+    var endDate = $("#enddate").data("daterangepicker").endDate;
 
     // Ghi nhật ký các ngày bắt đầu và kết thúc vào bảng điều khiển
     console.log("Start Date:", startDate.format("DD/MM/YYYY"));
@@ -29,6 +29,7 @@ $(function () {
     var dayCount = updateDayCount(startDate, endDate);
     if (dayCount > 0) {
       $("#feedbackMsg").hide();
+      localStorage.setItem("dayCount", dayCount);
     } else {
       $("#feedbackMsg").show();
     }

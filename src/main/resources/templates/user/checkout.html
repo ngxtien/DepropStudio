@@ -30,10 +30,10 @@
         />
         <!-- style CSS -->
         <link rel="stylesheet" href="/css/user.css"/>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="sweetalert2.all.min.js"></script>
-      <script src="sweetalert2.min.js"></script>
-      <link rel="stylesheet" href="sweetalert2.min.css">
+<!--      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
+<!--      <script src="sweetalert2.all.min.js"></script>-->
+<!--      <script src="sweetalert2.min.js"></script>-->
+<!--      <link rel="stylesheet" href="sweetalert2.min.css">-->
     </head>
 
   <body>
@@ -225,77 +225,95 @@
                 <span><strong>Tổng tiền:</strong></span>
                 <span class="total_price"><strong></strong></span>
               </li>
+              <li
+                      class="total_area list-group-item d-flex justify-content-between"
+              >
+                <span>Số ngày thuê:</span>
+                <strong>x<span id="dayCount" class="rent_day"></span> ngày</strong>
+              </li>
+              <li
+                      class="total_area list-group-item d-flex justify-content-between"
+              >
+                <span>Phí vận chuyển:</span>
+                <strong><span class="delivery_fee"></span></strong>
+              </li>
+              <li
+                      class="total_area list-group-item d-flex justify-content-between"
+              >
+                <strong><span>Tổng thanh toán:</span></strong>
+                <strong><span class="total_payment"></span></strong>
+              </li>
             </ul>
 
             <h4 class="mb-3">Phương thức thanh toán</h4>
-            <div class="accordion mb-3" id="paymentAccordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingCash">
-                  <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseCash"
-                    aria-expanded="true"
-                    aria-controls="collapseCash"
-                    for="cash"
-                  >
-                    <input
-                      class="form-check-input me-2"
-                      type="radio"
-                      name="paymentMethod"
-                      id="cash"
-                      value="cash"
-                      checked
-                    />
-                    <label class="form-check-label" for="cash">
-                      Tiền mặt
-                    </label>
-                  </button>
-                </h2>
-                <div
-                  id="collapseCash"
-                  class="accordion-collapse collapse show"
-                  aria-labelledby="headingCash"
-                  data-bs-parent="#paymentAccordion"
-                >
-                  <div class="accordion-body">Thanh toán khi nhận hàng.</div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTPBank">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTPBank"
-                    aria-expanded="true"
-                    aria-controls="collapseTPBank"
-                  >
-                    <input
-                      class="form-check-input me-2"
-                      type="radio"
-                      name="paymentMethod"
-                      id="tpbank"
-                      value="tpbank"
-                    />
-                    <label class="form-check-label" for="tpbank">
-                      Chuyển khoản ngân hàng
-                    </label>
-                  </button>
-                </h2>
-                <div
-                  id="collapseTPBank"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingTPBank"
-                  data-bs-parent="#paymentAccordion"
-                >
-                  <div class="accordion-body">
-                    Chuyển khoản thông qua ngân hàng TPBank của chúng tôi.
+              <div class="accordion mb-3" id="paymentAccordion">
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingCash">
+                          <button
+                                  class="accordion-button"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapseCash"
+                                  aria-expanded="true"
+                                  aria-controls="collapseCash"
+                                  >
+                              <input
+                                      class="form-check-input me-2"
+                                      type="radio"
+                                      name="paymentMethod"
+                                      id="cash"
+                                      value="cash"
+                                      checked
+                              />
+                              <label class="form-check-label" name="paymentMethod" for="cash">
+                                  Tiền mặt
+                              </label>
+                          </button>
+                      </h2>
+                      <div
+                              id="collapseCash"
+                              class="accordion-collapse collapse show"
+                              aria-labelledby="headingCash"
+                              data-bs-parent="#paymentAccordion"
+                      >
+                          <div class="accordion-body">Thanh toán khi nhận hàng.</div>
+                      </div>
                   </div>
-                </div>
+
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTPBank">
+                          <button
+                                  class="accordion-button collapsed"
+                                  type="button"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#collapseTPBank"
+                                  aria-expanded="false"
+                                  aria-controls="collapseTPBank"
+                          >
+                              <input
+                                      class="form-check-input me-2"
+                                      type="radio"
+                                      name="paymentMethod"
+                                      id="tpbank"
+                                      value="tpbank"
+                              />
+                              <label class="form-check-label" value="tpbank" for="tpbank">
+                                  Chuyển khoản ngân hàng
+                              </label>
+                          </button>
+                      </h2>
+                      <div
+                              id="collapseTPBank"
+                              class="accordion-collapse collapse"
+                              aria-labelledby="headingTPBank"
+                              data-bs-parent="#paymentAccordion"
+                      >
+                          <div class="accordion-body">
+                              Chuyển khoản thông qua ngân hàng TPBank của chúng tôi.
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
           <div class="col-md-7 order-md-1">
             <h4 class="mb-3">Thông tin đơn hàng</h4>
@@ -461,7 +479,7 @@
     <script src="/js/common.js"></script>
     <script src="/js/addtocart-checkout.js"></script>
     <!-- extra js -->
-    <script src="/js/backtotop.js"></script>
+<!--    <script src="/js/backtotop.js"></script>-->
     <script src="/js/loading.js"></script>
   </body>
 </html>

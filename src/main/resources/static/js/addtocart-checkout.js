@@ -2,10 +2,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const cartArea = document.querySelector(".list-group");
     const totalPriceElement = document.querySelector(".total_price");
     const submitOrderBtn = document.querySelector(".submit_order");
+    const totalPaymentElement = document.querySelector(".total_payment");
+    const deliveryFeeElement = document.querySelector(".delivery_fee");
+    const dayCountElement = document.getElementById("dayCount");
     let productCount = 0;
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
     const startDate = localStorage.getItem("startDate");
     const endDate = localStorage.getItem("endDate");
+    const dayCount = localStorage.getItem("dayCount");
+    const deliveryFee = 5000; //Shipping fee
+
+    // console.log("Start Date:", startDate);
+    // console.log("End Date:", endDate);
+    // console.log("Day Count:", dayCount);
 
     function formatPrice(price) {
         const formattedPrice = price.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -28,6 +37,16 @@ document.addEventListener("DOMContentLoaded", function() {
             return total + (product.price * product.quantity);
         }, 0);
         totalPriceElement.textContent = formatPrice(totalPrice);
+
+        const totalPayment = (totalPrice * dayCount) + deliveryFee;
+        totalPaymentElement.textContent = formatPrice(totalPayment);
+
+        // Update delivery fee and day count elements
+        deliveryFeeElement.textContent = formatPrice(deliveryFee);
+        dayCountElement.textContent = dayCount;
+
+        localStorage.setItem("totalPayment", totalPayment);
+
     }
 
     function clearCart() {
@@ -59,23 +78,11 @@ document.addEventListener("DOMContentLoaded", function() {
             `;
             cartArea.insertBefore(cartItem, cartArea.querySelector(".total_area"));
             productCount += product.quantity;
-            console.log(product);
         });
 
         updateCartCount();
         updateTotalPrice();
-        // sendCartDataToServer(cartData, startDate, endDate);
     }
-
-    // function displayDates() {
-    //     const dateElement = document.querySelector(".date_display");
-    //     if (dateElement) {
-    //         dateElement.innerHTML = `
-    //             <p>Start Date: ${startDate ? startDate : 'Not Set'}</p>
-    //             <p>End Date: ${endDate ? endDate : 'Not Set'}</p>
-    //         `;
-    //     }
-    // }
 
     function sendCartDataToServer(cartData, startDate, endDate, customerData) {
         fetch('/check-out/add-to-cart', {
@@ -95,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 Swal.fire({
                     icon: 'success',
                     title: 'Success',
-                    text: text, // Display the plain text response from the server
+                    text: text,
                 }).then(() => {
                     localStorage.clear();
                     clearCart();
@@ -113,9 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     const checkoutForm = document.getElementById("checkoutForm");
     checkoutForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Ngăn chặn gửi form theo cách truyền thống
+        event.preventDefault();
 
-        // Lấy dữ liệu từ form
         const formData = new FormData(checkoutForm);
         const customerData = {
             firstname: formData.get('firstname'),
@@ -125,10 +131,48 @@ document.addEventListener("DOMContentLoaded", function() {
             email: formData.get('email'),
             company: formData.get('company'),
             note: formData.get('note'),
-            vat: formData.get('vat') === 'on'
+            vat: document.getElementById('VATCheck').checked,
+            totalprice: localStorage.getItem("totalPayment")
         };
-        sendCartDataToServer(cartData, startDate, endDate, customerData);
+        // const totalPayment = localStorage.getItem("totalPayment");
+        // sendCartDataToServer(cartData, startDate, endDate, customerData);
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+        // Kiểm tra phương thức thanh toán
+        if (paymentMethod === "cash") {
+            sendCartDataToServer(cartData, startDate, endDate, customerData);
+            window.location.href = "/ordersuccess";
+        } else if (paymentMethod === "tpbank") {
+            window.location.href = "/ordersuccess2"; // Chuyển hướng tới trang tạo link thanh toán
+        } else {
+            console.error("Unsupported payment method:", paymentMethod);
+        }
     });
     loadCartData();
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var vatCheck = document.getElementById('VATCheck');
+    vatCheck.checked = false;
+    // console.log(vatCheck)
+});
+
+//
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Kiểm tra xem có radio button nào đã được chọn hay chưa
+//     var checkedRadio = document.querySelector('input[name="paymentMethod"]:checked');
+//     // console.log(checkedRadio.value)
+// });
+
+
+// Đợi cho đến khi DOM đã được load hoàn toàn
+$(document).ready(function() {
+    // Xử lý sự kiện khi click vào label của radio button
+    $('.accordion-button').click(function() {
+        var paymentMethod = $(this).find('input[type="radio"]').val();
+        // console.log("Selected payment method:", paymentMethod);
+    });
+});
+
+

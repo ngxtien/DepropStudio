@@ -70,10 +70,15 @@ public class Controller {
         return "user/index";
     }
 
-//    @GetMapping("/ordersuccess")
-//    public String User_ordersuccess(){
-//        return "success";
-//    }
+    @GetMapping("/ordersuccess")
+    public String User_ordersuccess(){
+        return "user/order-success";
+    }
+
+    @GetMapping("/ordersuccess2")
+    public String test(){
+        return "success";
+    }
 
     @GetMapping("/policy")
     public String User_policy(){
