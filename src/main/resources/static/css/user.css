@@ -408,6 +408,11 @@ ul {
   }
 }
 
+.btn_block {
+  display: block !important;
+  width: 100%;
+}
+
 .btn_black {
   background-color: #000;
   color: #fff;
@@ -622,8 +627,11 @@ ul {
     color: #fff;
   }
   .main_menu .main-menu-item .nav-item.active {
-    background-color: #ff3368;
-    background-image: linear-gradient(16deg, rgb(255, 0, 90) 0%, rgb(255, 93, 45) 64%, rgb(255, 186, 0) 100%);
+    background-color: #fff;
+  }
+  .main_menu .main-menu-item .nav-item.active .nav-link {
+    color: #000;
+    font-weight: 600;
   }
   .navbar-collapse {
     z-index: 9999 !important;
@@ -848,17 +856,20 @@ ul {
 .banner_part .owl-theme .owl-nav {
   margin: 0;
 }
-.banner_part .owl-theme .owl-nav .owl-next, .banner_part .owl-theme .owl-nav .owl-prev {
+.banner_part .owl-theme .owl-nav .owl-next,
+.banner_part .owl-theme .owl-nav .owl-prev {
   position: absolute;
   top: 45%;
 }
 @media (max-width: 991px) {
-  .banner_part .owl-theme .owl-nav .owl-next, .banner_part .owl-theme .owl-nav .owl-prev {
+  .banner_part .owl-theme .owl-nav .owl-next,
+  .banner_part .owl-theme .owl-nav .owl-prev {
     display: none;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .banner_part .owl-theme .owl-nav .owl-next, .banner_part .owl-theme .owl-nav .owl-prev {
+  .banner_part .owl-theme .owl-nav .owl-next,
+  .banner_part .owl-theme .owl-nav .owl-prev {
     display: none;
   }
 }
@@ -4126,6 +4137,126 @@ html, body {
   display: none !important;
 }
 
+.slider {
+  height: 100%;
+  margin-top: 61px;
+  position: relative;
+}
+.slider .list .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.slider .list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider .list .item::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(-35deg, #000 -20%, transparent 20%);
+}
+.slider .list .item .content {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 250px;
+  max-width: 80%;
+  z-index: 1;
+  text-align: right;
+}
+.slider .list .item .content p {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+.slider .list .item .content h2 {
+  font-size: 40px;
+  margin: 0;
+}
+.slider .list .item.active {
+  opacity: 1;
+  z-index: 10;
+}
+.slider .list .item p,
+.slider .list .item h2 {
+  color: #fff;
+}
+
+@keyframes showContent {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.slider .list .item.active p,
+.slider .list .item.active h2 {
+  transform: translateY(50px);
+  filter: blur(10px);
+  opacity: 0;
+  animation: showContent 0.6s 0.1s ease-in-out 1 forwards;
+}
+
+.thumbnail {
+  position: absolute;
+  z-index: 11;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  overflow: auto;
+  justify-content: center;
+}
+.thumbnail::-webkit-scrollbar {
+  width: 0;
+}
+.thumbnail .item {
+  cursor: pointer;
+  width: 150px;
+  height: 80px;
+  filter: brightness(0.5);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.5s;
+  flex-shrink: 0;
+}
+.thumbnail .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.thumbnail .item::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, #000 -40%, transparent);
+}
+.thumbnail .item.active {
+  filter: brightness(1);
+}
+.thumbnail .item:hover {
+  filter: brightness(1);
+}
+.thumbnail .item .content {
+  position: absolute;
+  z-index: 10;
+  inset: auto 10px 10px 10px;
+  color: #fff;
+}
+
 .filter_area {
   background-color: #fff;
   padding-top: 10px;
@@ -5002,6 +5133,126 @@ html, body {
   display: inline-block;
 }
 
+.order_confirmation {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 25px;
+  font-size: 13px;
+  line-height: 24px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.order_code_text {
+  font-size: 16px;
+  color: #9c9c9c;
+}
+
+.order_title {
+  margin-bottom: 10px;
+}
+.order_title h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+.order_title .customer_name {
+  font-weight: 700;
+}
+
+.info_title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.order_info {
+  background-color: rgba(129, 129, 139, 0.2);
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  gap: 0;
+}
+.order_info .customer_name, .order_info .customer_phone, .order_info .customer_address {
+  font-weight: 700;
+}
+
+.order_summary {
+  width: 50%;
+  padding-left: 10px;
+  border-left: 1px solid rgba(74, 74, 80, 0.2);
+}
+.order_summary .deliver_time, .order_summary .payment_status {
+  font-weight: 700;
+}
+
+.order_customer {
+  width: 50%;
+  padding-right: 10px;
+}
+
+.order_details {
+  padding: 10px 0;
+}
+.order_details .details_title {
+  font-weight: 700;
+  font-size: 15px;
+}
+.order_details .order_time, .order_details .product_name, .order_details .subtotal_price {
+  font-weight: 700;
+}
+.order_details .order_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+.order_details .order_item .item_details {
+  display: flex;
+  gap: 10px;
+}
+.order_details .order_item img {
+  height: 80px;
+  width: 80px;
+}
+.order_details .order_item .item_quantity {
+  border-bottom: 1px solid #ddd;
+}
+.order_details .order_item:last-child {
+  border-bottom: none;
+}
+
+.order_total {
+  display: flex;
+  gap: 20px;
+  justify-content: right;
+}
+.order_total .order_total_text {
+  text-align: right;
+}
+.order_total .order_total_price {
+  text-align: right;
+}
+.order_total .total_payment {
+  font-weight: 700;
+}
+
+.thank_you {
+  text-align: center;
+  margin-top: 40px;
+}
+.thank_you a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+.thank_you a:hover {
+  text-decoration: underline;
+}
+
 .spinner-wrapper {
   z-index: 9999;
   background-color: #000;
@@ -5021,4 +5272,4 @@ html, body {
   height: 50px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=user.css.map */
