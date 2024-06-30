@@ -37,16 +37,24 @@
         }
         h2 {
           font-size: 40px;
-          margin: 0;
+          margin-bottom: 5px;
+        }
+        .manual_price {
+          font-size: 15px;
+          text-decoration: line-through;
+          color: #ccc;
+        }
+        .sale_price {
+          font-size: 25px;
+          margin-left: 10px;
+        }
+        p, h2, .combo_price {
+          color: $white;
         }
       }
       &.active {
         opacity: 1;
         z-index: 10;
-      }
-      p,
-      h2 {
-        color: $white;
       }
     }
   }
@@ -60,11 +68,24 @@
 }
 
 .slider .list .item.active p,
-.slider .list .item.active h2 {
+.slider .list .item.active h2,
+.slider .list .item.active .combo_price {
   transform: translateY(50px);
   filter: blur(10px);
   opacity: 0;
-  animation: showContent 0.6s 0.1s ease-in-out 1 forwards;
+  animation: showContent 0.5s 0.1s ease-in-out 1 forwards;
+}
+
+.contact_btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 100;
+  @media #{$small_mobile} {
+   top: unset;
+   right: 20px;
+   bottom: 150px;
+  }
 }
 
 .thumbnail {
@@ -74,12 +95,12 @@
   height: 100%;
   flex-direction: column;
   gap: 10px;
-  padding: 0 50px;
+  padding-left: 30px;
   box-sizing: border-box;
   overflow: auto;
   justify-content: center;
   &::-webkit-scrollbar {
-    width: 0;
+    display: none;
   }
   .item {
     cursor: pointer;
@@ -116,6 +137,16 @@
       z-index: 10;
       inset: auto 10px 10px 10px;
       color: $white;
+    }
+  }
+  @media #{$small_mobile} {
+    flex-direction: row;
+    width: 100%;
+    height: 90px;
+    padding: 10px 10px 0 10px;
+    justify-content: left;
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 }
