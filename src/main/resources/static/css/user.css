@@ -4178,15 +4178,23 @@ html, body {
 }
 .slider .list .item .content h2 {
   font-size: 40px;
-  margin: 0;
+  margin-bottom: 5px;
+}
+.slider .list .item .content .manual_price {
+  font-size: 15px;
+  text-decoration: line-through;
+  color: #ccc;
+}
+.slider .list .item .content .sale_price {
+  font-size: 25px;
+  margin-left: 10px;
+}
+.slider .list .item .content p, .slider .list .item .content h2, .slider .list .item .content .combo_price {
+  color: #fff;
 }
 .slider .list .item.active {
   opacity: 1;
   z-index: 10;
-}
-.slider .list .item p,
-.slider .list .item h2 {
-  color: #fff;
 }
 
 @keyframes showContent {
@@ -4197,11 +4205,26 @@ html, body {
   }
 }
 .slider .list .item.active p,
-.slider .list .item.active h2 {
+.slider .list .item.active h2,
+.slider .list .item.active .combo_price {
   transform: translateY(50px);
   filter: blur(10px);
   opacity: 0;
-  animation: showContent 0.6s 0.1s ease-in-out 1 forwards;
+  animation: showContent 0.5s 0.1s ease-in-out 1 forwards;
+}
+
+.contact_btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 100;
+}
+@media (max-width: 576px) {
+  .contact_btn {
+    top: unset;
+    right: 20px;
+    bottom: 150px;
+  }
 }
 
 .thumbnail {
@@ -4211,13 +4234,13 @@ html, body {
   height: 100%;
   flex-direction: column;
   gap: 10px;
-  padding: 0 50px;
+  padding-left: 30px;
   box-sizing: border-box;
   overflow: auto;
   justify-content: center;
 }
 .thumbnail::-webkit-scrollbar {
-  width: 0;
+  display: none;
 }
 .thumbnail .item {
   cursor: pointer;
@@ -4255,6 +4278,18 @@ html, body {
   z-index: 10;
   inset: auto 10px 10px 10px;
   color: #fff;
+}
+@media (max-width: 576px) {
+  .thumbnail {
+    flex-direction: row;
+    width: 100%;
+    height: 90px;
+    padding: 10px 10px 0 10px;
+    justify-content: left;
+  }
+  .thumbnail::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .filter_area {
