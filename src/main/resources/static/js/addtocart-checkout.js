@@ -94,27 +94,16 @@ document.addEventListener("DOMContentLoaded", function() {
         })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
+                    window.location.href = "/404";
                 }
                 return response.text();
             })
             .then(text => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: text,
-                }).then(() => {
-                    localStorage.clear();
-                    clearCart();
-                });
+                localStorage.clear();
+                clearCart();
             })
             .catch((error) => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: error.message,
-                });
-                console.error('Error:', error);
+                window.location.href = "/404";
             });
 
     }
@@ -141,6 +130,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // Kiểm tra phương thức thanh toán
         if (paymentMethod === "cash") {
             sendCartDataToServer(cartData, startDate, endDate, customerData);
+            localStorage.clear();
+            clearCart();
             window.location.href = "/ordersuccess";
         } else if (paymentMethod === "tpbank") {
             window.location.href = "/ordersuccess2"; // Chuyển hướng tới trang tạo link thanh toán
