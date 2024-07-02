@@ -1,5 +1,8 @@
 package com.example.depropdemo.Model.DTO;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import com.example.depropdemo.Model.Customer;
 
@@ -48,5 +51,14 @@ public class OrderRequestDTO {
 
     public void setEndDate(String endDate) {
         this.endDate = endDate;
+    }
+
+    public int calculateDurationInDays() {
+        // Parse the dates from string to LocalDate
+        LocalDate start = LocalDate.parse(startDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+
+        // Calculate the number of days between startDate and endDate
+        return (int) ChronoUnit.DAYS.between(start, end);
     }
 }

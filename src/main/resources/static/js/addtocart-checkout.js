@@ -134,23 +134,38 @@ document.addEventListener("DOMContentLoaded", function() {
             vat: document.getElementById('VATCheck').checked,
             totalprice: localStorage.getItem("totalPayment")
         };
-        // const totalPayment = localStorage.getItem("totalPayment");
-        // sendCartDataToServer(cartData, startDate, endDate, customerData);
         const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-
-        // Kiểm tra phương thức thanh toán
         if (paymentMethod === "cash") {
             sendCartDataToServer(cartData, startDate, endDate, customerData);
-            window.location.href = "/ordersuccess";
+            localStorage.clear();
+            clearCart();
+            window.location.href = "/order-success-cash";
         } else if (paymentMethod === "tpbank") {
-            window.location.href = "/ordersuccess2"; // Chuyển hướng tới trang tạo link thanh toán
-        } else {
-            console.error("Unsupported payment method:", paymentMethod);
+            fetch('/check-out/create-payment-link', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ cartData, startDate, endDate, customerData })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Failed to create payment link');
+                })
+                .then(data => {
+                    window.location.href = data.checkoutUrl;
+                })
+                .catch(error => {
+                    console.error('Error creating payment link:', error);
+                });
         }
     });
     loadCartData();
 
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var vatCheck = document.getElementById('VATCheck');

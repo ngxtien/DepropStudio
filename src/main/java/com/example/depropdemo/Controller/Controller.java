@@ -70,14 +70,9 @@ public class Controller {
         return "user/index";
     }
 
-    @GetMapping("/ordersuccess")
+    @GetMapping("/order-success-cash")
     public String User_ordersuccess(){
         return "user/order-success";
-    }
-
-    @GetMapping("/ordersuccess2")
-    public String test(){
-        return "success";
     }
 
     @GetMapping("/policy")
@@ -100,4 +95,5 @@ public class Controller {
     public String User_cart(Model model){
         return "user/cart";
     }
+
 }

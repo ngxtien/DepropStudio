@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="Loading..." />
+    <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="Loading...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirmTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/DepropdemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Model/DTO/OrderRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Model/DTO/OrderRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/addtocart-checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/addtocart-checkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mailSender.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="thaidanglam" />
+        <entry key="$PROJECT_DIR$" value="merge-test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,7 +71,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.DepropdemoApplication.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;merge-test&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;clone-ngtien&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/OneDrive/Máy tính/FPTU/Sem 8/DepropStudio/src/main/resources/templates&quot;,
@@ -76,11 +91,11 @@
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin\src\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates" />
+      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\java\com\example\depropdemo\mail" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\user" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\css" />
       <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\js" />
-      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\static\sass" />
-      <recent name="C:\Users\Admin\OneDrive\Máy tính\FPTU\Sem 8\DepropStudio\src\main\resources\templates\admin" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.depropdemo.Controller" />
@@ -148,6 +163,7 @@
       <workItem from="1719213893542" duration="31000" />
       <workItem from="1719214295335" duration="1992000" />
       <workItem from="1719302130373" duration="4838000" />
+      <workItem from="1719892283652" duration="15373000" />
     </task>
     <task id="LOCAL-00001" summary="Loading...">
       <option name="closed" value="true" />
