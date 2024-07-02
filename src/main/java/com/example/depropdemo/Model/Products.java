@@ -7,11 +7,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.aspectj.weaver.loadtime.definition.Definition;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "products")
 public class Products {
 
     @Id
@@ -30,4 +33,15 @@ public class Products {
 
     private String description;
 
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {
+            CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH
+    })
+    @JoinTable(
+            name = "products_category",
+            joinColumns = @JoinColumn(name = "products_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private List<Category> categories;
 }
