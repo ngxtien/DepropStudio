@@ -16,14 +16,12 @@ public class GmailSender implements EmailSender{
     @Autowired
     private JavaMailSender gmailSender;
 
-    public void send(String template ,String email) throws MessagingException, UnsupportedEncodingException {
+    public void send(String template ,String email, int orderId) throws MessagingException, UnsupportedEncodingException {
         MimeMessage message = gmailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
-        String randomBillNumber = Math.round((Math.random() * 89999 + 10000)) + "";
-        System.out.println(randomBillNumber);
         helper.setFrom("deprop.contact@gmail.com", "DepropStu");
         helper.setTo(email);
-        helper.setSubject("Xác nhận đơn hàng#" + randomBillNumber);
+        helper.setSubject("Xác nhận đơn hàng#" + orderId);
         helper.setText(template, true);
         gmailSender.send(message);
     }

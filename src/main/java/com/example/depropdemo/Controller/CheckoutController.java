@@ -61,9 +61,11 @@ public class CheckoutController {
 
     // Endpoint to handle adding order details
     @PostMapping("/add-to-cart")
-    public ResponseEntity<String> addToCart(@RequestBody OrderRequestDTO orderRequestDTO) {
+    public ResponseEntity<String> addToCart(@RequestBody OrderRequestDTO orderRequestDTO, HttpSession session) {
+        session.setAttribute("OrderRequestDT", orderRequestDTO);
+        session.setAttribute("customer1", orderRequestDTO.getCustomerData());
         orderDetailService.processOrder(orderRequestDTO);
-        return ResponseEntity.ok("Order processed successfully");
+        return ResponseEntity.ok("Added to cart successfully");
     }
 
     @PostMapping("/create-payment-link")
@@ -89,6 +91,7 @@ public class CheckoutController {
                 itemList.add(item);
                 totalPrice += (price * quantity) * (rentDay - 1) + 50000;
             }
+            orderDetailService.processOrder(orderRequestDTO);
             PaymentData paymentData = new PaymentData(orderCode, totalPrice, description,
                     itemList, cancelUrl, returnUrl);
             JsonNode data = payOS.createPaymentLink(paymentData);

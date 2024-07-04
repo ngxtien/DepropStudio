@@ -136,10 +136,31 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
         if (paymentMethod === "cash") {
-            sendCartDataToServer(cartData, startDate, endDate, customerData);
-            localStorage.clear();
-            clearCart();
-            window.location.href = "/order-success-cash";
+            fetch('/check-out/add-to-cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ cartData, startDate, endDate, customerData })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                    throw new Error('Failed to add to cart');
+                })
+                .then(data => {
+                    if (data.trim() === "Added to cart successfully") {
+                        localStorage.clear();
+                        clearCart();
+                        window.location.href = "/order-success-cash";
+                    } else {
+                        console.error('Unknown response:', data);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding to cart:', error);
+                });
         } else if (paymentMethod === "tpbank") {
             fetch('/check-out/create-payment-link', {
                 method: 'POST',
@@ -155,6 +176,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     throw new Error('Failed to create payment link');
                 })
                 .then(data => {
+                    localStorage.clear();
+                    clearCart();
                     window.location.href = data.checkoutUrl;
                 })
                 .catch(error => {

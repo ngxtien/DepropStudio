@@ -1,7 +1,9 @@
 package com.example.depropdemo.Service;
 
 import com.example.depropdemo.Dao.CustomerOrderRepository;
+import com.example.depropdemo.Model.Customer;
 import com.example.depropdemo.Model.CustomerOrder;
+import com.example.depropdemo.Model.DTO.CustomerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +30,10 @@ public class CustomerOrderService {
     public CustomerOrder saveOrUpdateCustomerOrder(CustomerOrder customerOrder) {
         return customerOrderRepository.save(customerOrder);
     }
-
+    public Integer getOrderId(){
+        List<CustomerOrder> orderId = getAllCustomerOrders();
+        return orderId.get(orderId.size() - 1).getOrderId();
+    }
     public void deleteCustomerOrderById(Long id) {
         customerOrderRepository.deleteById(id);
     }

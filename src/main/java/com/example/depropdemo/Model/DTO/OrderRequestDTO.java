@@ -20,15 +20,6 @@ public class OrderRequestDTO {
         this.customerData = customerData;
     }
 
-
-    //    public Customer getCustomer() {
-//        return customerData;
-//    }
-
-//    public void setCustomer(Customer customer) {
-//        this.customerData = customer;
-//    }
-
     public List<OrderDetailDTO> getCartData() {
         return cartData;
     }
@@ -54,11 +45,8 @@ public class OrderRequestDTO {
     }
 
     public int calculateDurationInDays() {
-        // Parse the dates from string to LocalDate
         LocalDate start = LocalDate.parse(startDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
-        // Calculate the number of days between startDate and endDate
         return (int) ChronoUnit.DAYS.between(start, end);
     }
 }

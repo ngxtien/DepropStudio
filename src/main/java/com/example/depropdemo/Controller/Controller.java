@@ -70,11 +70,6 @@ public class Controller {
         return "user/index";
     }
 
-    @GetMapping("/order-success-cash")
-    public String User_ordersuccess(){
-        return "user/order-success";
-    }
-
     @GetMapping("/policy")
     public String User_policy(){
         return "user/policy";

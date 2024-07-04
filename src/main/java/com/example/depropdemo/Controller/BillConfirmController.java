@@ -1,10 +1,13 @@
 package com.example.depropdemo.Controller;
 
 import com.example.depropdemo.Model.Customer;
+import com.example.depropdemo.Model.CustomerOrder;
 import com.example.depropdemo.Model.DTO.CustomerDTO;
 import com.example.depropdemo.Model.DTO.OrderDetailDTO;
 import com.example.depropdemo.Model.DTO.OrderRequestDTO;
 import com.example.depropdemo.Model.Products;
+import com.example.depropdemo.Service.CustomerOrderService;
+import com.example.depropdemo.Service.CustomerService;
 import com.example.depropdemo.Service.ProductsService;
 import com.example.depropdemo.mail.BillConfirmTemplate;
 import com.example.depropdemo.mail.EmailSender;
@@ -34,16 +37,53 @@ public class BillConfirmController {
     @Autowired
     private ProductsService productsService;
 
-    @RequestMapping(value = "/order-success-bank", method = RequestMethod.GET)
-    public String orderSuccess(HttpSession session) {
-        OrderRequestDTO OrderRequestDTO = (OrderRequestDTO) session.getAttribute("OrderRequestDTO");
-        CustomerDTO customer = (CustomerDTO) session.getAttribute("customer");
-        if (customer != null) {
-            int endDay = OrderRequestDTO.calculateDurationInDays();
-            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(OrderRequestDTO.getCartData(), endDay - 1));
+    @Autowired
+    private CustomerOrderService customerOrderService;
+
+    @GetMapping("/order-success-cash")
+    public String User_ordersuccess(HttpSession session, Model model) {
+        OrderRequestDTO OrderRequestDT = (OrderRequestDTO) session.getAttribute("OrderRequestDT");
+        CustomerDTO customer = (CustomerDTO) session.getAttribute("customer1");
+        if (OrderRequestDT == null) {
+            return "redirect:/404";
+        }
+        if (customer.getEmail() != null) {
+            int getOrderId = customerOrderService.getOrderId();
+            System.out.println(getOrderId);
+            model.addAttribute("order_code", getOrderId);
+            int endDay = OrderRequestDT.calculateDurationInDays();
+            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(OrderRequestDT.getCartData(), endDay - 1), getOrderId);
             Thread emailThread = new Thread(() -> {
                 try {
-                    gmailSender.send(template, customer.getEmail());
+                    gmailSender.send(template, customer.getEmail(), getOrderId);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            emailThread.start();
+            session.removeAttribute("customer1");
+            session.removeAttribute("OrderRequestDT");
+            return "user/order-success";
+        }
+        return "redirect:/404";
+    }
+
+    @RequestMapping(value = "/order-success-bank", method = RequestMethod.GET)
+    public String orderSuccess(HttpSession session, Model model) {
+        OrderRequestDTO OrderRequestDTO = (OrderRequestDTO) session.getAttribute("OrderRequestDTO");
+        CustomerDTO customer = (CustomerDTO) session.getAttribute("customer");
+        if (OrderRequestDTO == null) {
+            return "redirect:/404";
+        }
+        if (customer.getEmail() != null) {
+            int getOrderId = customerOrderService.getOrderId();
+            System.out.println(getOrderId);
+            model.addAttribute("order_code", getOrderId);
+            int endDay = OrderRequestDTO.calculateDurationInDays();
+            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(OrderRequestDTO.getCartData(), endDay - 1), 1);
+            Thread emailThread = new Thread(() -> {
+                try {
+                    gmailSender.send(template, customer.getEmail(), 1);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
