@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const startDate = localStorage.getItem("startDate");
     const endDate = localStorage.getItem("endDate");
     const dayCount = localStorage.getItem("dayCount");
-    const deliveryFee = 5000; //Shipping fee
-
-    // console.log("Start Date:", startDate);
-    // console.log("End Date:", endDate);
-    // console.log("Day Count:", dayCount);
+    const deliveryFee = 50000;
 
     function formatPrice(price) {
         const formattedPrice = price.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -123,94 +119,87 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
 
         const formData = new FormData(checkoutForm);
-        const customerData = {
-            firstname: formData.get('firstname'),
-            lastname: formData.get('lastname'),
-            phonenumber: formData.get('phonenumber'),
-            address: formData.get('address'),
-            email: formData.get('email'),
-            company: formData.get('company'),
-            note: formData.get('note'),
-            vat: document.getElementById('VATCheck').checked,
-            totalprice: localStorage.getItem("totalPayment")
-        };
-        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
-        if (paymentMethod === "cash") {
-            fetch('/check-out/add-to-cart', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ cartData, startDate, endDate, customerData })
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.text();
-                    }
-                    throw new Error('Failed to add to cart');
+        const requiredFields = ['firstname', 'lastname', 'phonenumber', 'address', 'email'];
+        let valid = true;
+
+        requiredFields.forEach(field => {
+            if (!formData.get(field)) {
+                valid = false;
+            }
+        });
+
+        if (!cartData || cartData.length === 0) {
+            valid = false;
+        }
+
+
+        if (valid) {
+            const customerData = {
+                firstname: formData.get('firstname'),
+                lastname: formData.get('lastname'),
+                phonenumber: formData.get('phonenumber'),
+                address: formData.get('address'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                note: formData.get('note'),
+                vat: document.getElementById('VATCheck').checked,
+                totalprice: localStorage.getItem("totalPayment")
+            };
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+            if (paymentMethod === "cash") {
+                fetch('/check-out/add-to-cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({cartData, startDate, endDate, customerData})
                 })
-                .then(data => {
-                    if (data.trim() === "Added to cart successfully") {
+                    .then(response => {
+                        if (response.ok) {
+                            return response.text();
+                        }
+                        throw new Error('Failed to add to cart');
+                    })
+                    .then(data => {
+                        if (data.trim() === "Added to cart successfully") {
+                            localStorage.clear();
+                            clearCart();
+                            window.location.href = "/order-success-cash";
+                        } else {
+                            console.error('Unknown response:', data);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error adding to cart:', error);
+                    });
+            }
+            else if (paymentMethod === "tpbank") {
+                fetch('/check-out/create-payment-link', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({cartData, startDate, endDate, customerData})
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('Failed to create payment link');
+                    })
+                    .then(data => {
                         localStorage.clear();
                         clearCart();
-                        window.location.href = "/order-success-cash";
-                    } else {
-                        console.error('Unknown response:', data);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error adding to cart:', error);
-                });
-        } else if (paymentMethod === "tpbank") {
-            fetch('/check-out/create-payment-link', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ cartData, startDate, endDate, customerData })
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    throw new Error('Failed to create payment link');
-                })
-                .then(data => {
-                    localStorage.clear();
-                    clearCart();
-                    window.location.href = data.checkoutUrl;
-                })
-                .catch(error => {
-                    console.error('Error creating payment link:', error);
-                });
+                        window.location.href = data.checkoutUrl;
+                    })
+                    .catch(error => {
+                        console.error('Error creating payment link:', error);
+                    });
+            }
         }
     });
     loadCartData();
 
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var vatCheck = document.getElementById('VATCheck');
-    vatCheck.checked = false;
-    // console.log(vatCheck)
-});
-
-//
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Kiểm tra xem có radio button nào đã được chọn hay chưa
-//     var checkedRadio = document.querySelector('input[name="paymentMethod"]:checked');
-//     // console.log(checkedRadio.value)
-// });
-
-
-// Đợi cho đến khi DOM đã được load hoàn toàn
-$(document).ready(function() {
-    // Xử lý sự kiện khi click vào label của radio button
-    $('.accordion-button').click(function() {
-        var paymentMethod = $(this).find('input[type="radio"]').val();
-        // console.log("Selected payment method:", paymentMethod);
-    });
 });
 
 

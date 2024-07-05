@@ -12,9 +12,8 @@ $(function () {
     var startDate = $("#startdate").data("daterangepicker").startDate;
     var endDate = $("#enddate").data("daterangepicker").endDate;
 
-    // Ghi nhật ký các ngày bắt đầu và kết thúc vào bảng điều khiển
-    console.log("Start Date:", startDate.format("DD/MM/YYYY"));
-    console.log("End Date:", endDate.format("DD/MM/YYYY"));
+    // console.log("Start Date:", startDate.format("DD/MM/YYYY"));
+    // console.log("End Date:", endDate.format("DD/MM/YYYY"));
 
     localStorage.setItem("startDate", startDate.format("DD/MM/YYYY"));
     localStorage.setItem("endDate", endDate.format("DD/MM/YYYY"));
@@ -84,15 +83,25 @@ $(function () {
 
   updateDayCount(startDate, endDate);
 
-  // Thiết lập sự kiện cho nút xác nhận
-  $("#continueBtn").click(function () {
-    var dayCount = parseInt($("#dayCount").text());
-    if (dayCount > 0) {
-      window.location.href = "/check-out";
-    } else {
-      $("#feedbackMsg")
-          .html('<div class="feedback-date">Số ngày thuê phải lớn hơn 0.</div>')
-          .show();
-    }
-  });
+  //valid
+  let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+  let valid = true;
+  if (!cartData || cartData.length === 0) {
+    valid = false;
+  }
+
+
+  if (valid){
+      // Thiết lập sự kiện cho nút xác nhận
+    $("#continueBtn").click(function () {
+      var dayCount = parseInt($("#dayCount").text());
+      if (dayCount > 0) {
+        window.location.href = "/check-out";
+      } else {
+        $("#feedbackMsg")
+            .html('<div class="feedback-date">Số ngày thuê phải lớn hơn 0.</div>')
+            .show();
+      }
+    });
+}
 });
