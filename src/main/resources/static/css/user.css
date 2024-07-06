@@ -980,7 +980,7 @@ ul {
 }
 @media (max-width: 576px) {
   .our_offer .offer_text h2 {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
@@ -4759,6 +4759,11 @@ html, body {
 }
 .footer_part .footlink_part {
   padding: 50px;
+}
+@media (max-width: 576px) {
+  .footer_part .footlink_part {
+    padding: 50px 20px;
+  }
 }
 .footer_part .navbar {
   padding: 0 15px;
