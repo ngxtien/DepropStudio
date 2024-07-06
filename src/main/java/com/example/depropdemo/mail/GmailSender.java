@@ -21,7 +21,7 @@ public class GmailSender implements EmailSender{
         MimeMessageHelper helper = new MimeMessageHelper(message);
         helper.setFrom("deprop.contact@gmail.com", "DepropStu");
         helper.setTo(email);
-        helper.setSubject("Xác nhận đơn hàng#" + orderId);
+        helper.setSubject("Xác nhận đơn hàng #" + orderId);
         helper.setText(template, true);
         gmailSender.send(message);
     }
