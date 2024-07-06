@@ -47,6 +47,7 @@
                     <a href="/admin/product.html" class="nav-item nav-link"><i class="fa fa-box me-2"></i>Sản phẩm</a>
                     <a href="/admin/add_product.html" class="nav-item nav-link active"><i class="fa fa-plus-circle me-2"></i>Tạo sản phẩm</a>
                     <a href="/admin/edit_product.html" class="nav-item nav-link"><i class="fa fa-edit me-2"></i>Chỉnh sửa sản phẩm</a>
+                    <a href="/admin/category.html" class="nav-item nav-link"><i class="fa fa-book me-2"></i>Tạo danh mục</a>
                 </div>
             </nav>
         </div>
@@ -79,66 +80,49 @@
 
 
             <!-- Create Product Form Start -->
-            <div class="container-fluid pt-4 px-4">
+            <form class="container-fluid pt-4 px-4 needs-validation" novalidate>
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-7">
                         <div class="bg-light rounded h-100 p-4">
                                 <div class="mb-4">
                                     <label for="category" class="form-label me-2">Danh mục</label>
-                                    <button href="#" class="btn btn-sm btn-link" data-bs-toggle="modal" data-bs-target="#modalCategory">Tạo mới</button>
-                                    <div class="modal fade" id="modalCategory" tabindex="-1" role="dialog" aria-labelledby="modalCategory" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <h5 class="modal-title" id="exampleModalLongTitle">Tạo danh mục mới</h5>
-                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                              </button>
-                                            </div>
-                                            <div class="modal-body">
-                                              <form>
-                                                <div class="mb-4">
-                                                    <label for="categoryName" class="form-label">Tên danh mục</label>
-                                                    <input class="form-control" id="categoryName" placeholder="Nhập tên danh mục">
-                                                </div>
-                                              </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                                              <button type="button" class="btn btn-primary">Tạo mới</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <select class="form-select" aria-label="Category">
-                                        <option selected>Chọn danh mục</option>
+                                    <select class="form-select" aria-label="Category" required>
+                                        <option selected disabled value="">Chọn danh mục</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                         <option value="3">Three</option>
                                     </select>
+                                    <div class="invalid-feedback">
+                                        Vui lòng chọn danh mục.
+                                    </div>
                                 </div>
 
                                 <div class="mb-4">
                                     <label for="productName" class="form-label">Tên sản phẩm</label>
-                                    <input class="form-control" id="productName" placeholder="Nhập tên sản phẩm">
+                                    <input class="form-control" id="productName" placeholder="Nhập tên sản phẩm" required>
+                                    <div class="invalid-feedback">
+                                        Vui lòng nhập tên sản phẩm.
+                                    </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="productDescription" class="form-label">Mô tả sản phẩm</label>
-                                    <textarea class="form-control" placeholder="Nhập mô tả"
-                                        id="floatingTextarea" style="height: 150px;"></textarea>
+                                    <label for="productDescription" class="form-label">Mô tả sản phẩm (tuỳ chọn)</label>
+                                    <textarea class="form-control" placeholder="Nhập mô tả" id="floatingTextarea" style="height: 150px;"></textarea>
                                 </div>
                                 
                                 <div class="mb-4">
                                     <label for="formFile" class="form-label">Ảnh sản phẩm</label>
                                     <label for="input-file" class="form-control" id="drop-area">
-                                        <input  type="file" accept="image/*" id="input-file" hidden>
                                         <div id="img-view">
                                             <i class="fa-solid fa-cloud-arrow-up fa-5x"></i>
                                             <p> Drag and drop or click here<br>to upload image</p>
                                             <span>Upload any image from desktop</span>
                                         </div>
                                     </label>
-                                    
+                                    <input type="file" accept="image/*" id="input-file" hidden required>
+                                    <div class="invalid-feedback">
+                                        Vui lòng chọn ảnh sản phẩm.
+                                    </div>
                                 </div>
                         </div>
                     </div>
@@ -147,32 +131,42 @@
                         <div class="bg-light rounded h-100 p-4">
                             <div class="mb-4">
                                 <label for="productQuantity" class="form-label">Số lượng</label>
-                                <input type="number" class="form-control" id="productQuantity" placeholder="Nhập số lượng" min="0">
+                                <input type="number" class="form-control" id="productQuantity" placeholder="Nhập số lượng" min="0" required>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập số lượng.
+                                </div>
                             </div>
                             <div class="mb-4">
                                 <label for="productPrice" class="form-label">Đơn giá</label>
                                 <div class="input-group">
                                     <span class="input-group-text">đ</span>
-                                    <input type="text" inputmode="numeric" class="form-control" aria-label="Amount (to the nearest dong)">
+                                    <input type="text" inputmode="numeric" class="form-control" aria-label="Amount (to the nearest dong)" required>
                                     <span class="input-group-text">.000</span>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Vui lòng nhập đơn giá.
                                 </div>
                             </div>
                             
                             <div class="mb-4">
                                 <label for="productStatus" class="form-label me-2">Tình trạng</label>
-                                <select class="form-select" aria-label="Status">
-                                    <option selected>Chọn tình trạng</option>
+                                <select class="form-select" aria-label="Status" required>
+                                    <option selected disabled value="">Chọn tình trạng</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
+                                <div class="invalid-feedback">
+                                    Vui lòng chọn tình trạng.
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary me-2">Tạo sản phẩm</button>
                             <button type="submit" class="btn btn-outline-danger">Huỷ</button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
+            
             <!-- Create Product Form End -->
 
 
@@ -201,6 +195,7 @@
 
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
+    <script src="/js/form-validation.js"></script>
     <script src="/js/drop-image.js"></script>
 </body>
 

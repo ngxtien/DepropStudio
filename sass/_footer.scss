@@ -8,6 +8,9 @@
 	}
 	.footlink_part {
 		padding: 50px;
+		@media #{$small_mobile} {
+			padding: 50px 20px;
+		}
 	}
 	
 	.navbar {
