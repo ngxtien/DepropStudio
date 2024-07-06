@@ -6,20 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e5267cf5-896f-4762-be63-32a11ccea8e4" name="Changes" comment="Loading...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/BillConfirmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CheckoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Dao/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Model/DTO/OrderRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Model/DTO/OrderRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Service/CustomerOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Service/CustomerOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/Service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirmTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/BillConfirmTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/EmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/EmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/GmailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/depropdemo/mail/GmailSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/addtocart-checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/addtocart-checkout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/order-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/order-success.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +156,7 @@
       <workItem from="1719892283652" duration="15862000" />
       <workItem from="1719995695290" duration="3362000" />
       <workItem from="1720011079839" duration="9950000" />
-      <workItem from="1720062083283" duration="7901000" />
+      <workItem from="1720062083283" duration="8318000" />
     </task>
     <task id="LOCAL-00001" summary="Loading...">
       <option name="closed" value="true" />
@@ -204,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719907801644</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Loading...">
+      <option name="closed" value="true" />
+      <created>1720070952327</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720070952327</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -52,7 +52,7 @@ public class BillConfirmController {
             System.out.println(getOrderId);
             model.addAttribute("order_code", getOrderId);
             int endDay = OrderRequestDT.calculateDurationInDays();
-            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(OrderRequestDT.getCartData(), endDay - 1), getOrderId);
+            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(OrderRequestDT.getCartData(), endDay - 1), getOrderId, "Tiền mặt");
             Thread emailThread = new Thread(() -> {
                 try {
                     gmailSender.send(template, customer.getEmail(), getOrderId);
@@ -80,10 +80,10 @@ public class BillConfirmController {
             System.out.println(getOrderId);
             model.addAttribute("order_code", getOrderId);
             int endDay = OrderRequestDTO.calculateDurationInDays();
-            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(OrderRequestDTO.getCartData(), endDay - 1), 1);
+            String template = BillConfirmTemplate.getTemplate(customer, getDay(), getDayExp(), generateProductHtml(OrderRequestDTO.getCartData(), endDay - 1), getOrderId, "Chuyển khoản ngân hàng");
             Thread emailThread = new Thread(() -> {
                 try {
-                    gmailSender.send(template, customer.getEmail(), 1);
+                    gmailSender.send(template, customer.getEmail(), getOrderId);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
