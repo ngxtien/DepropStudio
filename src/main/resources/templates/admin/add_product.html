@@ -80,17 +80,20 @@
 
 
             <!-- Create Product Form Start -->
-            <form class="container-fluid pt-4 px-4 needs-validation" novalidate>
+            <form class="container-fluid pt-4 px-4 needs-validation" novalidate th:action="@{/dashboard/add-product}" th:object="${product}" method="post" enctype="multipart/form-data">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-7">
                         <div class="bg-light rounded h-100 p-4">
                                 <div class="mb-4">
-                                    <label for="category" class="form-label me-2">Danh mục</label>
-                                    <select class="form-select" aria-label="Category" required>
-                                        <option selected disabled value="">Chọn danh mục</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <label for="Category" class="form-label me-2">Danh mục</label>
+                                    <select class="form-select" aria-label="Category" id="Category" required th:field="*{category.categoryId}">
+                                        <option  value="" disabled selected>Chọn danh mục</option>
+                                        <option th:each="category : ${categories}"
+                                                th:value="${category.categoryId}"
+                                                th:text="${category.categoryName}"></option>
+<!--                                        <option value="1">One</option>-->
+<!--                                        <option value="2">Two</option>-->
+<!--                                        <option value="3">Three</option>-->
                                     </select>
                                     <div class="invalid-feedback">
                                         Vui lòng chọn danh mục.
@@ -99,7 +102,9 @@
 
                                 <div class="mb-4">
                                     <label for="productName" class="form-label">Tên sản phẩm</label>
-                                    <input class="form-control" id="productName" placeholder="Nhập tên sản phẩm" required>
+                                    <input class="form-control" id="productName" placeholder="Nhập tên sản phẩm" required
+                                           th:field="*{name}"
+                                    >
                                     <div class="invalid-feedback">
                                         Vui lòng nhập tên sản phẩm.
                                     </div>
@@ -107,7 +112,9 @@
 
                                 <div class="mb-3">
                                     <label for="productDescription" class="form-label">Mô tả sản phẩm (tuỳ chọn)</label>
-                                    <textarea class="form-control" placeholder="Nhập mô tả" id="floatingTextarea" style="height: 150px;"></textarea>
+                                    <textarea class="form-control" placeholder="Nhập mô tả" id="productDescription" style="height: 150px;"
+                                              th:field="*{description}"
+                                    ></textarea>
                                 </div>
                                 
                                 <div class="mb-4">
@@ -119,7 +126,7 @@
                                             <span>Upload any image from desktop</span>
                                         </div>
                                     </label>
-                                    <input type="file" accept="image/*" id="input-file" hidden required>
+                                    <input type="file" accept="image/*" id="input-file" name="imaged" hidden required>
                                     <div class="invalid-feedback">
                                         Vui lòng chọn ảnh sản phẩm.
                                     </div>
@@ -131,7 +138,8 @@
                         <div class="bg-light rounded h-100 p-4">
                             <div class="mb-4">
                                 <label for="productQuantity" class="form-label">Số lượng</label>
-                                <input type="number" class="form-control" id="productQuantity" placeholder="Nhập số lượng" min="0" required>
+                                <input type="number" class="form-control" id="productQuantity" placeholder="Nhập số lượng" min="0" required
+                                       th:field="*{quantity}">
                                 <div class="invalid-feedback">
                                     Vui lòng nhập số lượng.
                                 </div>
@@ -140,7 +148,8 @@
                                 <label for="productPrice" class="form-label">Đơn giá</label>
                                 <div class="input-group">
                                     <span class="input-group-text">đ</span>
-                                    <input type="text" inputmode="numeric" class="form-control" aria-label="Amount (to the nearest dong)" required>
+                                    <input type="text" inputmode="numeric" id="productPrice" class="form-control" aria-label="Amount (to the nearest dong)" required
+                                           th:field="*{price}">
                                     <span class="input-group-text">.000</span>
                                 </div>
                                 <div class="invalid-feedback">
@@ -150,11 +159,15 @@
                             
                             <div class="mb-4">
                                 <label for="productStatus" class="form-label me-2">Tình trạng</label>
-                                <select class="form-select" aria-label="Status" required>
+                                <select class="form-select" aria-label="Status" id="productStatus" required th:field="*{status}">
                                     <option selected disabled value="">Chọn tình trạng</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="NEW_ARRIVAL">Hàng mới về</option>
+                                    <option value="OUT_OF_STOCK">Hết hàng</option>
+                                    <option value="IN_STOCK">Còn hàng</option>
+                                    <option value="FEATURED">Hàng nổi bật</option>
+<!--                                    <option value="1">One</option>-->
+<!--                                    <option value="2">Two</option>-->
+<!--                                    <option value="3">Three</option>-->
                                 </select>
                                 <div class="invalid-feedback">
                                     Vui lòng chọn tình trạng.

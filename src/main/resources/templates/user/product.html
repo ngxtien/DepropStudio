@@ -111,7 +111,7 @@
         <div class="col-lg-6">
           <div class="s_product_text">
             <div class="product_category">
-              <a href="#">Category</a>
+              <a href="#" th:text="${product.category.categoryName}">Category</a>
             </div>
             <div class="product_name" th:text="${product.name}"></div>
             <div class="product_price current_prefix">
@@ -119,7 +119,9 @@
             </div>
             <ul class="list">
               <li>
-                <a href="#"> <span>Tình trạng:</span>In Stock</a>
+                <a> Kho:
+                    <span th:text="${product.quantity}"></span>
+                </a>
               </li>
             </ul>
             <p th:text="${product.description}">
@@ -261,167 +263,24 @@
             <div class="col-lg-12">
                 <div class="product_list_slider owl-carousel owl-theme">
                     <div class="single_product_list_slider">
-                        <div class="row align-items-center justify-content-between">
+                        <div class="row align-items-center justify-content-between" th:each="product : ${product}">
                             <div class="col-lg-3 col-sm-6 col-6">
                               <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
+                                <a th:href="@{'/product/' + ${product.id}}">
+                                    <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
+                                    <span class="product_tag"
+                                          th:text="${product.status.displayName}">Nổi bật</span>
                                 </a>
-                                
+
                                 <div class="single_product_text">
                                     <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
+                                        <a class="text-muted-1 category-link" href="#" data-category="furniture" th:text="${product.category.categoryName}"></a>
                                     </h5>
                                     <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
+                                        <a th:href="@{'/product/' + ${product.id}}" th:text="${product.name}"></a>
                                     </h4>
                                     <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-6">
-                              <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-6">
-                              <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-6">
-                              <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single_product_list_slider">
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-lg-3 col-sm-6 col-6">
-                              <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-6">
-                              <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-6">
-                              <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
-                                    </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-6 col-6">
-                              <div class="single_product_item">
-                                <a href="/single-product">
-                                    <img src="/images/product/item.jpg">
-                                    <span class="product_tag">Nổi bật</span>
-                                </a>
-                                
-                                <div class="single_product_text">
-                                    <h5 class="product_category">
-                                        <a class="text-muted-1" href="#">Category</a>
-                                    </h5>
-                                    <h4 class="product_title">
-                                        <a href="/single-product">Product Name</a>
-                                    </h4>
-                                    <div class="product_price current_prefix">
-                                        100
+                                        <a th:text="${product.price}"></a>
                                     </div>
                                 </div>
                               </div>

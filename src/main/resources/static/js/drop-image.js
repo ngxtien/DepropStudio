@@ -20,3 +20,20 @@ dropArea.addEventListener("drop", function(e){
     inputFile.files = e.dataTransfer.files;
     uploadImage();
 });
+
+function previewImage(event) {
+    var input = event.target;
+    var reader = new FileReader();
+
+    reader.onload = function(){
+        var imgPreview = document.getElementById('image-preview');
+        imgPreview.style.display = 'block'; // Hiển thị thẻ img xem trước
+
+        var currentImg = document.getElementById('imaged');
+        currentImg.style.display = 'none'; // Ẩn ảnh hiện tại
+
+        imgPreview.src = reader.result;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+}

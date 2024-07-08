@@ -251,154 +251,18 @@
                         <div class="single_product_item">
                             <a th:href="@{'/product/' + ${product.id}}">
                                 <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
-                                <span class="product_tag">Nổi bật</span>
+                                <span class="product_tag"
+                                        th:text="${product.status.displayName}">Nổi bật</span>
                             </a>
                             <div class="single_product_text">
                                 <h5 class="product_category">
-                                    <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                                    <a class="text-muted-1 category-link" href="#" data-category="furniture" th:text="${product.category.categoryName}"></a>
                                 </h5>
                                 <h4 class="product_title" >
                                     <a th:href="@{'/product/' + ${product.id}}" th:text="${product.name}"></a>
                                 </h4>
                                 <div class="product_price current_prefix">
                                     <a th:text="${product.price}"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter furniture blue classic">
-                        <div class="single_product_item">
-                            <a href="/single-product">
-                                <img src="/images/product/item.jpg">
-                            </a>
-                            
-                            <div class="single_product_text">
-                                <h5 class="product_category">
-                                    <a class="text-muted-1" href="#">furniture</a>
-                                </h5>
-                                <h4 class="product_title">
-                                    <a href="/single-product">blue classic</a>
-                                </h4>
-                                <div class="product_price current_prefix">
-                                    20
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter tree special green natural">
-                        <div class="single_product_item">
-                            <a href="/single-product">
-                                <img src="/images/product/item.jpg">
-                                <span class="product_tag">Nổi bật</span>
-                            </a>
-                            
-                            <div class="single_product_text">
-                                <h5 class="product_category">
-                                    <a class="text-muted-1" href="#">tree</a>
-                                </h5>
-                                <h4 class="product_title">
-                                    <a href="/single-product">green natural</a>
-                                </h4>
-                                <div class="product_price current_prefix">
-                                    300
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter lamp minimalism black">
-                        <div class="single_product_item">
-                            <a href="/single-product">
-                                <img src="/images/product/item.jpg">
-                            </a>
-                            
-                            <div class="single_product_text">
-                                <h5 class="product_category">
-                                    <a class="text-muted-1" href="#">lamp</a>
-                                </h5>
-                                <h4 class="product_title">
-                                    <a href="/single-product">minimalism black</a>
-                                </h4>
-                                <div class="product_price current_prefix">
-                                    30
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter event special modern red">
-                        <div class="single_product_item">
-                            <a href="/single-product">
-                                <img src="/images/product/item.jpg">
-                                <span class="product_tag">Nổi bật</span>
-                            </a>
-                            
-                            <div class="single_product_text">
-                                <h5 class="product_category">
-                                    <a class="text-muted-1" href="#">event</a>
-                                </h5>
-                                <h4 class="product_title">
-                                    <a href="/single-product">modern red</a>
-                                </h4>
-                                <div class="product_price current_prefix">
-                                    100
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter accessory special modern blue">
-                        <div class="single_product_item">
-                            <a href="/single-product">
-                                <img src="/images/product/item.jpg">
-                                <span class="product_tag">Nổi bật</span>
-                            </a>
-                            
-                            <div class="single_product_text">
-                                <h5 class="product_category">
-                                    <a class="text-muted-1" href="#">accessory</a>
-                                </h5>
-                                <h4 class="product_title">
-                                    <a href="/single-product">modern blue</a>
-                                </h4>
-                                <div class="product_price current_prefix">
-                                    100
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter walldecor special natural black">
-                        <div class="single_product_item">
-                            <a href="/single-product">
-                                <img src="/images/product/item.jpg">
-                                <span class="product_tag">Nổi bật</span>
-                            </a>
-                            
-                            <div class="single_product_text">
-                                <h5 class="product_category">
-                                    <a class="text-muted-1" href="#">walldecor</a>
-                                </h5>
-                                <h4 class="product_title">
-                                    <a href="/single-product">natural black</a>
-                                </h4>
-                                <div class="product_price current_prefix">
-                                    100
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter furniture minimalism blue">
-                        <div class="single_product_item">
-                            <a href="/single-product">
-                                <img src="/images/product/item.jpg">
-                            </a>
-                            
-                            <div class="single_product_text">
-                                <h5 class="product_category">
-                                    <a class="text-muted-1" href="#">furniture</a>
-                                </h5>
-                                <h4 class="product_title">
-                                    <a href="/single-product">minimalism blue</a>
-                                </h4>
-                                <div class="product_price current_prefix">
-                                    200
                                 </div>
                             </div>
                         </div>

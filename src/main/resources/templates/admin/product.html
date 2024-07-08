@@ -42,7 +42,7 @@
                 <a href="/dashboard" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary">DeAdmin</h3>
                 </a>
-                <div class="navbar-nav w-100">
+                <div class="navbar-nav w-100" >
                     <a href="/dashboard" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Dashboard</a>
                     <a href="/dashboard/product" class="nav-item nav-link active"><i class="fa fa-box me-2"></i>Sản phẩm</a>
                     <a href="/dashboard/add-product" class="nav-item nav-link"><i class="fa fa-plus-circle me-2"></i>Tạo sản phẩm</a>
@@ -103,42 +103,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td>1</td>
-                                    <td>Bình hoa</td>
-                                    <td>Trang trí</td>
-                                    <td>1.000</td>
-                                    <td><span class="btn btn-sm btn-warning rounded-pill">Sắp hết</span></td>
-                                    <td>1</td>
+                                <tr th:each="product : ${product}">
+                                    <td th:value="${product.id}"></td>
+                                    <td th:text="${product.id}"></td>
+                                    <td th:text="${product.name}"></td>
+                                    <td th:text="${product.category.categoryName}"></td>
+                                    <td th:text="${product.price}"></td>
+                                    <td><span class="btn btn-sm btn-warning rounded-pill"
+                                              th:text="${product.status.displayName}"></span></td>
+                                    <td th:text="${product.quantity}"></td>
                                     <td>
-                                        <a href=""><i class="fa fa-pen-to-square fa m-1"></i></a>
+                                        <a th:href="@{'/dashboard/update-product/' + ${product.id}}"><i class="fa fa-pen-to-square fa m-1"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>2</td>
-                                    <td>Cái ghế</td>
-                                    <td>Trang trí</td>
-                                    <td>1.000</td>
-                                    <td><span class="btn btn-sm btn-danger rounded-pill">Hết hàng</span></td>
-                                    <td>2</td>
-                                    <td>
-                                        <a href=""><i class="fa fa-pen-to-square fa m-1"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>3</td>
-                                    <td>Cái bàn</td>
-                                    <td>Trang trí</td>
-                                    <td>1.000</td>
-                                    <td><span class="btn btn-sm btn-success rounded-pill">Còn hàng</span></td>
-                                    <td>3</td>
-                                    <td>
-                                        <a href=""><i class="fa fa-pen-to-square fa m-1"></i></a>
-                                    </td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>

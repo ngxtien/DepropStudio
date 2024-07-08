@@ -29,4 +29,8 @@ public class ProductsService {
     public void deleteProduct(Long id) {
         productsRepository.deleteById(id);
     }
+//
+//    public String getStatus(){
+//        return productsRepository.f
+//    }
 }

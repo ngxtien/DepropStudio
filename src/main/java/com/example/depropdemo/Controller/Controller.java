@@ -2,6 +2,7 @@ package com.example.depropdemo.Controller;
 
 import com.example.depropdemo.Model.Customer;
 import com.example.depropdemo.Model.Products;
+import com.example.depropdemo.Service.CategoryService;
 import com.example.depropdemo.Service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -15,6 +16,9 @@ public class Controller {
 
     @Autowired
     private ProductsService productsService;
+
+    @Autowired
+    private CategoryService categoryService;
 
 //////////         USER            ////////////////
 

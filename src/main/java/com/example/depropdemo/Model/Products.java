@@ -1,11 +1,11 @@
 package com.example.depropdemo.Model;
 
+import com.google.gson.annotations.SerializedName;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.aspectj.weaver.loadtime.definition.Definition;
 
 import java.util.List;
 
@@ -33,15 +33,29 @@ public class Products {
 
     private String description;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {
-            CascadeType.PERSIST, CascadeType.MERGE,
-            CascadeType.DETACH, CascadeType.REFRESH
-    })
-    @JoinTable(
-            name = "products_category",
-            joinColumns = @JoinColumn(name = "products_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id")
-    )
-    private List<Category> categories;
+    @Enumerated(EnumType.STRING)
+    private ProductStatus status;
+
+    public enum ProductStatus {
+        OUT_OF_STOCK("Hết Hàng"),
+        IN_STOCK("Còn Hàng"),
+        NEW_ARRIVAL("Hàng Mới Về"),
+        FEATURED("Nổi Bật");
+
+        private final String displayName;
+
+        ProductStatus(String displayName) {
+            this.displayName = displayName;
+        }
+
+        public String getDisplayName() {
+            return displayName;
+        }
+    }
+
+
 }

@@ -79,18 +79,19 @@
 
 
             <!-- Edit Product Form Start -->
-            <form class="container-fluid pt-4 px-4 needs-validation" novalidate>
+            <form class="container-fluid pt-4 px-4 needs-validation" novalidate th:action="@{/dashboard/update-product/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-7">
                         <div class="bg-light rounded h-100 p-4">
                                 <div class="mb-4">
                                     <label for="category" class="form-label me-2">Danh mục</label>
                                     <!-- Show Category by selected -->
-                                    <select class="form-select" aria-label="Category" required>
+                                    <select class="form-select" aria-label="Category" id="category" required
+                                            th:field="*{category.categoryId}">
                                         <option selected disabled value="">Chọn danh mục</option>
-                                        <option selected value="1">One</option> 
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option th:each="category : ${categories}"
+                                                th:value="${category.categoryId}"
+                                                th:text="${category.categoryName}"></option>
                                     </select>
                                     <div class="invalid-feedback">
                                         Vui lòng chọn danh mục.
@@ -100,7 +101,8 @@
                                 <div class="mb-4">
                                     <label for="productName" class="form-label">Tên sản phẩm</label>
                                     <!-- Show productName by value = "..." -->
-                                    <input class="form-control" id="productName" value="Sản phẩm 1" placeholder="Nhập tên sản phẩm" required>
+                                    <input class="form-control" id="productName" value="Sản phẩm 1" placeholder="Nhập tên sản phẩm" required
+                                           th:field="*{name}">
                                     <div class="invalid-feedback">
                                         Vui lòng nhập tên sản phẩm.
                                     </div>
@@ -110,19 +112,17 @@
                                     <label for="productDescription" class="form-label">Mô tả sản phẩm</label>
                                     <!-- Show productDescription here -->
                                     <textarea class="form-control" name="abcxyz" placeholder="Nhập mô tả"
-                                        id="productDescription" style="height: 150px;">This is a sample text.</textarea>
+                                        id="productDescription" style="height: 150px;"
+                                              th:field="*{description}"></textarea>
                                 </div>
                                 
                                 <div class="mb-4">
                                     <label for="formFile" class="form-label">Ảnh sản phẩm</label>
                                     <label for="input-file" class="form-control" id="drop-area">
-                                        <div id="img-view">
-                                            <i class="fa-solid fa-cloud-arrow-up fa-5x"></i>
-                                            <p>Drag and drop or click here<br>to upload image</p>
-                                            <span>Upload any image from desktop</span>
-                                        </div>
+                                        <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image" id="imaged" style="max-width: 300px; max-height: 300px"/>
+                                        <img id="image-preview" style="max-width: 600px; max-height: 600px; display: none;" />
                                     </label>
-                                    <input type="file" accept="image/*" id="input-file" hidden>
+                                    <input type="file" accept="image/*" id="input-file" name="image-update" hidden required onchange="previewImage(event)">
                                 </div>
                         </div>
                     </div>
@@ -131,7 +131,8 @@
                             <div class="mb-4">
                                 <label for="productQuantity" class="form-label">Số lượng</label>
                                 <!-- Show productQuantity by value = "..." -->
-                                <input type="number" class="form-control" id="productQuantity" value="1" placeholder="Nhập số lượng" min="0" required>
+                                <input type="number" class="form-control" id="productQuantity" value="1" placeholder="Nhập số lượng" min="0" required
+                                       th:field="*{quantity}">
                                 <div class="invalid-feedback">
                                     Vui lòng nhập số lượng.
                                 </div>
@@ -141,7 +142,8 @@
                                 <div class="input-group">
                                     <span class="input-group-text">đ</span>
                                     <!-- Show productPrice by value = "..." -->
-                                    <input type="text" class="form-control" value="200" id="productPrice" aria-label="Amount (to the nearest dong)" required>
+                                    <input type="text" class="form-control" value="200" id="productPrice" aria-label="Amount (to the nearest dong)" required
+                                           th:field="*{price}">
                                     <span class="input-group-text">.000</span>
                                 </div>
                                 <div class="invalid-feedback">
@@ -151,12 +153,13 @@
                             
                             <div class="mb-4">
                                 <label for="productStatus" class="form-label me-2">Tình trạng</label>
-                                <select class="form-select" aria-label="Status">
+                                <select class="form-select" aria-label="Status" id="productStatus" required th:field="*{status}">
                                     <!-- Show Category by selected -->
                                     <option selected disabled value="">Chọn tình trạng</option>
-                                    <option selected value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="NEW_ARRIVAL">Hàng mới về</option>
+                                    <option value="OUT_OF_STOCK">Hết hàng</option>
+                                    <option value="IN_STOCK">Còn hàng</option>
+                                    <option value="FEATURED">Hàng nổi bật</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Vui lòng chọn tình trạng.
@@ -197,7 +200,7 @@
 
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
-    <script src="/js/form-validation.js"></script>
+<!--    <script src="/js/form-validation.js"></script>-->
     <script src="/js/drop-image.js"></script>
 </body>
 
