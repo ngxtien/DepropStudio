@@ -80,7 +80,8 @@
 
 
             <!-- Create Product Form Start -->
-            <form class="container-fluid pt-4 px-4 needs-validation" novalidate>
+            <form class="container-fluid pt-4 px-4 needs-validation" novalidate
+                  th:action="@{/dashboard/category}" th:object="${category}" method="post">
                 <div class="bg-light rounded h-100 p-4">
                     <div class="mb-4">
                         <label for="categoryName" class="form-label">Tên danh mục</label>
@@ -103,7 +104,8 @@
                     <button id="deleteButton" class="btn btn-primary mb-3">Xoá</button>
                     
                     <div class="table-responsive">
-                        <table id="productTable" class="table table-hover" style="width:100%">
+                        <table id="productTable" class="table table-hover" style="width:100%"
+                               th:each="categories : ${categories}">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -111,6 +113,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td th:text="${category.id}"></td>
+                                    <td th:text="${category.name}" ></td>
+                                </tr>
                                 <tr>
                                     <td></td>
                                     <td>Danh mục 1</td>

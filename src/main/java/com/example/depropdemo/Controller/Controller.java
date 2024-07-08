@@ -16,31 +16,6 @@ public class Controller {
     @Autowired
     private ProductsService productsService;
 
-    @GetMapping("/dashboard")
-    public String adminindex(){
-        return "/admin/index";
-    }
-
-    @GetMapping("/dashboard/login")
-    public String login(){
-        return "/admin/login";
-    }
-
-    @GetMapping("/dashboard/add-product")
-    public String Add_product(){
-        return "/admin/add_product";
-    }
-
-    @GetMapping("/dashboard/update-product")
-    public String update_product(){
-        return "/admin/edit_product";
-    }
-
-    @GetMapping("/dashboard/product")
-    public String Dashboard_product(){
-        return "/admin/product";
-    }
-
 //////////         USER            ////////////////
 
     @GetMapping("/check-out")
