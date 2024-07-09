@@ -39,6 +39,12 @@ public class Controller {
         return "user/category";
     }
 
+    @GetMapping("/combo")
+    public String User_combo(Model model){
+        model.addAttribute("product", productsService.getAllProducts());
+        return "user/combo";
+    }
+
     @GetMapping("/contact")
     public String User_contact(){
         return "user/contact";
