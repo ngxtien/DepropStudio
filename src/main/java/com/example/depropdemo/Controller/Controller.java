@@ -32,6 +32,10 @@ public class Controller {
     public String Error_page(){
         return "user/404";
     }
+    @GetMapping("/error")
+    public String Error_page1(){
+        return "user/404";
+    }
 
     @GetMapping("/category")
     public String User_category(Model model){

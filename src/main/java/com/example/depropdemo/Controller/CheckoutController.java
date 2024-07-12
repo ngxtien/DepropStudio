@@ -75,8 +75,8 @@ public class CheckoutController {
         List<OrderDetailDTO> orderList = orderRequestDTO.getCartData();
         try {
             final String description = "Thanh toan don hang";
-            final String returnUrl = "http://localhost:8080/order-success-bank";
-            final String cancelUrl = "http://localhost:8080/order-fail";
+            final String returnUrl = "https://depropstudio.art/order-success-bank";
+            final String cancelUrl = "https://depropstudio.art/order-fail";
             String currentTimeString = String.valueOf(new Date().getTime());
             int orderCode = Integer.parseInt(currentTimeString.substring(currentTimeString.length() - 6));
             List<ItemData> itemList = new ArrayList<>();
