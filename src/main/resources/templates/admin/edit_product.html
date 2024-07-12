@@ -113,15 +113,15 @@
                                         id="productDescription" style="height: 150px;"
                                               th:field="*{description}"></textarea>
                                 </div>
-                                
-                                <div class="mb-4">
-                                    <label for="formFile" class="form-label">Ảnh sản phẩm</label>
-                                    <label for="input-file" class="form-control" id="drop-area">
-                                        <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image" id="imaged" style="max-width: 300px; max-height: 300px"/>
-                                        <img id="image-preview" style="max-width: 600px; max-height: 600px; display: none;" />
-                                    </label>
-                                    <input type="file" accept="image/*" id="input-file" name="image-update" hidden required onchange="previewImage(event)">
-                                </div>
+
+                            <div class="mb-4">
+                                <label for="formFile" class="form-label">Ảnh sản phẩm</label>
+                                <label for="input-file" class="form-control" id="drop-area">
+                                    <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image" id="imaged" style="max-width: 300px; max-height: 300px"/>
+                                    <img id="image-preview" style="max-width: 600px; max-height: 600px; display: none;" />
+                                </label>
+                                <input type="file" accept="image/*" id="input-file" name="image-update" hidden required onchange="previewImage(event)">
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-5">
@@ -164,7 +164,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary me-2">Lưu</button>
-                            <button type="button" class="btn btn-danger">Xoá sản phẩm</button>
+                            <button type="button" href="/dashboard/product" class="btn btn-danger">Hủy</button>
                         </div>
                     </div>
                 </div>

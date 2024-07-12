@@ -37,4 +37,12 @@ public class CustomerOrderService {
     public void deleteCustomerOrderById(Long id) {
         customerOrderRepository.deleteById(id);
     }
+
+    public Long getTotalSaleaday(){
+        return customerOrderRepository.totalSalesaday();
+    }
+    public Long getTotalSale(){
+        return customerOrderRepository.totalSale();
+    }
 }
+

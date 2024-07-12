@@ -3,6 +3,7 @@ package com.example.depropdemo.Controller;
 import com.example.depropdemo.Model.Category;
 import com.example.depropdemo.Model.Products;
 import com.example.depropdemo.Service.CategoryService;
+import com.example.depropdemo.Service.CustomerOrderService;
 import com.example.depropdemo.Service.ProductsService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +25,14 @@ public class DashboardController {
     @Autowired
     private ProductsService productsService;
 
+    @Autowired
+    private CustomerOrderService customerOrderService;
 
     @GetMapping("/dashboard")
-    public String adminindex(){
+    public String adminindex(Model model){
+        model.addAttribute("customerOrders", customerOrderService.getAllCustomerOrders());
+        model.addAttribute("totalSaleaday", customerOrderService.getTotalSaleaday());
+        model.addAttribute("totalSale", customerOrderService.getTotalSale());
         return "/admin/index";
     }
 
@@ -64,6 +70,11 @@ public class DashboardController {
     public String Add_product_p(@Valid @ModelAttribute("product") Products products,
                                 BindingResult result, Model model,
                                 @RequestParam(value = "imaged", required = false) MultipartFile imageFile){
+        if (result.hasErrors()) {
+            model.addAttribute("categories", categoryService.getAllCategory());
+            return "admin/add_product";
+        }
+
         if (!imageFile.isEmpty()) {
             try {
                 byte[] imageBytes = imageFile.getBytes();
@@ -71,12 +82,11 @@ public class DashboardController {
                 products.setImage(base64Image);
             } catch (IOException e) {
                 e.printStackTrace();
-                // Xử lý lỗi lưu ảnh
                 return "redirect:/dashboard/add-product";
             }
         }
         productsService.saveProduct(products);
-        return "admin/add_product";
+        return "redirect:/dashboard/add-product";
     }
 
 
@@ -102,6 +112,23 @@ public class DashboardController {
         return "redirect:/dashboard/product";
     }
 
+    @GetMapping("/dashboard/product/{ids}")
+    public String deleteProducts(@PathVariable String ids) {
+        String[] idArray = ids.split(",");
+        for (String id : idArray) {
+            productsService.deleteProduct(Long.parseLong(id));
+        }
+        return "redirect:/dashboard/product";
+    }
+
+    @GetMapping("/dashboard/category/{ids}")
+    public String deleteCategory(@PathVariable String ids) {
+        String[] idArray = ids.split(",");
+        for (String id : idArray) {
+            categoryService.deleteCategory(Long.parseLong(id));
+        }
+        return "redirect:/dashboard/category";
+    }
 
 
     @GetMapping("/dashboard/product")

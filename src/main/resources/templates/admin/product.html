@@ -85,7 +85,7 @@
                         <h6 class="mb-0">Danh sách sản phẩm</h6>
                     </div>
 
-                    <button class="btn btn-primary mb-3">Xoá</button>
+                    <button class="btn btn-primary mb-3" id="deleteButton">Xoá</button>
                     
                     <div class="table-responsive">
                         <table id="productTable" class="table table-hover table-bordered text-start align-middle mb-0">
@@ -103,13 +103,25 @@
                             </thead>
                             <tbody>
                                 <tr th:each="product : ${product}">
-                                    <td th:value="${product.id}"><input type="checkbox" class="form-check-input"></td>
+                                    <td><input name="checkbox" id="checkbox" type="checkbox" class="form-check-input" th:value="${product.id}"></td>
                                     <td th:text="${product.id}"></td>
                                     <td th:text="${product.name}"></td>
                                     <td th:text="${product.category.categoryName}"></td>
                                     <td th:text="${product.price}"></td>
-                                    <td><span class="btn btn-sm btn-warning rounded-pill"
-                                              th:text="${product.status.displayName}"></span></td>
+                                    <td>
+                                        <span class="btn btn-sm rounded-pill"
+                                              th:text="${product.status.displayName}"
+                                              th:classappend="|${product.status.displayName == 'Hết Hàng' ? 'btn btn-sm btn-danger rounded-pill' : ''}
+                                               ${product.status.displayName == 'Còn Hàng' ? 'btn btn-sm btn-success rounded-pill' : ''}
+                                               ${product.status.displayName == 'Hàng Mới Về' ? 'btn btn-sm btn-warning rounded-pill' : ''}
+                                               ${product.status.displayName == 'Nổi Bật' ? 'btn btn-sm btn-secondary rounded-pill' : ''}
+                                               |"
+
+                                        >
+
+                                        </span>
+
+                                    </td>
                                     <td th:text="${product.quantity}"></td>
                                     <td>
                                         <a th:href="@{'/dashboard/update-product/' + ${product.id}}"><i class="fa fa-pen-to-square fa m-1"></i></a>
@@ -154,3 +166,23 @@
 </body>
 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("deleteButton").addEventListener("click", function() {
+            var checkboxes = document.querySelectorAll('input[name="checkbox"]:checked');
+
+            const ids = Array.from(checkboxes)
+                .map(checkbox => checkbox.value)
+                .filter(value => value !== "on" && !isNaN(value))
+                .join(',');
+
+            if (ids.length > 0) {
+                // console.log(ids);
+                window.location.href = `/dashboard/product/${ids}`;
+            } else {
+                alert("Không thể xóa")
+            }
+        });
+    });
+</script>

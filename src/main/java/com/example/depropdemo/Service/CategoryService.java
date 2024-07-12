@@ -2,6 +2,7 @@ package com.example.depropdemo.Service;
 
 import com.example.depropdemo.Dao.CategoryRepository;
 import com.example.depropdemo.Model.Category;
+import com.example.depropdemo.Model.Products;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +20,10 @@ public class CategoryService {
     public Category save(Category category){
         return categoryRepository.save(category);
     }
+
+    public void deleteCategory(Long id) {
+        categoryRepository.deleteById(id);
+    }
+
 
 }

@@ -35,5 +35,18 @@ function previewImage(event) {
         imgPreview.src = reader.result;
     };
 
-    reader.readAsDataURL(input.files[0]);
+    if (input.files && input.files[0]) {
+        reader.readAsDataURL(input.files[0]);
+    }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var imgPreview = document.getElementById('image-preview');
+    var currentImg = document.getElementById('imaged');
+
+    // Check if currentImg has a valid src
+    if (currentImg.src) {
+        imgPreview.style.display = 'none'; // Ẩn thẻ img xem trước
+        currentImg.style.display = 'block'; // Hiển thị ảnh hiện tại
+    }
+});
