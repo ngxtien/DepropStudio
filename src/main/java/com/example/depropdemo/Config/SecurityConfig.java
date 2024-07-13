@@ -54,7 +54,7 @@ public class SecurityConfig {
     @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
         UserDetails admin = User.withUsername("Depropstu")
-                .password(passwordEncoder.encode("123321"))
+                .password(passwordEncoder.encode("Deprop123!"))
                 .roles("ADMIN")
                 .build();
         System.out.println(admin.getPassword());
