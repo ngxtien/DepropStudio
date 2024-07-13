@@ -33,12 +33,12 @@ public class DashboardController {
         model.addAttribute("customerOrders", customerOrderService.getAllCustomerOrders());
         model.addAttribute("totalSaleaday", customerOrderService.getTotalSaleaday());
         model.addAttribute("totalSale", customerOrderService.getTotalSale());
-        return "/admin/index";
+        return "admin/index";
     }
 
     @GetMapping("/dashboard/login")
     public String login(){
-        return "/admin/login";
+        return "admin/login";
     }
 
     @GetMapping("/dashboard/category")
