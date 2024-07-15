@@ -5,7 +5,7 @@
 /**************** common css start ****************/
 @font-face {
   font-family: Caveat;
-  src: url(../fonts/Fz-Caveat-Regular.ttf);
+  src: url(/fonts/Fz-Caveat-Regular.ttf);
 }
 body {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -3861,6 +3861,7 @@ html, body {
 .product_image_area {
   background-color: #fff;
   padding-top: 10px;
+  padding-bottom: 200px;
 }
 
 .s_product_img {
@@ -3924,7 +3925,7 @@ html, body {
 .s_product_text .list li:last-child {
   margin-bottom: 0px;
 }
-.s_product_text p {
+.s_product_text .product_description {
   padding-top: 20px;
   border-top: 1px dotted #d5d5d5;
   margin: 20px 0;
@@ -4001,6 +4002,16 @@ html, body {
 .s_product_text .product_accordion i {
   color: #000;
 }
+.s_product_text .product_accordion p {
+  font-size: 14px;
+}
+.s_product_text .product_accordion p strong {
+  font-weight: bold;
+}
+.s_product_text .product_accordion p a {
+  color: #000;
+  text-decoration: underline;
+}
 .s_product_text .product_accordion .offcanvas {
   width: 500px;
 }
@@ -4023,6 +4034,9 @@ html, body {
 }
 .s_product_text .product_accordion .offcanvas-body .accordion-button:not(.collapsed)::after {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.s_product_text .product_accordion .offcanvas-body::-webkit-scrollbar {
+  width: 0px;
 }
 
 /***************** single product item css *******************/
