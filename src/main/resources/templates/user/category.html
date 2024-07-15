@@ -114,33 +114,33 @@
                                     <label for="cat_all">Tất cả</label>
                                 </li>
                                 <li>
-                                    <input type="radio" value="special" id="cat_special">
-                                    <label for="cat_special">Nổi bật</label>
+                                    <input type="radio" value="nổi-bật" id="Noi-Bat">
+                                    <label for="Noi-Bat">Nổi bật</label>
                                 </li>
                                 <li>
-                                    <input type="radio" value="backdrop" id="cat_backdrop">
-                                    <label for="cat_backdrop">Backdrop sân khấu</label>
+                                    <input type="radio" value="bàn-ghế" id="Bàn-Ghế">
+                                    <label for="Bàn-Ghế">Bàn Ghế</label>
                                 </li>
                                 <li>
-                                    <input type="radio" value="tree" id="cat_tree">
-                                    <label for="cat_tree">Cây giả trang trí</label>
+                                    <input type="radio" value="đèn" id="Đèn">
+                                    <label for="Đèn">Đèn</label>
                                 </li>
                                 <li>
-                                    <input type="radio" value="lamp" id="cat_lamp">
-                                    <label for="cat_lamp">Đèn trang trí, cột đèn</label>
+                                    <input type="radio" value="cây-giả" id="Cây-giả">
+                                    <label for="Cây-giả">Cây giả</label>
                                 </li>
-                                <li>
-                                    <input type="radio" value="furniture" id="cat_furniture">
-                                    <label for="cat_furniture">Nội thất</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="accessory" id="cat_accessory">
-                                    <label for="cat_accessory">Vật dụng, mô hình</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="instrument" id="cat_instrument">
-                                    <label for="cat_instrument">Nhạc cụ</label>
-                                </li>
+<!--                                <li>-->
+<!--                                    <input type="radio" value="furniture" id="cat_furniture">-->
+<!--                                    <label for="cat_furniture">Nội thất</label>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <input type="radio" value="accessory" id="cat_accessory">-->
+<!--                                    <label for="cat_accessory">Vật dụng, mô hình</label>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <input type="radio" value="instrument" id="cat_instrument">-->
+<!--                                    <label for="cat_instrument">Nhạc cụ</label>-->
+<!--                                </li>-->
                             </ul>
                         </div>
                 </aside>
@@ -246,9 +246,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row align-items-center latest_product_inner">
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter furniture special red modern" th:each="product : ${product}">
-                        <div class="single_product_item">
+                <div class="row align-items-center latest_product_inner" th:each="product : ${product}">
+                    <div class="col-lg-3 col-sm-4 col-6 product_filter"
+                         th:classappend="| ${#strings.replace(#strings.toLowerCase(#strings.replace(product.category.categoryName, ' ', '-')), ' ', '-')}
+                          ${#strings.replace(#strings.toLowerCase(#strings.replace(product.status.displayName, ' ', '-')), ' ', '-')} |">
+
+                    <div class="single_product_item">
                             <a th:href="@{'/product/' + ${product.id}}">
                                 <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
                                 <span class="product_tag"
@@ -256,7 +259,7 @@
                             </a>
                             <div class="single_product_text">
                                 <h5 class="product_category">
-                                    <a class="text-muted-1 category-link" href="#" data-category="furniture" th:text="${product.category.categoryName}"></a>
+                                    <a class="text-muted-1 category-link" href="#"  th:attr="data-category=${product.category.categoryName}" th:text="${product.category.categoryName}"></a>
                                 </h5>
                                 <h4 class="product_title" >
                                     <a th:href="@{'/product/' + ${product.id}}" th:text="${product.name}"></a>

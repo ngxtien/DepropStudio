@@ -79,7 +79,7 @@
 
 
             <!-- Create Product Form Start -->
-            <form class="container-fluid pt-4 px-4 needs-validation" novalidate th:action="@{/dashboard/add-product}" th:object="${product}" method="post" enctype="multipart/form-data">
+            <form class="container-fluid pt-4 px-4 needs-validation" id="productForm" novalidate th:action="@{/dashboard/add-product}" th:object="${product}" method="post" enctype="multipart/form-data">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-7">
                         <div class="bg-light rounded h-100 p-4">
@@ -173,7 +173,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary me-2">Tạo sản phẩm</button>
-                            <button type="button" href="/dashboard/product" class="btn btn-outline-danger">Huỷ</button>
+                            <button type="button" class="btn btn-outline-danger" onclick="clearForm()">Clear</button>
                         </div>
                     </div>
                 </div>

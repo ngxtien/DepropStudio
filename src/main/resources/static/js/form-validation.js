@@ -18,4 +18,8 @@
         }, false)
       })
   })()
-  
+
+function clearForm() {
+    var form = document.getElementById("productForm");
+    form.reset();
+}

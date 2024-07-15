@@ -77,7 +77,7 @@
             <!-- Navbar End -->
 
             <!-- Edit Product Form Start -->
-            <form class="container-fluid pt-4 px-4 needs-validation" novalidate th:action="@{/dashboard/update-product/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
+            <form  class="container-fluid pt-4 px-4 needs-validation" onsubmit="handleFormSubmit(event)" th:action="@{/dashboard/update-product/{id}(id=${product.id})}" th:object="${product}" method="post" enctype="multipart/form-data">
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-7">
                         <div class="bg-light rounded h-100 p-4">
@@ -116,12 +116,19 @@
 
                             <div class="mb-4">
                                 <label for="formFile" class="form-label">Ảnh sản phẩm</label>
-                                <label for="input-file" class="form-control" id="drop-area">
-                                    <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image" id="imaged" style="max-width: 300px; max-height: 300px"/>
-                                    <img id="image-preview" style="max-width: 600px; max-height: 600px; display: none;" />
+                                <input type="hidden" th:field="*{image}" />
+                                <label for="image-update" class="form-control" id="drop-area">
+<!--                                    <div id="img-view">-->
+<!--                                        <i class="fa-solid fa-cloud-arrow-up fa-5x"></i>-->
+<!--                                        <p>Drag and drop or click here<br>to upload image</p>-->
+<!--                                        <span>Upload any image from desktop</span>-->
+<!--                                    </div>-->
+                                    <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image" id="imaged"/>
+                                    <img id="image-preview" style=" display: none;" />
                                 </label>
-                                <input type="file" accept="image/*" id="input-file" name="image-update" hidden required onchange="previewImage(event)">
+                                <input type="file" id="image-update" name="image-update" accept="image/*" hidden onchange="previewImage(event)" />
                             </div>
+
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-5">
@@ -164,7 +171,7 @@
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary me-2">Lưu</button>
-                            <button type="button" href="/dashboard/product" class="btn btn-danger">Hủy</button>
+                            <button type="button" class="btn btn-danger" onclick="window.location.href='/dashboard/product'">Hủy</button>
                         </div>
                     </div>
                 </div>
@@ -197,7 +204,7 @@
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
 <!--    <script src="/js/form-validation.js"></script>-->
-    <script src="/js/drop-image.js"></script>
+    <script src="/js/drop-image-update.js"></script>
 </body>
 
 </html>
