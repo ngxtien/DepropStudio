@@ -89,7 +89,7 @@ public class CheckoutController {
                 int price = (int) pricedoub;
                 ItemData item = new ItemData(productName, quantity, price);
                 itemList.add(item);
-                totalPrice += (price * quantity) * (rentDay - 1) + 50000;
+                totalPrice += (price * quantity) * (rentDay - 1);
             }
             orderDetailService.processOrder(orderRequestDTO);
             PaymentData paymentData = new PaymentData(orderCode, totalPrice, description,
