@@ -103,58 +103,58 @@
         <div class="container">
             <div class="filter_area d-flex align-items-center">
                 <aside class="filter_widget">
-                        <div class="widgets_inner dropdown category">
-                            <button class="dropdown_btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" data-bs-offset="0,0">
-                                Danh mục
-                            </button>
-                            <ul class="filter_list category_menu dropdown-menu p-3" aria-labelledby="categoryDropdown">
-                                <input type="text" class="search_filter form-control" placeholder="Tìm danh mục" id="categorySearchFilter">
-                                <li>
-                                    <input type="radio" value="all" id="All" checked>
-                                    <label for="All">Tất cả</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="nổi-bật" id="Noi-Bat">
-                                    <label for="Noi-Bat">Nổi bật</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="bàn-ghế" id="Bàn-Ghế">
-                                    <label for="Bàn-Ghế">Bàn Ghế</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="cây-giả" id="Cây-giả">
-                                    <label for="Cây-giả">Cây giả</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="đèn" id="Đèn">
-                                    <label for="Đèn">Đèn</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="picnic" id="Picnic">
-                                    <label for="Picnic">Picnic</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="concept-đồng-quê" id="Concept-Đồng-quê">
-                                    <label for="Concept-Đồng-quê">Concept Đồng quê</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="concept-giáng-sinh" id="Concept-Giáng-sinh">
-                                    <label for="Concept-Giáng-sinh">Concept Giáng sinh</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="concept-mùa-hè" id="Concept-Mùa-hè">
-                                    <label for="Concept-Mùa-hè">Concept Mùa hè</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="concept-mùa-xuân" id="Concept-Mùa-xuân">
-                                    <label for="Concept-Mùa-xuân">Concept Mùa xuân</label>
-                                </li>
-                                <li>
-                                    <input type="radio" value="concept-vintage" id="Concept-Vintage">
-                                    <label for="Concept-Vintage">Concept Vintage</label>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="widgets_inner dropdown category">
+                        <button class="dropdown_btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" data-bs-offset="0,0">
+                            Danh mục
+                        </button>
+                        <ul class="filter_list category_menu dropdown-menu p-3" aria-labelledby="categoryDropdown">
+                            <input type="text" class="search_filter form-control" placeholder="Tìm danh mục" id="categorySearchFilter">
+                            <li>
+                                <input type="radio" value="all" id="All" checked>
+                                <label for="All">Tất cả</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="nổi-bật" id="Noi-Bat">
+                                <label for="Noi-Bat">Nổi bật</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="bàn-ghế" id="Bàn-Ghế">
+                                <label for="Bàn-Ghế">Bàn Ghế</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="cây-giả" id="Cây-giả">
+                                <label for="Cây-giả">Cây giả</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="đèn" id="Đèn">
+                                <label for="Đèn">Đèn</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="picnic" id="Picnic">
+                                <label for="Picnic">Picnic</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="concept-đồng-quê" id="Concept-Đồng-quê">
+                                <label for="Concept-Đồng-quê">Concept Đồng quê</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="concept-giáng-sinh" id="Concept-Giáng-sinh">
+                                <label for="Concept-Giáng-sinh">Concept Giáng sinh</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="concept-mùa-hè" id="Concept-Mùa-hè">
+                                <label for="Concept-Mùa-hè">Concept Mùa hè</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="concept-mùa-xuân" id="Concept-Mùa-xuân">
+                                <label for="Concept-Mùa-xuân">Concept Mùa xuân</label>
+                            </li>
+                            <li>
+                                <input type="radio" value="concept-vintage" id="Concept-Vintage">
+                                <label for="Concept-Vintage">Concept Vintage</label>
+                            </li>
+                        </ul>
+                    </div>
                 </aside>
                 <aside class="filter_widget">
                     <div class="widgets_inner dropdown price">
@@ -202,7 +202,7 @@
                     </div>
                 </div>
                 <div id="product-container" class="row align-items-center latest_product_inner" th:each="product : ${product}">
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter all"
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter all"
                          th:classappend="| ${#strings.replace(#strings.toLowerCase(#strings.replace(product.category.categoryName, ' ', '-')), ' ', '-')}
                           ${#strings.replace(#strings.toLowerCase(#strings.replace(product.status.displayName, ' ', '-')), ' ', '-')} |">
 
