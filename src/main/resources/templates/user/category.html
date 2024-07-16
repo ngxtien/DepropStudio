@@ -110,8 +110,8 @@
                             <ul class="filter_list category_menu dropdown-menu p-3" aria-labelledby="categoryDropdown">
                                 <input type="text" class="search_filter form-control" placeholder="Tìm danh mục" id="categorySearchFilter">
                                 <li>
-                                    <input type="radio" value="all" id="cat_all" checked>
-                                    <label for="cat_all">Tất cả</label>
+                                    <input type="radio" value="all" id="All" checked>
+                                    <label for="All">Tất cả</label>
                                 </li>
                                 <li>
                                     <input type="radio" value="nổi-bật" id="Noi-Bat">
@@ -122,80 +122,36 @@
                                     <label for="Bàn-Ghế">Bàn Ghế</label>
                                 </li>
                                 <li>
+                                    <input type="radio" value="cây-giả" id="Cây-giả">
+                                    <label for="Cây-giả">Cây giả</label>
+                                </li>
+                                <li>
                                     <input type="radio" value="đèn" id="Đèn">
                                     <label for="Đèn">Đèn</label>
                                 </li>
                                 <li>
-                                    <input type="radio" value="cây-giả" id="Cây-giả">
-                                    <label for="Cây-giả">Cây giả</label>
-                                </li>
-<!--                                <li>-->
-<!--                                    <input type="radio" value="furniture" id="cat_furniture">-->
-<!--                                    <label for="cat_furniture">Nội thất</label>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <input type="radio" value="accessory" id="cat_accessory">-->
-<!--                                    <label for="cat_accessory">Vật dụng, mô hình</label>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <input type="radio" value="instrument" id="cat_instrument">-->
-<!--                                    <label for="cat_instrument">Nhạc cụ</label>-->
-<!--                                </li>-->
-                            </ul>
-                        </div>
-                </aside>
-                <aside class="filter_widget">
-                        <div class="widgets_inner dropdown style">
-                            <button class="dropdown_btn dropdown-toggle" type="button" id="styleDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,0">
-                                Phong cách
-                            </button>
-                            <ul class="filter_list style_menu dropdown-menu p-3" aria-labelledby="styleDropdown">
-                                <input type="text" class="search_filter form-control" placeholder="Tìm phong cách" id="styleSearchFilter">
-                                <li>
-                                    <input type="checkbox" value="modern" id="sty_modern">
-                                    <label for="sty_modern">Hiện đại</label>
+                                    <input type="radio" value="picnic" id="Picnic">
+                                    <label for="Picnic">Picnic</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="classic" id="sty_classic">
-                                    <label for="sty_classic">Cổ điển</label>
+                                    <input type="radio" value="concept-đồng-quê" id="Concept-Đồng-quê">
+                                    <label for="Concept-Đồng-quê">Concept Đồng quê</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="minimalism" id="sty_minimalism">
-                                    <label for="sty_minimalism">Tối giản</label>
+                                    <input type="radio" value="concept-giáng-sinh" id="Concept-Giáng-sinh">
+                                    <label for="Concept-Giáng-sinh">Concept Giáng sinh</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="luxury" id="sty_luxury">
-                                    <label for="sty_luxury">Sang trọng</label>
+                                    <input type="radio" value="concept-mùa-hè" id="Concept-Mùa-hè">
+                                    <label for="Concept-Mùa-hè">Concept Mùa hè</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="natural" id="sty_natural">
-                                    <label for="sty_natural">Thiên nhiên</label>
-                                </li>
-                            </ul>
-                        </div>
-                </aside>
-                <aside class="filter_widget">
-                        <div class="widgets_inner dropdown color">
-                            <button class="dropdown_btn dropdown-toggle" type="button" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,0">
-                                Màu sắc
-                            </button>
-                            <ul class="filter_list color_menu dropdown-menu p-3" aria-labelledby="colorDropdown">
-                                <input type="text" class="search_filter form-control" placeholder="Tìm màu sắc" id="colorSearchFilter">
-                                <li>
-                                    <input type="checkbox" value="red" id="cor_red">
-                                    <label for="cor_red">Red</label>
+                                    <input type="radio" value="concept-mùa-xuân" id="Concept-Mùa-xuân">
+                                    <label for="Concept-Mùa-xuân">Concept Mùa xuân</label>
                                 </li>
                                 <li>
-                                    <input type="checkbox" value="blue" id="cor_blue">
-                                    <label for="cor_blue">Blue</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="green" id="cor_green">
-                                    <label for="cor_green">Green</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="black" id="cor_black">
-                                    <label for="cor_black">Black</label>
+                                    <input type="radio" value="concept-vintage" id="Concept-Vintage">
+                                    <label for="Concept-Vintage">Concept Vintage</label>
                                 </li>
                             </ul>
                         </div>
@@ -225,7 +181,6 @@
                         </ul>
                     </div>
                 </aside>
-                
             </div>
             <div class="right_sidebar_area">
                 <div class="row">
@@ -246,16 +201,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="row align-items-center latest_product_inner" th:each="product : ${product}">
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter"
+                <div id="product-container" class="row align-items-center latest_product_inner" th:each="product : ${product}">
+                    <div class="col-lg-3 col-sm-4 col-6 product_filter all"
                          th:classappend="| ${#strings.replace(#strings.toLowerCase(#strings.replace(product.category.categoryName, ' ', '-')), ' ', '-')}
                           ${#strings.replace(#strings.toLowerCase(#strings.replace(product.status.displayName, ' ', '-')), ' ', '-')} |">
 
-                    <div class="single_product_item">
+                        <div class="single_product_item">
                             <a th:href="@{'/product/' + ${product.id}}">
                                 <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
                                 <span class="product_tag"
-                                        th:text="${product.status.displayName}">Nổi bật</span>
+                                        th:text="${product.status.displayName}"></span>
                             </a>
                             <div class="single_product_text">
                                 <h5 class="product_category">
@@ -272,28 +227,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 mt-4">
-                    <div class="pageination">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <ul id="pagination" class="pagination justify-content-center">
+                    </ul>
                 </div>
             </div>
         </div>
@@ -325,8 +260,8 @@
                         <div class="single_footer_part">
                             <h4>Our Social</h4>
                             <ul class="list-unstyled">
-                                <li><a href="https://www.facebook.com/profile.php?id=61560555539153">Facebook</a></li>
-                                <li><a href="https://www.instagram.com/deprop_studio/">Instagram</a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/profile.php?id=61560555539153">Facebook</a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/deprop_studio/">Instagram</a></li>
                             </ul>
                         </div>
                     </div>
@@ -399,6 +334,7 @@
    <script src="/js/common.js"></script>
    <script src="/js/addtocart.js"></script>
    <script src="/js/filter_sort.js"></script>
+   <script src="/js/pagination.js"></script>
    <!-- extra js --> 
    <script src="/js/backtotop.js"></script>
    <script src="/js/loading.js"></script>

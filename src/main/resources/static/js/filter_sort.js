@@ -1,8 +1,6 @@
 /*------------------- filter start -------------------*/
 // Attach event listeners to checkboxes
 var categoryCheckboxes = document.querySelectorAll(".category input");
-var colorCheckboxes = document.querySelectorAll(".color input");
-var styleCheckboxes = document.querySelectorAll(".style input");
 var priceCheckboxes = document.querySelectorAll(".price input");
 var categoryLinks = document.querySelectorAll(".category-link");
 
@@ -21,16 +19,6 @@ for (var i = 0; i < categoryCheckboxes.length; i++) {
   });
 }
 
-//Color Filter
-for(var i = 0; i < colorCheckboxes.length; i++) {
-  colorCheckboxes[i].addEventListener("change", filter);
-}
-
-// Style filter
-for (var i = 0; i < styleCheckboxes.length; i++) {
-  styleCheckboxes[i].addEventListener("change", filter);
-}
-
 // Price filter
 for (var i = 0; i < priceCheckboxes.length; i++) {
   priceCheckboxes[i].addEventListener("change", filter);
@@ -41,7 +29,7 @@ for (var i = 0; i < categoryLinks.length; i++) {
   categoryLinks[i].addEventListener("click", function (event) {
     event.preventDefault();
     var category = this.getAttribute("data-category");
-    window.location.href = "category.html?category=" + category; // Redirect to the filtered page
+    window.location.href = "category?category=" + category; // Redirect to the filtered page
   });
 }
 
@@ -72,26 +60,6 @@ function filter() {
   // Get selected category
   var selectedCategory = document.querySelector(".category input:checked").value;
 
-  // Get selected colors
-  var selectedColors = [];
-  var colorCheckbox;
-  for (var i = 0; i < colorCheckboxes.length; i++) {
-    colorCheckbox = colorCheckboxes[i];
-    if (colorCheckbox.checked) {
-      selectedColors.push(colorCheckbox.value);
-    }
-  }
-
-  // Get selected styles
-  var selectedStyles = [];
-  var styleCheckbox;
-  for (var i = 0; i < styleCheckboxes.length; i++) {
-    styleCheckbox = styleCheckboxes[i];
-    if (styleCheckbox.checked) {
-      selectedStyles.push(styleCheckbox.value);
-    }
-  }
-
   // Get selected price ranges
   var selectedPriceRanges = [];
   for (var i = 0; i < priceCheckboxes.length; i++) {
@@ -107,12 +75,10 @@ function filter() {
   for (i = 0; i < items.length; i++) {
     var item = items[i];
     var showCategory = (selectedCategory === "all") || item.classList.contains(selectedCategory);
-    var showColor = (selectedColors.length === 0) || selectedColors.some(color => item.classList.contains(color));
-    var showStyle = (selectedStyles.length === 0) || selectedStyles.some(style => item.classList.contains(style));
     var itemPrice = parseInt(item.querySelector(".product_price").textContent, 10);
     var showPrice = (selectedPriceRanges.length === 0) || selectedPriceRanges.some(range => isPriceInRange(itemPrice, range));
 
-    if (showCategory && showColor && showStyle && showPrice) {
+    if (showCategory && showPrice) {
       item.classList.add("show");
       item.classList.remove("hide");
       count++;
@@ -140,32 +106,6 @@ function removeDiacritics(str) {
 document.getElementById('categorySearchFilter').addEventListener('keyup', function() {
   var filter = removeDiacritics(this.value.toLowerCase());
   var items = document.querySelectorAll('.category_menu li');
-  items.forEach(function(item) {
-    var text = removeDiacritics(item.textContent.toLowerCase());
-    if (text.indexOf(filter) === -1) {
-      item.style.display = 'none';
-    } else {
-      item.style.display = 'flex';
-    }
-  });
-});
-
-document.getElementById('styleSearchFilter').addEventListener('keyup', function() {
-  var filter = removeDiacritics(this.value.toLowerCase());
-  var items = document.querySelectorAll('.style_menu li');
-  items.forEach(function(item) {
-    var text = removeDiacritics(item.textContent.toLowerCase());
-    if (text.indexOf(filter) === -1) {
-      item.style.display = 'none';
-    } else {
-      item.style.display = 'flex';
-    }
-  });
-});
-
-document.getElementById('colorSearchFilter').addEventListener('keyup', function() {
-  var filter = removeDiacritics(this.value.toLowerCase());
-  var items = document.querySelectorAll('.color_menu li');
   items.forEach(function(item) {
     var text = removeDiacritics(item.textContent.toLowerCase());
     if (text.indexOf(filter) === -1) {
