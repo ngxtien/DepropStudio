@@ -202,7 +202,7 @@
                     </div>
                 </div>
                 <div id="product-container" class="row align-items-center latest_product_inner" th:each="product : ${product}">
-                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter all"
+                    <div  th:if="${product.status.displayName != 'Combo'}"  class="product_item col-lg-3 col-sm-4 col-6 product_filter all"
                          th:classappend="| ${#strings.replace(#strings.toLowerCase(#strings.replace(product.category.categoryName, ' ', '-')), ' ', '-')}
                           ${#strings.replace(#strings.toLowerCase(#strings.replace(product.status.displayName, ' ', '-')), ' ', '-')} |">
 

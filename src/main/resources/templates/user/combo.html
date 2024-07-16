@@ -89,60 +89,15 @@
     <!-- breadcrumb start-->
 
     <div class="slider">
-        <!-- list Items -->
-        <div class="list">
-            <div class="item active">
-                <img src="/images/combo/b1.jpg">
+        <div class="list" >
+            <div th:each="product : ${product}" class="item active">
+                <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image">
                 <div class="content">
                     <p>design</p>
-                    <h2>Slider 01</h2>
+                    <h2 th:text="${product.name}"></h2>
                     <div class="combo_price">
-                        <span class="current_prefix manual_price">100</span>
-                        <span class="current_prefix sale_price">50</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b2.jpg">
-                <div class="content">
-                    <p>design</p>
-                    <h2>Slider 02</h2>
-                    <div class="combo_price">
-                        <span class="current_prefix manual_price">100</span>
-                        <span class="current_prefix sale_price">50</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b3.jpg">
-                <div class="content">
-                    <p>design</p>
-                    <h2>Slider 03</h2>
-                    <div class="combo_price">
-                        <span class="current_prefix manual_price">100</span>
-                        <span class="current_prefix sale_price">50</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b1.jpg">
-                <div class="content">
-                    <p>design</p>
-                    <h2>Slider 04</h2>
-                    <div class="combo_price">
-                        <span class="current_prefix manual_price">100</span>
-                        <span class="current_prefix sale_price">50</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b2.jpg">
-                <div class="content">
-                    <p>design</p>
-                    <h2>Slider 05</h2>
-                    <div class="combo_price">
-                        <span class="current_prefix manual_price">100</span>
-                        <span class="current_prefix sale_price">50</span>
+                        <span class="current_prefix manual_price" th:text="${product.price + 50}"></span>
+                        <span class="current_prefix sale_price" th:text="${product.price}"></span>
                     </div>
                 </div>
             </div>
@@ -150,35 +105,10 @@
 
         <a href="/contact" class="contact_btn custom_btn btn_black">Liên hệ thuê</a>
 
-        <!-- thumbnail -->
         <div class="thumbnail">
-            <div class="item active">
-                <img src="/images/combo/b1.jpg">
-                <div class="content">
-                    Name Slider
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b2.jpg">
-                <div class="content">
-                    Name Slider
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b3.jpg">
-                <div class="content">
-                    Name Slider
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b1.jpg">
-                <div class="content">
-                    Name Slider
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/combo/b2.jpg">
-                <div class="content">
+            <div th:each="product : ${product}" class="item">
+                <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Thumbnail">
+                <div class="content" th:text="${product.name}">
                     Name Slider
                 </div>
             </div>

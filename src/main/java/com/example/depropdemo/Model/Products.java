@@ -44,7 +44,8 @@ public class Products {
         OUT_OF_STOCK("Hết Hàng"),
         IN_STOCK("Còn Hàng"),
         NEW_ARRIVAL("Hàng Mới Về"),
-        FEATURED("Nổi Bật");
+        FEATURED("Nổi Bật"),
+        COMBO("Combo");
 
         private final String displayName;
 
