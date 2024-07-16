@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 0);
         totalPriceElement.textContent = formatPrice(totalPrice);
 
-        const totalPayment = (totalPrice * dayCount) + deliveryFee;
+        const totalPayment = (totalPrice * dayCount);
         totalPaymentElement.textContent = formatPrice(totalPayment);
 
         // Update delivery fee and day count elements
-        deliveryFeeElement.textContent = formatPrice(deliveryFee);
+        // deliveryFeeElement.textContent = formatPrice(deliveryFee);
         dayCountElement.textContent = dayCount;
 
         localStorage.setItem("totalPayment", totalPayment);

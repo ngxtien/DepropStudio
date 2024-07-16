@@ -259,7 +259,8 @@
                             </a>
                             <div class="single_product_text">
                                 <h5 class="product_category">
-                                    <a class="text-muted-1 category-link" href="#"  th:attr="data-category=${product.category.categoryName}" th:text="${product.category.categoryName}"></a>
+                                    <a class="text-muted-1 category-link" href="#"  th:attr="data-category=${product.category.categoryName}"
+                                       th:text="${product.category.categoryName}"></a>
                                 </h5>
                                 <h4 class="product_title" >
                                     <a th:href="@{'/product/' + ${product.id}}" th:text="${product.name}"></a>
