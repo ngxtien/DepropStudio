@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Set Combo</title>
+    <title>Combo</title>
     <link rel="icon" href="/images/logo/favicon_black.svg">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -85,35 +85,211 @@
     </header>
     <!-- Header part end-->
 
-    <!--================Home Banner Area =================-->
-    <!-- breadcrumb start-->
-
-    <div class="slider">
-        <div class="list" >
-            <div th:each="product : ${product}" class="item active">
-                <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Image">
-                <div class="content">
-                    <p>design</p>
-                    <h2 th:text="${product.name}"></h2>
-                    <div class="combo_price">
-                        <span class="current_prefix manual_price" th:text="${product.price + 50}"></span>
-                        <span class="current_prefix sale_price" th:text="${product.price}"></span>
+    <!-- Combo part start-->
+    <section class="combo_part">
+        <div class="combo_slider owl-carousel owl-theme">
+            <!-- Combo 1 -->
+            <div class="single_combo_slider" data-products="products1">
+                <div class="s_product_img">
+                    <img src="/images/combo/concept-1.jpg" alt="">
+                    <div class="s_product_text">
+                        <div class="product_combo">
+                            <div class="combo_price d-flex">
+                                <div class="manual_price current_prefix">100</div>
+                                <div class="product_price current_prefix">70</div>
+                            </div>
+                            <h3 class="product_name">Combo 1</h3>
+                        </div>
+                        <div class="combo_card_area d-flex">
+                            <div class="product_count">
+                              <span class="number-decrement"><i class="ti-minus"></i></span>
+                              <input class="input-number product_quantity" type="text" value="1" min="1">
+                              <span class="number-increment"><i class="ti-plus"></i></span>
+                            </div>
+                            <button class="add_to_cart custom_btn btn_white">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Combo 2 -->
+            <div class="single_combo_slider" data-products="products2">
+                <div class="s_product_img">
+                    <img src="/images/combo/concept-2.jpg" alt="">
+                    <div class="s_product_text">
+                        <div class="product_combo">
+                            <div class="combo_price d-flex">
+                                <div class="manual_price current_prefix">100</div>
+                                <div class="product_price current_prefix">50</div>
+                            </div>
+                            <h3 class="product_name">Combo 2</h3>
+                        </div>
+                        <div class="combo_card_area d-flex">
+                            <div class="product_count">
+                              <span class="number-decrement"><i class="ti-minus"></i></span>
+                              <input class="input-number product_quantity" type="text" value="1" min="1">
+                              <span class="number-increment"><i class="ti-plus"></i></span>
+                            </div>
+                            <button class="add_to_cart custom_btn btn_white">Thêm vào giỏ</button>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <a href="/contact" class="contact_btn custom_btn btn_black">Liên hệ thuê</a>
-
-        <div class="thumbnail">
-            <div th:each="product : ${product}" class="item">
-                <img th:src="@{'data:image/png;base64,' + ${product.image}}" alt="Product Thumbnail">
-                <div class="content" th:text="${product.name}">
-                    Name Slider
+        <!-- Products Section -->
+        <div class="container">
+            <!-- Products for Combo 1 -->
+            <div id="products1" class="products row align-items-center latest_product_inner">
+                <!-- Combo description -->
+                <p class="product_decription">
+                    Below are a series of poorly constructed paragraphs and possible solutions. Put yourself in the place of a teacher. Criticise the structure of each paragraph and suggest how it might be improved. 
+                </p>
+                <!-- Product template -->
+                <div class="product_item col-lg-3 col-sm-4 col-6">
+                    <div class="single_product_item">
+                        <a href="single-product.html">
+                            <img src="/images/product/item.jpg">
+                            <span class="product_tag">Nổi bật</span>
+                        </a>
+                        <div class="single_product_text">
+                            <h5 class="product_category">
+                                <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                            </h5>
+                            <h4 class="product_title">
+                                <a href="single-product.html">red modern</a>
+                            </h4>
+                            <div class="product_price current_prefix">
+                                1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item col-lg-3 col-sm-4 col-6">
+                    <div class="single_product_item">
+                        <a href="single-product.html">
+                            <img src="/images/product/item.jpg">
+                            <span class="product_tag">Nổi bật</span>
+                        </a>
+                        <div class="single_product_text">
+                            <h5 class="product_category">
+                                <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                            </h5>
+                            <h4 class="product_title">
+                                <a href="single-product.html">red modern</a>
+                            </h4>
+                            <div class="product_price current_prefix">
+                                1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item col-lg-3 col-sm-4 col-6">
+                    <div class="single_product_item">
+                        <a href="single-product.html">
+                            <img src="/images/product/item.jpg">
+                            <span class="product_tag">Nổi bật</span>
+                        </a>
+                        <div class="single_product_text">
+                            <h5 class="product_category">
+                                <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                            </h5>
+                            <h4 class="product_title">
+                                <a href="single-product.html">red modern</a>
+                            </h4>
+                            <div class="product_price current_prefix">
+                                1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item col-lg-3 col-sm-4 col-6">
+                    <div class="single_product_item">
+                        <a href="single-product.html">
+                            <img src="/images/product/item.jpg">
+                            <span class="product_tag">Nổi bật</span>
+                        </a>
+                        <div class="single_product_text">
+                            <h5 class="product_category">
+                                <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                            </h5>
+                            <h4 class="product_title">
+                                <a href="single-product.html">red modern</a>
+                            </h4>
+                            <div class="product_price current_prefix">
+                                1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Products for Combo 2 -->
+            <div id="products2" class="products row align-items-center latest_product_inner">
+                <!-- Combo description -->
+                <p class="product_decription">
+                    bao gom abc
+                </p>
+                <!-- Product template -->
+                <div class="product_item col-lg-3 col-sm-4 col-6">
+                    <div class="single_product_item">
+                        <a href="single-product.html">
+                            <img src="/images/product/item.jpg">
+                            <span class="product_tag">Nổi bật</span>
+                        </a>
+                        <div class="single_product_text">
+                            <h5 class="product_category">
+                                <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                            </h5>
+                            <h4 class="product_title">
+                                <a href="single-product.html">red modern</a>
+                            </h4>
+                            <div class="product_price current_prefix">
+                                1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item col-lg-3 col-sm-4 col-6">
+                    <div class="single_product_item">
+                        <a href="single-product.html">
+                            <img src="/images/product/item.jpg">
+                            <span class="product_tag">Nổi bật</span>
+                        </a>
+                        <div class="single_product_text">
+                            <h5 class="product_category">
+                                <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                            </h5>
+                            <h4 class="product_title">
+                                <a href="single-product.html">red modern</a>
+                            </h4>
+                            <div class="product_price current_prefix">
+                                1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_item col-lg-3 col-sm-4 col-6">
+                    <div class="single_product_item">
+                        <a href="single-product.html">
+                            <img src="/images/product/item.jpg">
+                            <span class="product_tag">Nổi bật</span>
+                        </a>
+                        <div class="single_product_text">
+                            <h5 class="product_category">
+                                <a class="text-muted-1 category-link" href="#" data-category="furniture">Furniture</a>
+                            </h5>
+                            <h4 class="product_title">
+                                <a href="single-product.html">red modern</a>
+                            </h4>
+                            <div class="product_price current_prefix">
+                                1
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Combo part start-->
 
 
     <!-- quick_cart start -->
@@ -150,13 +326,10 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    <!-- owl carousel plugin-->
    <script src="/plugins/owl.carousel.min.js"></script>
-   <!-- manific-popup plugin-->
-   <script src="/plugins/jquery.magnific-popup.js"></script>
    <!-- main js -->
    <script src="/js/jquery.js"></script>
    <script src="/js/common.js"></script>
    <script src="/js/addtocart.js"></script>
-   <script src="/js/filter_sort.js"></script>
    <script src="/js/combo.js"></script>
    <!-- extra js --> 
    <script src="/js/backtotop.js"></script>
