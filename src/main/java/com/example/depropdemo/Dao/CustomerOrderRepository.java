@@ -13,10 +13,10 @@ import java.util.Optional;
 
 public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, Long> {
 
-    @Query(value = "SELECT SUM(co.totalprice - 50000) AS total_sales FROM customer_order co WHERE DATE(co.order_date) = CURDATE();", nativeQuery = true)
+    @Query(value = "SELECT SUM(co.totalprice) AS total_sales FROM customer_order co WHERE DATE(co.order_date) = CURDATE();", nativeQuery = true)
     Long totalSalesaday();
 
-    @Query(value = "SELECT SUM(co.totalprice - 50000) AS total_sales FROM customer_order co;", nativeQuery = true)
+    @Query(value = "SELECT SUM(co.totalprice) AS total_sales FROM customer_order co;", nativeQuery = true)
     Long totalSale();
     Optional<CustomerOrder> findAllByOrderId(Long id);
 }
