@@ -70,7 +70,7 @@ public class Controller {
         if (productOptional.isPresent()) {
             model.addAttribute("product", productOptional.get());
         } else {
-            return "redirect:/404"; // Hoặc một trang lỗi phù hợp
+            return "redirect:/404";
         }
         return "user/product";
     }

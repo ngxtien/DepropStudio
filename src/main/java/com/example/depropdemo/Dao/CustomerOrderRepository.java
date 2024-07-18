@@ -18,5 +18,5 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, Lo
 
     @Query(value = "SELECT SUM(co.totalprice - 50000) AS total_sales FROM customer_order co;", nativeQuery = true)
     Long totalSale();
-
+    Optional<CustomerOrder> findAllByOrderId(Long id);
 }

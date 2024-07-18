@@ -1,9 +1,12 @@
 package com.example.depropdemo.Controller;
 
 import com.example.depropdemo.Model.Category;
+import com.example.depropdemo.Model.CustomerOrder;
+import com.example.depropdemo.Model.OrderDetail;
 import com.example.depropdemo.Model.Products;
 import com.example.depropdemo.Service.CategoryService;
 import com.example.depropdemo.Service.CustomerOrderService;
+import com.example.depropdemo.Service.OrderDetailService;
 import com.example.depropdemo.Service.ProductsService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Base64;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -27,6 +31,21 @@ public class DashboardController {
 
     @Autowired
     private CustomerOrderService customerOrderService;
+
+    @Autowired
+    private OrderDetailService orderDetailService;
+
+     @GetMapping("/dashboard/order/{id}")
+     public String getOrderDetails(@PathVariable Long id, Model model) {
+
+         Optional<CustomerOrder> customerOrder = customerOrderService.findAllByOrderId(id);
+         if (customerOrder.isPresent()) {
+             model.addAttribute("customerOrder", customerOrder.get());
+             return "admin/order_details";
+         } else {
+             return "admin/index";
+         }
+     }
 
     @GetMapping("/dashboard")
     public String adminindex(Model model){

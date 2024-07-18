@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<head>
+
+<head  th:if="${customerOrder}">
     <meta charset="utf-8">
-    <title>Đơn hàng #123</title> <!--add ma don hang-->
+    <title  th:text="'Đơn hàng' + ${customerOrder.orderId}">Đơn hàng #123</title> <!--add ma don hang-->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -13,7 +14,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -83,6 +84,7 @@
                 <div class="row g-4">
                     <div class="col-sm-12 col-xl-7">
                         <div class="bg-light rounded p-4">
+<!--                            <button class="btn btn-primary mb-3" id="deleteButton">Xoá</button>-->
                             <div class="mb-4">
                                 <h6 class="mb-4">Mã đơn hàng: #<span th:text="${customerOrder.orderId}"></span></h6>
                             </div>
@@ -91,37 +93,40 @@
                                     <thead>
                                         <tr class="text-dark">
                                             <th>STT</th>
-                                            <th>ID</th>
+                                            <th>ID sản phẩm</th>
                                             <th>Tên sản phẩm</th>
                                             <th>Số lượng</th>
+                                            <th>Từ ngày</th>
+                                            <th>Đến ngày</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <!--add value in <td> -->
-                                            <td>1</td> <!--STT-->
-                                            <td>12353</td> <!--ID san pham-->
-                                            <td>ban</td> <!--Ten san pham-->
-                                            <td>1</td> <!--so luong-->
+                                        <tr th:each="orderDetail, stat : ${customerOrder.orderDetails}">
+                                            <td th:text="${customerOrder.id}"></td>
+                                            <td th:text="${orderDetail.product.id}"></td>
+                                            <td th:text="${orderDetail.product.name}"></td>
+                                            <td th:text="${orderDetail.quantity}"></td>
+                                            <td th:text="${#dates.format(orderDetail.startDate, 'dd/MM/yyyy')}"></td>
+                                            <td th:text="${#dates.format(orderDetail.endDate, 'dd/MM/yyyy')}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <!--add value in <span> -->
-                            <h6 class="mb-3">Tổng tiền: <span class="fw-normal"><!--tong tien--></span></h6> 
-                            <h6 class="mb-3">Ngày thuê: <span class="fw-normal">từ <span>2/7/24</span> đến <span>4/7/24</span></span></h6> <!--ngay thue tu ... den ...-->
-                            <h6 class="mb-3">In hoá đơn VAT (hoá đơn đỏ): <span class="fw-normal">Có</span></h6>
-                            <h6 class="mb-3">Ghi chú: <span class="fw-normal"><!--note--></span></h6> 
+                            <h6 class="mb-3">Tổng tiền: <span class="fw-normal totalprice current-prefix" th:text="${customerOrder.totalprice}"><!--tong tien--></span></h6>
+                            <h6 class="mb-3">Ngày đặt hàng: <span class="fw-normal"th:text="${#dates.format(customerOrder.orderDate, 'dd/MM/yyyy')}"></span></h6>
+                            <h6 class="mb-3">In hoá đơn VAT (hoá đơn đỏ): <span class="fw-normal" th:text="${customerOrder.customer.vat ? 'Có' : 'Không'}">Có</span></h6>
+                            <h6 class="mb-3">Ghi chú: <span class="fw-normal" th:text="${customerOrder.customer.note}"><!--note--></span></h6>
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-5">
                         <div class="bg-light rounded p-4">
                             <div class="mb-4">
                                 <!--add value in <span> -->
-                                <h6 class="mb-3">Tên khách hàng: <span class="fw-normal"><!--ten khach hang--></span></h6>
-                                <h6 class="mb-3">Địa chỉ: <span class="fw-normal"><!--dia chi--></span></h6> 
-                                <h6 class="mb-3">Số điện thoại: <span class="fw-normal"><!--so dien thoai--></span></h6> 
-                                <h6 class="mb-3">Email: <span class="fw-normal"><!--so dien thoai--></span></h6>
+                                <h6 class="mb-3">Tên khách hàng: <span class="fw-normal" th:text="${customerOrder.customer.firstname} + ' ' +${customerOrder.customer.lastname}"><!--ten khach hang--></span></h6>
+                                <h6 class="mb-3">Số điện thoại: <span class="fw-normal" th:text="${customerOrder.customer.phonenumber}"><!--so dien thoai--></span></h6>
+                                <h6 class="mb-3">Email: <span class="fw-normal" th:text="${customerOrder.customer.email}"></span></h6>
+                                <h6 class="mb-3">Địa chỉ: <span class="fw-normal" th:text="${customerOrder.customer.address}"><!--dia chi--></span></h6>
                             </div>
                         </div>
                     </div>
@@ -134,7 +139,7 @@
                 <div class="bg-light rounded p-4">
                     <div class="row align-items-center">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">DeArt</a>, All Right Reserved. 
+                            &copy; <a href="#">DeArt</a>, All Right Reserved.
                         </div>
                     </div>
                 </div>
@@ -154,6 +159,8 @@
 
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
+    <script src="/js/totalprice.js"></script>
+
 </body>
 
 </html>
