@@ -133,163 +133,148 @@
               </div>
               <button class="add_to_cart custom_btn btn_black" th:data-id="${product.id}">Thêm vào giỏ</button>
             </div>
-            <div class="product_accordion d-flex flex-column">
-              <div class="frequently_question_offcanvas">
-                <a data-bs-toggle="offcanvas" href="#frequently_question" role="button" aria-controls="product_description">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <h5>Câu hỏi thường gặp</h5>
-                      <i class="ti-angle-right"></i>
-                  </div>
-                </a>
-                <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="frequently_question" aria-labelledby="offcanvasRightLabel">
-                  <div class="offcanvas-header">
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    <h5 id="offcanvasRightLabel">Câu hỏi thường gặp</h5>
-                  </div>
-                  <div class="offcanvas-body">
-                    <div class="accordion" id="quesionList">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionOne">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Tôi có thể đặt đơn online không?
-                          </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="questionOne" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p><strong>Có thể đặt đơn online!</strong></p>
-                            <p>Khi đặt đơn online, bạn cần cung cấp đầy đủ thông tin, Deprop Studio sẽ liên hệ lại để xác nhận đơn hàng và thông tin thanh toán.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionTwo">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Tôi liên hệ với studio thông qua đâu để được tư vấn?
-                          </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="questionTwo" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p>Bạn có thể liên hệ với Deprop Studio thông qua các phương tiện sau đây:</p>
-                            <p><strong>&#x2022; Fanpage: </strong><a target="_blank" href="https://www.facebook.com/profile.php?id=61560555539153">Link Fanpage</a></p>
-                            <p><strong>&#x2022; Instagram: </strong><a target="_blank" href="https://www.instagram.com/deprop_studio/">Link Instagram</a></p>
-                            <p><strong>&#x2022; Số điện thoại: </strong><a href="tel:0901131465">0901131465</a></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionThree">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Quy định thanh toán và tiền đặt cọc thế chân tại studio quy định như thế nào?
-                          </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="questionThree" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p><strong>1. Quy định thanh toán:</strong></p>
-                            <p><strong>&#x2022;</strong> Thanh toán 100% khi đặt cọc.</p>
-                            <p><strong>&#x2022;</strong> Tiền đặt cọc 50% giá trị đơn hàng.</p>
-                            <p><strong>&#x2022;</strong> Có thể thanh toán bằng tiền mặt, chuyển khoản, hoặc thẻ ATM/Visa.</p>
-                            <p><strong>Lưu ý:</strong>
-                            <p><strong>&#x2022;</strong> Deprop Studio sẽ không hoàn trả tiền đặt cọc nếu khách hàng hủy đơn hàng.</p>
-                            <p><strong>&#x2022;</strong> Khách hàng cần thanh toán phần còn lại của đơn hàng trước khi nhận đồ.</p>
-                            <br>
-                            <p><strong>2. Tiền đặt cọc thế chân:</strong></p>
-                            <p><strong>&#x2022;</strong> Áp dụng cho trường hợp khách hàng muốn giữ nguyên trạng thái đặt cọc cho đơn hàng đã đặt trước, nhưng muốn thay đổi ngày sử dụng hoặc một số chi tiết khác.</p>
-                            <p><strong>&#x2022;</strong> Mức phí đặt cọc thế chân là 20% giá trị đơn hàng.</p>
-                            <p><strong>&#x2022;</strong> Deprop Studio sẽ giữ nguyên trạng thái đặt cọc cho đơn hàng trong vòng 7 ngày kể từ ngày khách hàng thanh toán tiền đặt cọc thế chân.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionFour">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            Hình thức và phí ship đơn như thế nào? 
-                          </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="questionFour" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p><strong>&#x2022;</strong> Phí ship theo quy định của đơn vị vận chuyển.</p>
-                            <p><strong>&#x2022;</strong> Deprop Studio sẽ liên hệ với khách hàng để thống nhất đơn vị vận chuyển và mức phí phù hợp.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionFive">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            Deprop Studio có xuất hoá đơn VAT (hoá đơn đỏ) không? 
-                          </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="questionFive" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p><strong>Deprop Studio sẽ xuất hóa đơn VAT cho khách hàng theo yêu cầu.</strong></p>
-                            <p><strong>&#x2022;</strong> Khi đặt đơn hàng, bạn cần ghi chú hoặc chọn vào ô yêu cầu xuất hóa đơn VAT.</p>
-                            <p><strong>&#x2022;</strong> Sau khi nhận hàng và thanh toán, bạn có thể liên hệ Deprop Studio để cung cấp thông tin xuất hóa đơn.</p>
-                            <p><strong>&#x2022;</strong> Deprop Studio sẽ gửi hóa đơn VAT qua email cho bạn.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionSix">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            Có thể đến trực tiếp kho để tham khảo vật dụng không?
-                          </button>
-                        </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="questionSix" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p><strong>Bạn có thể đến Deprop studio để tham khảo vật dụng decor tại cửa hàng</strong></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionSeven">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            Tôi phải chịu trách nhiệm bồi thường bao nhiêu % cho đồ decor setup khi gặp hư hỏng?
-                          </button>
-                        </h2>
-                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="questionSeven" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p><strong>1. Hợp đồng cho thuê:</strong></p>
-                            <p><strong>&#x2022;</strong> Bạn thường sẽ chịu trách nhiệm đầy đủ cho bất kỳ thiệt hại nào xảy ra với đồ decor setup trong thời gian thuê, trừ trường hợp do hao mòn tự nhiên hoặc bất khả kháng.</p>
-                            <p><strong>&#x2022;</strong> Một số hợp đồng cho thuê có thể quy định mức bồi thường tối đa hoặc miễn trừ trách nhiệm cho một số loại thiệt hại nhất định.</p>
-                            <br>
-                            <p><strong>2. Nguyên nhân hư hỏng:</strong></p>
-                            <p><strong>&#x2022;</strong> <strong>Do lỗi của bạn:</strong> Bạn sẽ chịu trách nhiệm đầy đủ cho việc bồi thường thiệt hại.</p>
-                            <p><strong>&#x2022;</strong> <strong>Do tai nạn hoặc sự cố ngoài ý muốn:</strong> Mức độ trách nhiệm của bạn có thể phụ thuộc vào các yếu tố như bạn có thể dự phòng được sự cố hay không và bạn đã thực hiện các biện pháp phòng ngừa hợp lý hay chưa.</p>
-                            <p><strong>&#x2022;</strong> <strong>Do hao mòn tự nhiên:</strong> Bạn có thể không phải chịu trách nhiệm bồi thường thiệt hại.</p>
-                            <br>
-                            <p><strong>3. Giá trị của đồ decor setup:</strong></p>
-                            <p><strong>&#x2022;</strong> <strong>Đồ decor setup có giá trị cao:</strong> Bạn có thể phải bồi thường toàn bộ giá trị của đồ decor setup.</p>
-                            <p><strong>&#x2022;</strong> <strong>Đồ decor setup có giá trị thấp:</strong> Bạn có thể chỉ phải bồi thường một phần giá trị của đồ decor setup.</p>
-                            <br>
-                            <p><strong>4. Cách thức giải quyết:</strong></p>
-                            <p><strong>&#x2022;</strong> <strong>Thỏa thuận thương lượng:</strong> Bạn có thể thỏa thuận với chủ sở hữu đồ decor setup về mức bồi thường.</p>
-                            <p><strong>&#x2022;</strong> <strong>Yêu cầu của bên bảo hiểm:</strong> Nếu bạn có bảo hiểm cho đồ decor setup, bạn có thể yêu cầu công ty bảo hiểm bồi thường thiệt hại.</p>
-                            <p><strong>&#x2022;</strong> <strong>Xử lý qua pháp luật:</strong> Trong một số trường hợp, tranh chấp về việc bồi thường thiệt hại có thể phải được giải quyết qua pháp luật.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="questionEight">
-                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            Tôi có thể gia hạn thời gian thuê đồ decor setup không? Cách gia hạn như thế nào? 
-                          </button>
-                        </h2>
-                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="questionEight" data-bs-parent="#quesionList">
-                          <div class="accordion-body">
-                            <p><strong>Bạn có thể gia hạn thời gian thuê đồ decor setup bằng cách:</strong></p>
-                            <p><strong>1. </strong> Liên hệ với Deprop studio để thông báo về nhu cầu gia hạn hợp đồng. Bạn nên liên hệ trước khi hợp đồng hiện tại hết hạn để có thời gian thảo luận và thống nhất các điều khoản gia hạn.</p>
-                            <br>
-                            <p><strong>2. </strong> Sau khi liên hệ bạn cần trao đổi về các điều khoản gia hạn, bao gồm:</p>
-                            <p><strong>&#x2022;</strong> <strong>Thời gian gia hạn:</strong> Bạn muốn gia hạn hợp đồng thêm bao lâu?</p>
-                            <p><strong>&#x2022;</strong> <strong>Giá thuê:</strong> Giá thuê có thay đổi sau khi gia hạn hay không?</p>
-                            <p><strong>&#x2022;</strong> <strong>Điều khoản thanh toán:</strong> Bạn sẽ thanh toán như thế nào sau khi gia hạn?</p>
-                            <p><strong>&#x2022;</strong> <strong>Điều khoản khác:</strong> Có thể có thêm các điều khoản khác cần được thống nhất, chẳng hạn như trách nhiệm bảo quản đồ decor, điều kiện chấm dứt hợp đồng, v.v.</p>
-                            <br>
-                            <p><strong>3. </strong> Hoàn tất các điều khoản trên, bạn ký hợp đồng gia hạn với Deprop studio.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          </div>
+        </div>
+        <div class="col-lg-12 product_accordion">
+          <h4>Câu hỏi thường gặp</h5>
+          <div class="accordion product_accordion" id="quesionList">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Tôi có thể đặt đơn online không?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="questionOne" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p><strong>Có thể đặt đơn online!</strong></p>
+                  <p>Khi đặt đơn online, bạn cần cung cấp đầy đủ thông tin, Deprop Studio sẽ liên hệ lại để xác nhận đơn hàng và thông tin thanh toán.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Tôi liên hệ với studio thông qua đâu để được tư vấn?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="questionTwo" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p>Bạn có thể liên hệ với Deprop Studio thông qua các phương tiện sau đây:</p>
+                  <p><strong>&#x2022; Fanpage: </strong><a target="_blank" href="https://www.facebook.com/profile.php?id=61560555539153">Link Fanpage</a></p>
+                  <p><strong>&#x2022; Instagram: </strong><a target="_blank" href="https://www.instagram.com/deprop_studio/">Link Instagram</a></p>
+                  <p><strong>&#x2022; Số điện thoại: </strong><a href="tel:0901131465">0901131465</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Quy định thanh toán và tiền đặt cọc thế chân tại studio quy định như thế nào?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="questionThree" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p><strong>1. Quy định thanh toán:</strong></p>
+                  <p><strong>&#x2022;</strong> Thanh toán 100% khi đặt cọc.</p>
+                  <p><strong>&#x2022;</strong> Tiền đặt cọc 50% giá trị đơn hàng.</p>
+                  <p><strong>&#x2022;</strong> Có thể thanh toán bằng tiền mặt, chuyển khoản, hoặc thẻ ATM/Visa.</p>
+                  <p><strong>Lưu ý:</strong>
+                  <p><strong>&#x2022;</strong> Deprop Studio sẽ không hoàn trả tiền đặt cọc nếu khách hàng hủy đơn hàng.</p>
+                  <p><strong>&#x2022;</strong> Khách hàng cần thanh toán phần còn lại của đơn hàng trước khi nhận đồ.</p>
+                  <br>
+                  <p><strong>2. Tiền đặt cọc thế chân:</strong></p>
+                  <p><strong>&#x2022;</strong> Áp dụng cho trường hợp khách hàng muốn giữ nguyên trạng thái đặt cọc cho đơn hàng đã đặt trước, nhưng muốn thay đổi ngày sử dụng hoặc một số chi tiết khác.</p>
+                  <p><strong>&#x2022;</strong> Mức phí đặt cọc thế chân là 20% giá trị đơn hàng.</p>
+                  <p><strong>&#x2022;</strong> Deprop Studio sẽ giữ nguyên trạng thái đặt cọc cho đơn hàng trong vòng 7 ngày kể từ ngày khách hàng thanh toán tiền đặt cọc thế chân.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Hình thức và phí ship đơn như thế nào? 
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="questionFour" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p><strong>&#x2022;</strong> Phí ship theo quy định của đơn vị vận chuyển.</p>
+                  <p><strong>&#x2022;</strong> Deprop Studio sẽ liên hệ với khách hàng để thống nhất đơn vị vận chuyển và mức phí phù hợp.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Deprop Studio có xuất hoá đơn VAT (hoá đơn đỏ) không? 
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="questionFive" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p><strong>Deprop Studio sẽ xuất hóa đơn VAT cho khách hàng theo yêu cầu.</strong></p>
+                  <p><strong>&#x2022;</strong> Khi đặt đơn hàng, bạn cần ghi chú hoặc chọn vào ô yêu cầu xuất hóa đơn VAT.</p>
+                  <p><strong>&#x2022;</strong> Sau khi nhận hàng và thanh toán, bạn có thể liên hệ Deprop Studio để cung cấp thông tin xuất hóa đơn.</p>
+                  <p><strong>&#x2022;</strong> Deprop Studio sẽ gửi hóa đơn VAT qua email cho bạn.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Có thể đến trực tiếp kho để tham khảo vật dụng không?
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="questionSix" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p><strong>Bạn có thể đến Deprop studio để tham khảo vật dụng decor tại cửa hàng</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Tôi phải chịu trách nhiệm bồi thường bao nhiêu % cho đồ decor setup khi gặp hư hỏng?
+                </button>
+              </h2>
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="questionSeven" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p><strong>1. Hợp đồng cho thuê:</strong></p>
+                  <p><strong>&#x2022;</strong> Bạn thường sẽ chịu trách nhiệm đầy đủ cho bất kỳ thiệt hại nào xảy ra với đồ decor setup trong thời gian thuê, trừ trường hợp do hao mòn tự nhiên hoặc bất khả kháng.</p>
+                  <p><strong>&#x2022;</strong> Một số hợp đồng cho thuê có thể quy định mức bồi thường tối đa hoặc miễn trừ trách nhiệm cho một số loại thiệt hại nhất định.</p>
+                  <br>
+                  <p><strong>2. Nguyên nhân hư hỏng:</strong></p>
+                  <p><strong>&#x2022;</strong> <strong>Do lỗi của bạn:</strong> Bạn sẽ chịu trách nhiệm đầy đủ cho việc bồi thường thiệt hại.</p>
+                  <p><strong>&#x2022;</strong> <strong>Do tai nạn hoặc sự cố ngoài ý muốn:</strong> Mức độ trách nhiệm của bạn có thể phụ thuộc vào các yếu tố như bạn có thể dự phòng được sự cố hay không và bạn đã thực hiện các biện pháp phòng ngừa hợp lý hay chưa.</p>
+                  <p><strong>&#x2022;</strong> <strong>Do hao mòn tự nhiên:</strong> Bạn có thể không phải chịu trách nhiệm bồi thường thiệt hại.</p>
+                  <br>
+                  <p><strong>3. Giá trị của đồ decor setup:</strong></p>
+                  <p><strong>&#x2022;</strong> <strong>Đồ decor setup có giá trị cao:</strong> Bạn có thể phải bồi thường toàn bộ giá trị của đồ decor setup.</p>
+                  <p><strong>&#x2022;</strong> <strong>Đồ decor setup có giá trị thấp:</strong> Bạn có thể chỉ phải bồi thường một phần giá trị của đồ decor setup.</p>
+                  <br>
+                  <p><strong>4. Cách thức giải quyết:</strong></p>
+                  <p><strong>&#x2022;</strong> <strong>Thỏa thuận thương lượng:</strong> Bạn có thể thỏa thuận với chủ sở hữu đồ decor setup về mức bồi thường.</p>
+                  <p><strong>&#x2022;</strong> <strong>Yêu cầu của bên bảo hiểm:</strong> Nếu bạn có bảo hiểm cho đồ decor setup, bạn có thể yêu cầu công ty bảo hiểm bồi thường thiệt hại.</p>
+                  <p><strong>&#x2022;</strong> <strong>Xử lý qua pháp luật:</strong> Trong một số trường hợp, tranh chấp về việc bồi thường thiệt hại có thể phải được giải quyết qua pháp luật.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  Tôi có thể gia hạn thời gian thuê đồ decor setup không? Cách gia hạn như thế nào? 
+                </button>
+              </h2>
+              <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="questionEight" data-bs-parent="#quesionList">
+                <div class="accordion-body">
+                  <p><strong>Bạn có thể gia hạn thời gian thuê đồ decor setup bằng cách:</strong></p>
+                  <p><strong>1. </strong> Liên hệ với Deprop studio để thông báo về nhu cầu gia hạn hợp đồng. Bạn nên liên hệ trước khi hợp đồng hiện tại hết hạn để có thời gian thảo luận và thống nhất các điều khoản gia hạn.</p>
+                  <br>
+                  <p><strong>2. </strong> Sau khi liên hệ bạn cần trao đổi về các điều khoản gia hạn, bao gồm:</p>
+                  <p><strong>&#x2022;</strong> <strong>Thời gian gia hạn:</strong> Bạn muốn gia hạn hợp đồng thêm bao lâu?</p>
+                  <p><strong>&#x2022;</strong> <strong>Giá thuê:</strong> Giá thuê có thay đổi sau khi gia hạn hay không?</p>
+                  <p><strong>&#x2022;</strong> <strong>Điều khoản thanh toán:</strong> Bạn sẽ thanh toán như thế nào sau khi gia hạn?</p>
+                  <p><strong>&#x2022;</strong> <strong>Điều khoản khác:</strong> Có thể có thêm các điều khoản khác cần được thống nhất, chẳng hạn như trách nhiệm bảo quản đồ decor, điều kiện chấm dứt hợp đồng, v.v.</p>
+                  <br>
+                  <p><strong>3. </strong> Hoàn tất các điều khoản trên, bạn ký hợp đồng gia hạn với Deprop studio.</p>
                 </div>
               </div>
             </div>
