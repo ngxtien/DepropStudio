@@ -52,6 +52,10 @@ public class DashboardController {
         model.addAttribute("customerOrders", customerOrderService.getAllCustomerOrders());
         model.addAttribute("totalSaleaday", customerOrderService.getTotalSaleaday());
         model.addAttribute("totalSale", customerOrderService.getTotalSale());
+        model.addAttribute("totalOrder", customerOrderService.getTotalOrder());
+        model.addAttribute("totalOrderAday", customerOrderService.getTotalOrderAday());
+
+
         return "admin/index";
     }
 

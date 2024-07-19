@@ -104,7 +104,7 @@
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Đơn hàng hôm nay</p>
-                                <h6 class="mb-0 totalprice"></h6>
+                                <h6 class="mb-0" th:text="${totalOrderAday} + ' đơn'"></h6>
                             </div>
                         </div>
                     </div>
@@ -113,7 +113,7 @@
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Tổng đơn hàng</p>
-                                <h6 class="mb-0 totalprice"></h6>
+                                <h6 class="mb-0" th:text="${totalOrder} + ' đơn'"></h6>
                             </div>
                         </div>
                     </div>

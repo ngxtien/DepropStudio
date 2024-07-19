@@ -4,7 +4,7 @@
 
 <head  th:if="${customerOrder}">
     <meta charset="utf-8">
-    <title  th:text="'Đơn hàng' + ${customerOrder.orderId}">Đơn hàng #123</title> <!--add ma don hang-->
+    <title  th:text="'Đơn hàng #' + ${customerOrder.orderId}">Đơn hàng #123</title> <!--add ma don hang-->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -40,7 +40,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pb-3">
             <nav class="navbar bg-light navbar-light">
-                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                <a href="/" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary">DeAdmin</h3>
                 </a>
                 <div class="navbar-nav w-100">

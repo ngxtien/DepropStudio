@@ -19,4 +19,10 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, Lo
     @Query(value = "SELECT SUM(co.totalprice) AS total_sales FROM customer_order co;", nativeQuery = true)
     Long totalSale();
     Optional<CustomerOrder> findAllByOrderId(Long id);
+
+    @Query(value = "SELECT count(co.order_id) AS total_orderaday FROM customer_order co WHERE DATE(co.order_date) = CURDATE();", nativeQuery = true)
+    Long totalOrderADay();
+
+    @Query(value = "SELECT count(co.order_id) AS total_order FROM customer_order co;", nativeQuery = true)
+    Long totalOrder();
 }

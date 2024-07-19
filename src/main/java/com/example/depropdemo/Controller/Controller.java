@@ -55,7 +55,8 @@ public class Controller {
     }
 
     @GetMapping("/")
-    public String User_index(){
+    public String User_index(Model model){
+        model.addAttribute("products", productsService.getAllProducts());
         return "user/index";
     }
 

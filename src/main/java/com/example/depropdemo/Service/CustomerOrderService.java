@@ -44,6 +44,12 @@ public class CustomerOrderService {
     public Long getTotalSale(){
         return customerOrderRepository.totalSale();
     }
+    public Long getTotalOrderAday(){
+        return customerOrderRepository.totalOrderADay();
+    }
+    public Long getTotalOrder(){
+        return customerOrderRepository.totalOrder();
+    }
 
     public Optional<CustomerOrder> findAllByOrderId(Long id){
         return customerOrderRepository.findAllByOrderId(id);
