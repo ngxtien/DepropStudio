@@ -99,7 +99,7 @@
                     <div class="s_product_text">
                         <div class="product_combo">
                             <div class="combo_price d-flex">
-                                <div class="manual_price current_prefix" th:text="${product.price}">100</div>
+                                <div class="manual_price current_prefix" th:text="${product.price}"></div>
                                 <div class="product_price current_prefix" th:text="${product.price > 500000 ? product.price * 0.85 : product.price * 0.9}"></div>
                             </div>
                             <h3 class="product_name" th:text="${product.name}"></h3>
@@ -123,7 +123,7 @@
                     <div class="s_product_text">
                         <div class="product_combo">
                             <div class="combo_price d-flex">
-                                <div class="manual_price current_prefix" th:text="${product.price}">100</div>
+                                <div class="manual_price current_prefix" th:text="${product.price}"></div>
                                 <div class="product_price current_prefix" th:text="${product.price > 500000 ? product.price * 0.85 : product.price * 0.9}"></div>
                             </div>
                             <h3 class="product_name" th:text="${product.name}"></h3>
@@ -146,7 +146,7 @@
                     <div class="s_product_text">
                         <div class="product_combo">
                             <div class="combo_price d-flex">
-                                <div class="manual_price current_prefix" th:text="${product.price}">100</div>
+                                <div class="manual_price current_prefix" th:text="${product.price}"></div>
                                 <div class="product_price current_prefix" th:text="${product.price > 500000 ? product.price * 0.85 : product.price * 0.9}"></div>
                             </div>
                             <h3 class="product_name" th:text="${product.name}"></h3>
@@ -169,7 +169,7 @@
                     <div class="s_product_text">
                         <div class="product_combo">
                             <div class="combo_price d-flex">
-                                <div class="manual_price current_prefix" th:text="${product.price}">100</div>
+                                <div class="manual_price current_prefix" th:text="${product.price}"></div>
                                 <div class="product_price current_prefix" th:text="${product.price > 500000 ? product.price * 0.85 : product.price * 0.9}"></div>
                             </div>
                             <h3 class="product_name" th:text="${product.name}"></h3>
@@ -192,7 +192,7 @@
                     <div class="s_product_text">
                         <div class="product_combo">
                             <div class="combo_price d-flex">
-                                <div class="manual_price current_prefix" th:text="${product.price}">100</div>
+                                <div class="manual_price current_prefix" th:text="${product.price}"></div>
                                 <div class="product_price current_prefix" th:text="${product.price > 500000 ? product.price * 0.85 : product.price * 0.9}"></div>
                             </div>
                             <h3 class="product_name" th:text="${product.name}"></h3>
@@ -217,7 +217,11 @@
                 <!-- Combo description -->
                 <!-- Product template -->
                 <div class="product_item col-lg-3 col-sm-4 col-6" th:each="product : ${product}"
-                     th:if="${product.id == 1 or product.id == 2}">
+                     th:if="${ product.id == 29
+                            or product.id == 30
+                            or product.id == 38
+                            or product.id == 72
+                            or product.id == 76 }">
                     <div class="single_product_item">
                         <a th:href="@{'/product/' + ${product.id}}">
                             <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
@@ -243,9 +247,11 @@
             <div id="products2" class="products row align-items-center latest_product_inner">
                 <!-- Product template -->
                 <div class="product_item col-lg-3 col-sm-4 col-6" th:each="product : ${product}"
-                     th:if="${product.id == 1 or product.id == 2
-                     or product.id == 3 or product.id == 10 or
-                     product.id == 11 or product.id == 9 }" >
+                     th:if="${ product.id == 67
+                            or product.id == 64
+                            or product.id == 62
+                            or product.id == 63
+                            or product.id == 68 }" >
                     <div class="single_product_item">
                         <a th:href="@{'/product/' + ${product.id}}">
                             <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
@@ -271,7 +277,11 @@
             <div id="products3" class="products row align-items-center latest_product_inner">
                 <!-- Product template -->
                 <div class="product_item col-lg-3 col-sm-4 col-6" th:each="product : ${product}"
-                     th:if="${product.id == 9 or product.id == 7 }" >
+                     th:if="${ product.id == 18
+                            or product.id == 20
+                            or product.id == 22
+                            or product.id == 23
+                            or product.id == 24 }" >
                     <div class="single_product_item">
                         <a th:href="@{'/product/' + ${product.id}}">
                             <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
@@ -297,7 +307,11 @@
             <div id="products4" class="products row align-items-center latest_product_inner">
                 <!-- Product template -->
                 <div class="product_item col-lg-3 col-sm-4 col-6" th:each="product : ${product}"
-                     th:if="${product.id == 9}" >
+                     th:if="${ product.id == 66
+                            or product.id == 69
+                            or product.id == 70
+                            or product.id == 71
+                            or product.id == 73 }" >
                     <div class="single_product_item">
                         <a th:href="@{'/product/' + ${product.id}}">
                             <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
@@ -323,7 +337,11 @@
             <div id="products5" class="products row align-items-center latest_product_inner">
                 <!-- Product template -->
                 <div class="product_item col-lg-3 col-sm-4 col-6" th:each="product : ${product}"
-                     th:if="${product.id == 9 or product.id == 1 or product.id == 2}" >
+                     th:if="${ product.id == 34
+                            or product.id == 37
+                            or product.id == 40
+                            or product.id == 42
+                            or product.id == 45 }" >
                     <div class="single_product_item">
                         <a th:href="@{'/product/' + ${product.id}}">
                             <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
