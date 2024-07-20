@@ -210,7 +210,7 @@
                         <div class="single_product_list_slider">
                             <div class="row align-items-center justify-content-between">
                                 <div class="col-lg-3 col-sm-6 col-6" th:each="product, productStat : ${products}"
-                                     th:if="${product.status.displayName == 'Nổi Bật' && productStat.index % 2 == 0}">
+                                     th:if="${product.status.displayName == 'Nổi Bật' && productStat.index % 4 == 0}">
                                     <div class="single_product_item">
                                         <a th:href="@{'/product/' + ${product.id}}">
                                             <img th:src="@{'data:image/png;base64,'+${product.image}}" alt="Product Image">
