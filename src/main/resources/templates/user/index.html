@@ -126,8 +126,8 @@
                         <div class="single_feature_slider" th:each="product : ${products}"  th:if="${product.name == 'Combo Tết'}">
                             <div class="row">
                                 <div class="feature_text col-lg-3">
-                                    <p>Premium Quality</p>
-                                    <h3 th:text="${product.name}">Latest foam Sofa</h3>
+                                    <p>Giá chỉ <span th:text="${product.price > 500 ? product.price * 0.9 : product.price * 0.85}"></span></p>
+                                    <h3 th:text="${product.name}"></h3>
                                     <a href="/combo" class="custom_btn btn_black">Xem ngay</i></a>
                                 </div>
                                 <div class="feature_img col-lg-9">
@@ -139,8 +139,8 @@
                         <div class="single_feature_slider" th:each="product : ${products}"  th:if="${product.name == 'Combo Giáng Sinh'}">
                             <div class="row">
                                 <div class="feature_text col-lg-3">
-                                    <p>Premium Quality</p>
-                                    <h3 th:text="${product.name}">Latest foam Sofa</h3>
+                                    <p>Giá chỉ <span th:text="${product.price > 500 ? product.price * 0.9 : product.price * 0.85}"></span></p>
+                                    <h3 th:text="${product.name}"></h3>
                                     <a href="/combo" class="custom_btn btn_black">Xem ngay</i></a>
                                 </div>
                                 <div class="feature_img col-lg-9">
@@ -152,7 +152,7 @@
                         <div class="single_feature_slider" th:each="product : ${product}"  th:if="${product.name == 'Combo Vintage'}">
                             <div class="row">
                                 <div class="feature_text col-lg-3">
-                                    <p>Premium Quality</p>
+                                    <p>Giá chỉ <span th:text="${product.price > 500 ? product.price * 0.9 : product.price * 0.85}"></span></p>
                                     <h3 th:text="${product.name}">Latest foam Sofa</h3>
                                     <a href="/combo" class="custom_btn btn_black">Xem ngay</i></a>
                                 </div>
@@ -175,7 +175,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section_tittle">
-                        <h2>Sản phẩm <span>nổi bật</span></h2>
+                        <h2>Sản phẩm nổi bật</h2>
                     </div>
                 </div>
             </div>
@@ -244,7 +244,7 @@
     <section class="our_offer">
         <div class="container">
             <div class="offer_text">
-                <h2>Cùng chọn sản phẩm decor<br> <span>phù hợp</span> với bạn nhé.</h2>
+                <h2>Cùng chọn sản phẩm decor<br> <strong>phù hợp</strong> với bạn nhé.</h2>
             </div>
             <a href="/category" class="custom_btn btn_white">Đến cửa hàng</a>
 
