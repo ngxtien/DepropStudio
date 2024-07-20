@@ -321,7 +321,7 @@ ul {
   position: relative;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1900px) {
   .container {
     max-width: 1170px;
   }
@@ -397,7 +397,7 @@ ul {
 }
 @media (max-width: 576px) {
   .custom_btn {
-    font-size: 14px;
+    font-size: 10px;
     padding: 14px 20px;
   }
 }
@@ -410,6 +410,45 @@ ul {
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .custom_btn {
     padding: 14px 30px;
+  }
+}
+
+.banner_btn {
+  display: inline;
+  padding: 14px 40px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 30px;
+  border: none;
+  font-size: 14px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  z-index: 999;
+}
+@media (max-width: 576px) {
+  .banner_btn {
+    font-size: 8px;
+    padding: 6px 15px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .banner_btn {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .banner_btn {
+    padding: 14px 30px;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .banner_btn {
+    font-size: 16px;
+    padding: 18px 40px;
   }
 }
 
@@ -707,22 +746,13 @@ ul {
 
 /**************** banner part css start ****************/
 .banner_part {
+  margin: 0;
   margin-top: 60px;
   background-color: #000000;
 }
 .banner_part .single_banner_slider .banner_img {
   width: 100%;
-  height: 640px;
-}
-@media (max-width: 576px) {
-  .banner_part .single_banner_slider .banner_img {
-    height: 300px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .banner_part .single_banner_slider .banner_img {
-    height: 500px;
-  }
+  aspect-ratio: 16/9;
 }
 .banner_part .single_banner_slider .banner_img img {
   width: 100%;
@@ -730,110 +760,39 @@ ul {
   object-fit: cover;
   object-position: right;
 }
-.banner_part .single_banner_slider .banner_text {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
+.banner_part .single_banner_slider .banner_img a {
   position: absolute;
-  top: 0;
+  bottom: 400px;
+  left: 100px;
 }
-@media (max-width: 576px) {
-  .banner_part .single_banner_slider .banner_text {
-    background: linear-gradient(90deg, #000000 0%, rgba(24, 25, 27, 0.9) 47.4%, rgba(29, 32, 39, 0) 100%);
-  }
-}
-.banner_part .single_banner_slider .banner_text .banner_text_iner {
-  max-width: 700px;
-  margin-left: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-@media (max-width: 576px) {
-  .banner_part .single_banner_slider .banner_text .banner_text_iner {
-    max-width: 250px;
-    margin-left: 20px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .banner_part .single_banner_slider .banner_text .banner_text_iner {
-    max-width: 350px;
-    margin-left: 50px;
+@media only screen and (min-width: 1900px) {
+  .banner_part .single_banner_slider .banner_img a {
+    bottom: 520px;
+    left: 120px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .banner_part .single_banner_slider .banner_text .banner_text_iner {
-    max-width: 400px;
-    margin-left: 50px;
-  }
-}
-.banner_part .single_banner_slider .banner_text h1 {
-  font-size: 66px;
-  font-weight: 700;
-  margin-bottom: 35px;
-  line-height: 72px;
-  color: #fff;
-}
-@media (max-width: 576px) {
-  .banner_part .single_banner_slider .banner_text h1 {
-    font-size: 25px;
-    margin-bottom: 15px;
-    line-height: 1.3;
+  .banner_part .single_banner_slider .banner_img a {
+    bottom: 260px;
+    left: 60px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .banner_part .single_banner_slider .banner_text h1 {
-    font-size: 40px;
-    margin-bottom: 15px;
-    line-height: 1.3;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .banner_part .single_banner_slider .banner_text h1 {
-    font-size: 40px;
-    margin-bottom: 15px;
-    line-height: 1.4;
-  }
-}
-.banner_part .single_banner_slider .banner_text h1 span {
-  color: #ff3368;
-}
-.banner_part .single_banner_slider .banner_text p {
-  font-size: 15px;
-  line-height: 1.8;
-  font-family: "Be Vietnam Pro", sans-serif;
-  color: #fff;
-  margin-bottom: 70px;
-  padding-right: 80px;
-}
-@media (max-width: 576px) {
-  .banner_part .single_banner_slider .banner_text p {
-    padding-right: 0;
-    margin-bottom: 20px;
-    font-size: 12px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .banner_part .single_banner_slider .banner_text p {
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .banner_part .single_banner_slider .banner_text p {
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 576px) {
-  .banner_part .single_banner_slider .banner_text .btn_2 {
-    padding: 10px 30px;
+  .banner_part .single_banner_slider .banner_img a {
+    bottom: 190px;
+    left: 50px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  .banner_part .single_banner_slider .banner_text .btn_2 {
-    padding: 10px 30px;
+  .banner_part .single_banner_slider .banner_img a {
+    bottom: 130px;
+    left: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .banner_part .single_banner_slider .banner_img a {
+    bottom: 90px;
+    left: 25px;
   }
 }
 .banner_part .owl-theme .owl-dots {
@@ -1128,9 +1087,7 @@ ul {
 .cat_product_area {
   background-color: #fff;
 }
-.cat_product_area .latest_product_inner {
-  padding-top: 30px;
-}
+
 .cat_product_area .latest_product_inner .single-product {
   margin-bottom: 50px;
 }
@@ -4356,7 +4313,7 @@ html, body {
   object-fit: cover;
   object-position: center;
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1900px) {
   .combo_part .single_combo_slider .s_product_img img {
     object-position: 0 -400px;
   }
@@ -4566,12 +4523,12 @@ html, body {
 .combo_part .container {
   padding: 20px 0;
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1900px) {
   .combo_part .container {
     max-width: 1000px;
   }
 }
-@media only screen and (min-width: 1200px) and (max-width: 1439px) {
+@media only screen and (min-width: 1200px) and (max-width: 1899px) {
   .combo_part .container {
     max-width: 1000px;
   }
