@@ -6,21 +6,24 @@
   text-align: center;
   .offer_text {
     h2 {
-      line-height: 60px;
+      font-family: $special_font;
+      font-weight: 350;
+      line-height: 70px;
       color: $white;
       font-size: 40px;
       margin-bottom: 50px;
-      span {
-        font-family: Caveat, cursive;
-        font-size: 60px;
-        margin-right: 10px;
-        @media #{$small_mobile} {
-          font-size: 50px;
-        }
-      }
       @media #{$small_mobile} {
-        font-size: 28px;
+        font-size: 20px;
+        line-height: 40px;
+        margin-bottom: 30px;
       }
+      @media #{$large_mobile} {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+    b {
+      color: $white;
     }
   }
 }

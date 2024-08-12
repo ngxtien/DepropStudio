@@ -7,20 +7,27 @@
       margin-top: 50px;
     }
     h4 {
+      font-family: $special_font;
+      font-weight: 350;
       color: $white;
       margin-bottom: 30px;
       @media #{$small_mobile} {
         font-size: 15px;
+        margin-bottom: 20px;
       }
     }
 
     h2 {
       font-family: $special_font;
+      text-transform: uppercase;
       color: $white;
       width: 100%;
-      font-size: 70px;
+      font-size: 60px;
       @media #{$small_mobile} {
-        font-size: 60px;
+        font-size: 30px;
+      }
+      @media #{$large_mobile} {
+        font-size: 35px;
       }
     }
   }

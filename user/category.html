@@ -145,62 +145,6 @@
                         </div>
                 </aside>
                 <aside class="filter_widget">
-                        <div class="widgets_inner dropdown style">
-                            <button class="dropdown_btn dropdown-toggle" type="button" id="styleDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,0">
-                                Phong cách
-                            </button>
-                            <ul class="filter_list style_menu dropdown-menu p-3" aria-labelledby="styleDropdown">
-                                <input type="text" class="search_filter form-control" placeholder="Tìm phong cách" id="styleSearchFilter">
-                                <li>
-                                    <input type="checkbox" value="modern" id="sty_modern">
-                                    <label for="sty_modern">Hiện đại</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="classic" id="sty_classic">
-                                    <label for="sty_classic">Cổ điển</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="minimalism" id="sty_minimalism">
-                                    <label for="sty_minimalism">Tối giản</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="luxury" id="sty_luxury">
-                                    <label for="sty_luxury">Sang trọng</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="natural" id="sty_natural">
-                                    <label for="sty_natural">Thiên nhiên</label>
-                                </li>
-                            </ul>
-                        </div>
-                </aside>
-                <aside class="filter_widget">
-                        <div class="widgets_inner dropdown color">
-                            <button class="dropdown_btn dropdown-toggle" type="button" id="colorDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,0">
-                                Màu sắc
-                            </button>
-                            <ul class="filter_list color_menu dropdown-menu p-3" aria-labelledby="colorDropdown">
-                                <input type="text" class="search_filter form-control" placeholder="Tìm màu sắc" id="colorSearchFilter">
-                                <li>
-                                    <input type="checkbox" value="red" id="cor_red">
-                                    <label for="cor_red">Red</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="blue" id="cor_blue">
-                                    <label for="cor_blue">Blue</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="green" id="cor_green">
-                                    <label for="cor_green">Green</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" value="black" id="cor_black">
-                                    <label for="cor_black">Black</label>
-                                </li>
-                            </ul>
-                        </div>
-                </aside>
-                <aside class="filter_widget">
                     <div class="widgets_inner dropdown price">
                         <button class="dropdown_btn dropdown-toggle" type="button" id="priceDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-offset="0,0">
                             Giá
@@ -225,7 +169,6 @@
                         </ul>
                     </div>
                 </aside>
-                
             </div>
             <div class="right_sidebar_area">
                 <div class="row">
@@ -246,8 +189,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row align-items-center latest_product_inner">
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter furniture special red modern">
+                <div id="product-container" class="row align-items-center latest_product_inner">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter furniture special modern">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -266,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter furniture blue classic">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter furniture classic">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -285,7 +228,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter tree special green natural">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter tree special natural">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -305,7 +248,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter lamp minimalism black">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter lamp minimalism">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -324,7 +267,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter event special modern red">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter event special modern">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -344,7 +287,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter accessory special modern blue">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter accessory special modern">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -364,7 +307,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter walldecor special natural black">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter walldecor special natural">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -384,7 +327,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 col-6 product_filter furniture minimalism blue">
+                    <div class="product_item col-lg-3 col-sm-4 col-6 product_filter furniture minimalism">
                         <div class="single_product_item">
                             <a href="single-product.html">
                                 <img src="/images/product/item.jpg">
@@ -405,28 +348,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 mt-4">
-                    <div class="pageination">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <ul id="pagination" class="pagination justify-content-center">
+                    </ul>
                 </div>
             </div>
         </div>
@@ -467,8 +390,8 @@
                         <div class="single_footer_part">
                             <h4>Our Contact</h4>
                             <ul class="list-unstyled">
-                                <li><a href="">deprop.contact@gmail.com</a></li>
-                                <li><a href="">0901131465</a></li>
+                                <li><a href="mailto:deprop.contact@gmail.com">deprop.contact@gmail.com</a></li>
+                                <li><a href="tel:0901131465">0901131465</a></li>
                                 <li><a>District 9, Ho Chi Minh city</a></li>
                             </ul>
                         </div>
@@ -532,6 +455,7 @@
    <script src="/js/common.js"></script>
    <script src="/js/addtocart.js"></script>
    <script src="/js/filter_sort.js"></script>
+   <script src="/js/pagination.js"></script>
    <!-- extra js --> 
    <script src="/js/backtotop.js"></script>
    <script src="/js/loading.js"></script>

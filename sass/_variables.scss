@@ -2,7 +2,7 @@ $font_stack_1: 'Be Vietnam Pro', sans-serif;
 $font_stack_2: 'Be Vietnam Pro', sans-serif;
 $body-font: 'Be Vietnam Pro', sans-serif;
 $title-font: 'Be Vietnam Pro', sans-serif;
-$special_font: 'Caveat', cursive;
+$special_font: 'Unbounded', sans-serif;
 /*Color Variables*/
 
 $primary-color  : #71cd14;
@@ -53,9 +53,9 @@ $sidebar_bg: #fbf9ff;
 $small_mobile:'(max-width: 576px)';
 $large_mobile: 'only screen and (min-width: 576px) and (max-width: 767px)';
 $tab_device:'only screen and (min-width: 768px) and (max-width: 991px)';
-$medium_device : 'only screen and (min-width: 992px) and (max-width: 1200px)';
-$big_screen:'only screen and (min-width: 1200px)';
-$extra_big_screen: 'only screen and (min-width: 1440px)';
+$medium_device : 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$big_screen:'only screen and (min-width: 1200px) and (max-width: 1899px)';
+$extra_big_screen: 'only screen and (min-width: 1900px)';
 
 $tab:'(max-width: 991px)';
 

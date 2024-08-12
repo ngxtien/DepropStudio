@@ -13,9 +13,10 @@
     -o-transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+	z-index: 999;
 	@media #{$small_mobile} {
-		font-size: 14px;
-		padding: 15px 24px;
+		font-size: 10px;
+		padding: 14px 20px;
 	}
 	@media #{$tab_device}{
 		font-size: 14px;
@@ -23,6 +24,37 @@
 	}
 	@media #{$medium_device}{
 		padding: 14px 30px;
+	}
+}
+
+.banner_btn{
+	display: inline;
+	padding: 14px 40px;
+	line-height: 15px;
+	text-align: center;
+	border-radius: 30px;
+	border: none;
+	font-size: 14px;
+	font-family: $font_stack_2;
+	font-weight: 600;
+    -o-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+	z-index: 999;
+	@media #{$small_mobile} {
+		font-size: 8px;
+		padding: 6px 15px;
+	}
+	@media #{$tab_device}{
+		font-size: 14px;
+		padding: 14px 20px;
+	}
+	@media #{$medium_device}{
+		padding: 14px 30px;
+	}
+	@media #{$extra_big_screen}{
+		font-size: 16px;
+		padding: 18px 40px;
 	}
 }
 

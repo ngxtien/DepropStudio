@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Tạo danh mục</button>
-                    <button type="submit" class="btn btn-outline-danger">Huỷ</button>
+                    <button type="button" class="btn btn-outline-danger">Huỷ</button>
                 </div>
             </form>
             <!-- Create Product Form End -->
@@ -100,27 +100,27 @@
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h6 class="mb-0">Danh mục</h6>
                     </div>
-                    <button id="deleteButton" class="btn btn-primary mb-3">Xoá</button>
+                    <button class="btn btn-primary mb-3">Xoá</button>
                     
                     <div class="table-responsive">
-                        <table id="productTable" class="table table-hover" style="width:100%">
+                        <table id="productTable" class="table table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th><input type="checkbox" class="form-check-input"></th>
                                     <th>Tên danh mục</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td></td>
+                                    <td><input type="checkbox" class="form-check-input"></td>
                                     <td>Danh mục 1</td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td><input type="checkbox" class="form-check-input"></td>
                                     <td>Danh mục 2</td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td><input type="checkbox" class="form-check-input"></td>
                                     <td>Danh mục 3</td>
                                 </tr>
                             </tbody>
@@ -156,15 +156,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/form-validation.js"></script>
     <script src="/js/drop-image.js"></script>
-    <script src="/js/delete.js"></script>
 
-    <!-- Datatables -->
-    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
-    <script src="https://cdn.datatables.net/select/2.0.2/js/dataTables.select.js"></script>
-    <script src="https://cdn.datatables.net/select/2.0.2/js/select.dataTables.js"></script>
-
-    <script src="/js/datatables.js"></script>
 </body>
 
 </html>

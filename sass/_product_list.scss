@@ -5,11 +5,12 @@
     .section_tittle {
         text-align: left !important;
         h2 {
+            font-family: $special_font;
             font-size: 35px;
+            text-transform: uppercase;
             color: $text-color;
-            span {
-                font-family: Caveat;
-                font-size: 60px;
+            @media #{$small_mobile} {
+                font-size: 25px;
             }
         }
 

@@ -9,6 +9,7 @@
 body {
     display: flex;
     flex-direction: column;
+    user-select: none;
 }
 
 html, body {
@@ -26,8 +27,7 @@ html, body {
 ::-webkit-scrollbar
 {
 	width: 6px;
-    border-radius: 10px;
-    
+    border-radius: 10px; 
 }
 
 ::-webkit-scrollbar-thumb

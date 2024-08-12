@@ -1,0 +1,265 @@
+/**************** banner part css start ****************/
+.combo_part {
+    margin-top: 60px;
+    background-color: $white;
+    position: relative;
+  
+    .single_combo_slider {
+      .s_product_img {
+        width: 100%;
+        height: 500px;
+        cursor: grabbing;
+        @media #{$tab_device} {
+          height: 350px;
+        }
+        @media #{$medium_device} {
+          height: 350px;
+        }
+        @media #{$large_mobile} {
+          height: 300px;
+        }
+        @media #{$small_mobile} {
+          height: 200px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          @media #{$extra_big_screen} {
+            object-position: 0 -400px;
+          }
+        }
+      }
+      .s_product_text {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        background: linear-gradient(
+            0deg,
+            #000000 0%,
+            rgba(24, 25, 27, 0.8) 20%,
+            rgba(29, 32, 39, 0) 100%
+        );
+
+        @media #{$small_mobile} {
+          background: linear-gradient(
+            0deg,
+            #000000 0%,
+            rgba(24, 25, 27, 0.8) 50%,
+            rgba(29, 32, 39, 0) 100%
+        );
+        }
+
+        .product_combo {
+            position: absolute;
+            bottom: 10px;
+            padding: 20px 20px;
+            max-width: 50%;
+        }
+  
+        .product_name {
+          font-size: 40px;
+          font-weight: 700;
+          margin: 0;
+          color: $white;
+          text-wrap: wrap;
+          @media #{$small_mobile} {
+            font-size: 25px;
+          }
+          @media #{$tab_device} {
+            font-size: 40px;
+          }
+          @media #{$medium_device} {
+            font-size: 40px;
+          }
+        }
+
+        .combo_price {
+            color: $white;
+            font-size: 16px;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 10px;
+            @media #{$small_mobile} {
+                flex-direction: column;
+                gap: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .product_price {
+            font-size: 25px;
+            margin: 0;
+            @media #{$small_mobile} {
+                font-size: 20px;
+            }
+        }
+
+        .manual_price {
+            text-decoration: line-through;
+            color: #ccc;
+            @media #{$small_mobile} {
+                font-size: 15px;
+            }
+        }
+
+        
+        .combo_card_area {
+            padding: 20px 10px;
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            max-width: 50%;
+            .product_count {
+              border: 2.2px solid #ddd;
+              border-radius: 50px;
+              display: flex;
+              align-items: center;
+              padding: 12px 15px;
+              input {
+                border: 0px solid transparent;
+                text-align: center;
+              }
+              .input-number {
+                color: white;
+                background-color: transparent;
+                display: inline-block;
+                width: 60px;
+                @media #{$small_mobile}{
+                  width: 60px;
+                }
+            }
+            }
+            .ti-minus, .ti-plus {
+              color: $white;
+              padding: 5px;
+              border-radius: 50%;
+              cursor: pointer;
+              &:hover {
+                color: $black;
+                background-color: #f3f3f3;
+              }
+            }
+            a {
+              padding: 12px 40px !important;
+              @media #{$medium_device} {
+                padding: 12px 25px !important;
+              }
+              @media #{$small_mobile} {
+                padding: 12px 10px !important;
+              }
+            }
+            @media #{$tab_device} {
+                flex-direction: column;
+                .product_count {
+                  justify-content: space-between;
+                }
+            }
+            @media #{$small_mobile} {
+              flex-direction: column;
+              .product_count {
+                justify-content: space-between;
+              }
+            }
+            @media #{$large_mobile} {
+              flex-direction: column;
+              .product_count {
+                justify-content: space-between;
+              }
+            }
+         }
+      }
+    }
+  
+    .owl-theme {
+      .owl-dots {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        line-height: 0;
+  
+        padding-bottom: 10px;
+        @media #{$tab_device} {
+          padding-bottom: 10px;
+        }
+  
+        .owl-dot {
+          span {
+            background: #747474 !important;
+          }
+        }
+        .owl-dot.active,
+        .owl-dot:hover {
+          span {
+            background: white !important;
+          }
+        }
+      }
+  
+      .owl-nav {
+        margin: 0;
+        .owl-next,
+        .owl-prev {
+          position: absolute;
+          top: 40%;
+          @media #{$tab} {
+            display: none;
+          }
+          @media #{$medium_device} {
+            display: none;
+          }
+        }
+        .owl-next {
+          right: 20px;
+        }
+        .owl-prev {
+          left: 20px;
+        }
+        .owl-prev:hover,
+        .owl-next:hover {
+          background: none !important;
+        }
+      }
+    }
+
+    .container {
+        padding: 20px 0;
+        @media #{$extra_big_screen} {
+            max-width: 1000px;
+        }
+        @media #{$big_screen} {
+          max-width: 1000px;
+        }
+        @media #{$medium_device} {
+          max-width: 1000px;
+        }
+        @media #{$large_mobile} {
+         max-width: 650px; 
+        }
+        @media #{$small_mobile} {
+          max-width: 400px;
+        }
+    }
+
+    .products {
+        display: none; /* Initially hide all products sections */
+        justify-content: center;
+        margin: 0;
+    }
+
+    .product_decription {
+        padding: 20px 20px 40px 20px;
+        text-align: center;
+        line-height: 25px;
+        font-size: 15px;
+    }
+  }
+  /**************** hero part css end ****************/
+  
